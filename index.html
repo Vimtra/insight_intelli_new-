@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Insight Intelli delivers strategic staffing, automation, and digital solutions that help businesses scale with confidence."
+    />
     <title>Insight Intelli</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,9 +41,15 @@
             >
           </div>
           <div class="top-social">
-            <a href="#"><i class="bi bi-linkedin"></i></a>
-            <a href="#"><i class="bi bi-twitter-x"></i></a>
-            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Visit us on LinkedIn"
+              ><i class="bi bi-linkedin"></i
+            ></a>
+            <a href="#" aria-label="Visit us on X"
+              ><i class="bi bi-twitter-x"></i
+            ></a>
+            <a href="#" aria-label="Visit us on Facebook"
+              ><i class="bi bi-facebook"></i
+            ></a>
           </div>
         </div>
       </div>
@@ -413,7 +423,7 @@
             <!-- Value 3 -->
             <div class="value-card">
               <div class="value-number">03</div>
-              <h3 class="value-title">Hardwork & Dedication</h3>
+              <h3 class="value-title">Hard Work & Dedication</h3>
               <p class="value-description">
                 We believe hard work pays off. Excellence demands commitment,
                 and we invest the time and effort to exceed expectations
@@ -476,7 +486,7 @@
 
       // Carousel progress bar
       const progressBar = document.getElementById("carouselProgress");
-      const totalSlides = 4;
+      const totalSlides = carousel.querySelectorAll(".carousel-item").length;
       let currentSlide = 0;
 
       function updateProgress() {
