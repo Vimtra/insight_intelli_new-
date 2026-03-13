@@ -1553,3 +1553,126 @@ html {
         width: 100%;
     }
 }
+
+/* ========== US STAFFING STYLE SECTION REDESIGN ========== */
+.staffing-modern-section {
+    padding: 110px 0;
+    background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+}
+
+.staffing-modern-section-alt {
+    background: linear-gradient(180deg, #ffffff 0%, #f4f8ff 100%);
+}
+
+.staffing-section-head {
+    max-width: 760px;
+    margin-bottom: 44px;
+}
+
+.staffing-kicker {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(255, 109, 0, 0.12);
+    color: #c65400;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.staffing-section-head h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    letter-spacing: -0.6px;
+    margin-bottom: 16px;
+    color: #0f172a;
+}
+
+.staffing-section-head p {
+    color: #5b6472;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.staffing-feature-grid,
+.staffing-process-grid,
+.staffing-values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 22px;
+}
+
+.staffing-feature-card,
+.staffing-process-step,
+.staffing-value-tile {
+    background: #fff;
+    border: 1px solid #e7edf5;
+    border-radius: 16px;
+    padding: 26px;
+    box-shadow: 0 8px 26px rgba(15, 23, 42, 0.06);
+    transition: all 0.3s ease;
+}
+
+.staffing-feature-card:hover,
+.staffing-process-step:hover,
+.staffing-value-tile:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 109, 0, 0.45);
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+}
+
+.staffing-feature-icon {
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(255, 109, 0, 0.2), rgba(255, 140, 58, 0.18));
+    color: #d45b00;
+    margin-bottom: 14px;
+    font-size: 1.2rem;
+}
+
+.staffing-feature-card h3,
+.staffing-process-step h3,
+.staffing-value-tile h3 {
+    font-size: 1.2rem;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.staffing-feature-card p,
+.staffing-process-step p,
+.staffing-value-tile p {
+    color: #606a79;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.staffing-step-number {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ff6d00;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+    .staffing-modern-section {
+        padding: 72px 0;
+    }
+
+    .staffing-section-head {
+        margin-bottom: 30px;
+    }
+
+    .staffing-feature-card,
+    .staffing-process-step,
+    .staffing-value-tile {
+        padding: 20px;
+    }
+}
