@@ -1475,3 +1475,81 @@ body {
         bottom: -20px;
     }
 }
+/* ========== DESIGN REFRESH OVERRIDES ========== */
+html {
+    scroll-behavior: smooth;
+}
+
+.top-bar {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.top-social {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.top-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(255, 109, 0, 0.1);
+    transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+
+.top-social a:hover {
+    background: var(--primary-color);
+    color: #fff;
+    transform: translateY(-2px);
+    opacity: 1;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.hero-buttons .btn {
+    margin-right: 0 !important;
+}
+
+.vision-item,
+.mission-pillar,
+.value-card {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 10px 30px rgba(17, 24, 39, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.vision-item:hover,
+.mission-pillar:hover,
+.value-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(17, 24, 39, 0.1);
+    border-color: rgba(255, 109, 0, 0.3);
+}
+
+.value-dot {
+    top: 18px;
+    right: 18px;
+}
+
+@media (max-width: 991px) {
+    .top-bar .container {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+}
