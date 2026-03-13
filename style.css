@@ -184,8 +184,9 @@ body {
     transform: translateX(4px);
 }
 
-/* ========== CTA BUTTON ========== */
+/* ========== CTA BUTTONS ========== */
 
+.btn-brand,
 .navbar .btn-primary {
     flex-shrink: 0;
     background: linear-gradient(135deg, var(--primary-color) 0%, #ff8c3a 100%);
@@ -200,12 +201,14 @@ body {
     white-space: nowrap;
 }
 
+.btn-brand:hover,
 .navbar .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(255, 109, 0, 0.5);
     background: linear-gradient(135deg, #ff8c3a 0%, var(--primary-color) 100%);
 }
 
+.btn-brand:active,
 .navbar .btn-primary:active {
     transform: translateY(0);
 }
@@ -373,6 +376,12 @@ body {
     height: 3.8rem;
     top: 50%;
     transform: translateY(-50%);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.35);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .carousel-control-prev-icon,
@@ -404,13 +413,14 @@ body {
 }
 
 .carousel-caption {
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    padding: 15px;
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     max-width: 80%;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
 }
 
 .carousel-caption h5 {
@@ -501,10 +511,8 @@ body {
 }
 
 .text-gradient {
-    background: linear-gradient(135deg, var(--primary-color) 0%, #ffc107 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    /* Use a solid brand color for maximum readability */
+    color: var(--primary-color);
     display: inline-block;
 }
 
