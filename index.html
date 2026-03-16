@@ -3,52 +3,109 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Insight Intelli</title>
+
+    <!-- SEO Meta Tags -->
+    <title>Insight Intelli — Strategic Staffing, Smart Automation & Digital Solutions</title>
+    <meta
+      name="description"
+      content="Insight Intelli drives business growth with strategic staffing, smart automation, and scalable digital solutions. Connect top talent with mission-critical roles."
+    />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Insight Intelli — Strategic Staffing & Digital Solutions" />
+    <meta
+      property="og:description"
+      content="Driving growth with strategic staffing, smart automation, and digital solutions that scale with your goals."
+    />
+    <meta property="og:image" content="images/logo.png" />
+    <meta property="og:url" content="https://insightintelli.com" />
+    <meta property="og:site_name" content="Insight Intelli" />
+
+    <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+
+    <!-- Bootstrap Icons -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
     />
+
+    <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Favicon -->
     <link rel="icon" href="images/logo.png" type="image/png" />
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Insight Intelli",
+        "url": "https://insightintelli.com",
+        "logo": "https://insightintelli.com/images/logo.png",
+        "description": "Strategic staffing, smart automation, and scalable digital solutions.",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-234-567-890",
+          "contactType": "customer service",
+          "email": "care@insightintelli.com"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/insightintelli",
+          "https://twitter.com/insightintelli",
+          "https://www.facebook.com/insightintelli",
+          "https://www.instagram.com/insightintelli"
+        ]
+      }
+    </script>
   </head>
   <body>
-    <header class="header">
-      <!-- TOP BAR WITH CONTACT & SOCIAL -->
+    <!-- Skip to Content (Accessibility) -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <header class="header" role="banner">
+      <!-- TOP BAR -->
       <div class="top-bar">
         <div class="container">
           <div class="top-bar-left">
-            <a href="tel:+1234567890" class="top-bar-link">
-              <i class="bi bi-telephone-fill"></i>
+            <a href="tel:+1234567890" class="top-bar-link" aria-label="Call us at +1 (234) 567-890">
+              <i class="bi bi-telephone-fill" aria-hidden="true"></i>
               <span>+1 (234) 567-890</span>
             </a>
-            <a href="mailto:care@insightintelli.com" class="top-bar-link">
-              <i class="bi bi-envelope-fill"></i>
+            <a href="mailto:care@insightintelli.com" class="top-bar-link" aria-label="Email us at care@insightintelli.com">
+              <i class="bi bi-envelope-fill" aria-hidden="true"></i>
               <span>care@insightintelli.com</span>
             </a>
           </div>
           <div class="top-bar-right">
             <div class="top-social">
-              <a href="#" class="social-icon" title="LinkedIn">
-                <i class="bi bi-linkedin"></i>
+              <a href="#" class="social-icon" title="LinkedIn" aria-label="Follow us on LinkedIn">
+                <i class="bi bi-linkedin" aria-hidden="true"></i>
               </a>
-              <a href="#" class="social-icon" title="Twitter">
-                <i class="bi bi-twitter"></i>
+              <a href="#" class="social-icon" title="Twitter" aria-label="Follow us on Twitter">
+                <i class="bi bi-twitter" aria-hidden="true"></i>
               </a>
-              <a href="#" class="social-icon" title="Facebook">
-                <i class="bi bi-facebook"></i>
+              <a href="#" class="social-icon" title="Facebook" aria-label="Follow us on Facebook">
+                <i class="bi bi-facebook" aria-hidden="true"></i>
               </a>
-              <a href="#" class="social-icon" title="Instagram">
-                <i class="bi bi-instagram"></i>
+              <a href="#" class="social-icon" title="Instagram" aria-label="Follow us on Instagram">
+                <i class="bi bi-instagram" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -56,16 +113,18 @@
       </div>
 
       <!-- MAIN NAVBAR -->
-      <nav class="navbar navbar-expand-lg modern-navbar">
+      <nav class="navbar navbar-expand-lg modern-navbar" role="navigation" aria-label="Main navigation">
         <div class="container-fluid nav-container">
           <a class="navbar-brand" href="index.html">
             <img
               src="images/logo.png"
-              alt="Insight Intelli Logo"
+              alt="Insight Intelli — Home"
               class="img-fluid"
+              width="246"
+              height="80"
             />
           </a>
-          
+
           <div class="navbar-right-section">
             <button
               class="navbar-toggler"
@@ -74,7 +133,7 @@
               data-bs-target="#navbarNav"
               aria-controls="navbarNav"
               aria-expanded="false"
-              aria-label="Toggle navigation"
+              aria-label="Toggle navigation menu"
             >
               <span class="navbar-toggler-icon">
                 <span></span>
@@ -82,11 +141,11 @@
                 <span></span>
               </span>
             </button>
-            
+
             <div class="collapse navbar-collapse" id="navbarNav">
               <div class="mobile-menu-header">
-                <button class="mobile-menu-close" aria-label="Close menu">
-                  <i class="bi bi-x-lg"></i>
+                <button class="mobile-menu-close" aria-label="Close navigation menu">
+                  <i class="bi bi-x-lg" aria-hidden="true"></i>
                 </button>
               </div>
               <ul class="navbar-nav">
@@ -105,25 +164,29 @@
                 <li class="nav-item">
                   <a class="nav-link" href="contact.html">Contact</a>
                 </li>
+                <!-- Mobile-only CTA -->
+                <li class="nav-item d-lg-none">
+                  <a class="mobile-nav-cta" href="contact.html">Get a Quote</a>
+                </li>
               </ul>
             </div>
           </div>
-          
+
           <a href="contact.html" class="btn btn-primary nav-cta">Get a Quote</a>
         </div>
       </nav>
     </header>
 
-    <main>
-      <section class="hero-section">
-        <div class="hero-animated-bg"></div>
+    <main id="main-content">
+      <!-- ========== HERO SECTION ========== -->
+      <section class="hero-section" aria-label="Hero">
         <div class="container">
           <div class="hero-grid">
             <!-- LEFT SIDE -->
             <div class="hero-left">
               <div class="hero-content">
                 <div class="hero-badge">
-                  <span class="badge-dot"></span>
+                  <span class="badge-dot" aria-hidden="true"></span>
                   <span>Next-Gen Intelligence</span>
                 </div>
                 <h1 class="hero-title" id="dynamic-title">
@@ -143,28 +206,27 @@
             <!-- RIGHT SIDE - CAROUSEL -->
             <div class="hero-right">
               <div class="hero-carousel-container">
-                <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel">
-                  <!-- Carousel Items -->
+                <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" aria-label="Featured highlights">
                   <div class="carousel-inner hero-carousel-inner">
-                    <div class="carousel-item active" 
+                    <div class="carousel-item active"
                          data-title="You dream it, we do it"
                          data-description="Driving growth with strategic staffing, smart automation, and digital solutions that scale with your goals.">
-                      <img src="images/slider/01.jpg" class="hero-carousel-img" alt="Slide 1" />
+                      <img src="images/slider/01.jpg" class="hero-carousel-img" alt="Team collaborating on a strategic staffing project" loading="eager" />
                     </div>
                     <div class="carousel-item"
                          data-title="We excel in finding the best talent"
                          data-description="We match top talent with mission-critical roles using data-powered sourcing and personal care.">
-                      <img src="images/slider/02.jpg" class="hero-carousel-img" alt="Slide 2" />
+                      <img src="images/slider/02.jpg" class="hero-carousel-img" alt="Professional recruiter reviewing candidate profiles" loading="lazy" />
                     </div>
                     <div class="carousel-item"
                          data-title="Timely delivery: we shorten the onboarding process"
                          data-description="Our streamlined workflows and automation reduce time-to-hire and ramp-up.">
-                      <img src="images/slider/03.jpg" class="hero-carousel-img" alt="Slide 3" />
+                      <img src="images/slider/03.jpg" class="hero-carousel-img" alt="Streamlined onboarding process with digital tools" loading="lazy" />
                     </div>
                     <div class="carousel-item"
                          data-title="Connecting the best talent with available opportunities"
                          data-description="We connect skilled professionals to opportunities where they can deliver impact fast.">
-                      <img src="images/slider/04.jpg" class="hero-carousel-img" alt="Slide 4" />
+                      <img src="images/slider/04.jpg" class="hero-carousel-img" alt="Professionals connecting at a networking event" loading="lazy" />
                     </div>
                   </div>
 
@@ -173,20 +235,20 @@
                     <div class="progress-bar" id="carouselProgress"></div>
                   </div>
 
-                  <!-- NEW MODERN INDICATORS -->
+                  <!-- Modern Indicators -->
                   <div class="carousel-indicators-modern">
-                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-label="Go to slide 1"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Go to slide 2"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Go to slide 3"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Go to slide 4"></button>
                   </div>
 
                   <!-- Controls -->
-                  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-                    <i class="bi bi-chevron-left"></i>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Previous slide">
+                    <i class="bi bi-chevron-left" aria-hidden="true"></i>
                   </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-                    <i class="bi bi-chevron-right"></i>
+                  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Next slide">
+                    <i class="bi bi-chevron-right" aria-hidden="true"></i>
                   </button>
                 </div>
               </div>
@@ -194,21 +256,31 @@
           </div>
         </div>
       </section>
-      <!-- ========== VISION SECTION ========== -->
 
-      <section class="vision-section">
+      <!-- ========== VISION SECTION ========== -->
+      <section class="vision-section" aria-labelledby="vision-heading">
         <div class="container">
           <div class="vision-header-area">
-            <span class="vision-badge">Our Vision</span>
-            <h2 class="vision-title">
-              Empowering Growth,<br />Delivering Excellence
-            </h2>
+            <div class="vision-header-content">
+              <span class="vision-badge">Our Vision</span>
+              <h2 class="vision-title" id="vision-heading">
+                Empowering Growth,<br />Delivering Excellence
+              </h2>
+            </div>
+            <div class="vision-header-image">
+              <img
+                src="images/slider/01.jpg"
+                alt="Diverse team collaborating around a whiteboard, planning business growth strategies"
+                loading="lazy"
+                width="600"
+                height="400"
+              />
+            </div>
           </div>
 
           <div class="vision-content-grid">
-            <!-- Vision Item 1 -->
             <div class="vision-item">
-              <div class="vision-item-number">01</div>
+              <div class="vision-item-number" aria-hidden="true">01</div>
               <h3 class="vision-item-title">Innovation First</h3>
               <p class="vision-item-description">
                 Pioneering next-generation staffing solutions powered by data
@@ -216,9 +288,8 @@
               </p>
             </div>
 
-            <!-- Vision Item 2 -->
             <div class="vision-item">
-              <div class="vision-item-number">02</div>
+              <div class="vision-item-number" aria-hidden="true">02</div>
               <h3 class="vision-item-title">People Centric</h3>
               <p class="vision-item-description">
                 Building lasting relationships between talented professionals
@@ -226,9 +297,8 @@
               </p>
             </div>
 
-            <!-- Vision Item 3 -->
             <div class="vision-item">
-              <div class="vision-item-number">03</div>
+              <div class="vision-item-number" aria-hidden="true">03</div>
               <h3 class="vision-item-title">Impact Driven</h3>
               <p class="vision-item-description">
                 Delivering transformational results through strategic insights,
@@ -236,9 +306,8 @@
               </p>
             </div>
 
-            <!-- Vision Item 4 -->
             <div class="vision-item">
-              <div class="vision-item-number">04</div>
+              <div class="vision-item-number" aria-hidden="true">04</div>
               <h3 class="vision-item-title">Trust & Quality</h3>
               <p class="vision-item-description">
                 Maintaining the highest standards of integrity, transparency,
@@ -253,13 +322,97 @@
           </p>
         </div>
       </section>
-      <!-- ========== MISSION SECTION ========== -->
 
-      <section class="mission-section">
+      <!-- ========== SERVICES PREVIEW SECTION ========== -->
+      <section class="services-section" aria-labelledby="services-heading">
+        <div class="container">
+          <div class="services-header">
+            <div class="services-header-top">
+              <span class="services-badge">What We Do</span>
+              <h2 class="services-title" id="services-heading">Our Services</h2>
+              <p class="services-subtitle">
+                End-to-end solutions designed to accelerate your growth — from
+                talent acquisition to digital transformation.
+              </p>
+            </div>
+          </div>
+
+          <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-card">
+              <div class="service-icon" aria-hidden="true">
+                <i class="bi bi-people-fill"></i>
+              </div>
+              <h3 class="service-card-title">Strategic Staffing</h3>
+              <p class="service-card-text">
+                We connect top-tier talent with mission-critical roles using
+                data-driven sourcing and personal care to find the perfect fit.
+              </p>
+              <a href="services.html" class="service-card-link">
+                Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-card">
+              <div class="service-icon" aria-hidden="true">
+                <i class="bi bi-gear-wide-connected"></i>
+              </div>
+              <h3 class="service-card-title">Smart Automation</h3>
+              <p class="service-card-text">
+                Streamline operations with intelligent automation that reduces
+                manual effort, accelerates delivery, and cuts costs.
+              </p>
+              <a href="services.html" class="service-card-link">
+                Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-card">
+              <div class="service-icon" aria-hidden="true">
+                <i class="bi bi-laptop"></i>
+              </div>
+              <h3 class="service-card-title">Digital Solutions</h3>
+              <p class="service-card-text">
+                Custom software, web platforms, and digital tools built to scale
+                with your business and drive measurable outcomes.
+              </p>
+              <a href="services.html" class="service-card-link">
+                Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service-card">
+              <div class="service-icon" aria-hidden="true">
+                <i class="bi bi-mortarboard-fill"></i>
+              </div>
+              <h3 class="service-card-title">Talent Development</h3>
+              <p class="service-card-text">
+                Upskill your workforce with targeted training programs, career
+                coaching, and professional development pathways.
+              </p>
+              <a href="services.html" class="service-card-link">
+                Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="services-cta">
+            <a href="services.html" class="btn btn-brand">
+              Explore All Services <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== MISSION SECTION ========== -->
+      <section class="mission-section" aria-labelledby="mission-heading">
         <div class="container">
           <div class="mission-header-area">
             <span class="mission-badge">Our Mission</span>
-            <h2 class="mission-title">
+            <h2 class="mission-title" id="mission-heading">
               Guiding Aspirants<br />Toward Excellence
             </h2>
           </div>
@@ -273,7 +426,6 @@
           </div>
 
           <div class="mission-pillars">
-            <!-- Pillar 1 -->
             <div class="mission-pillar">
               <h3 class="mission-pillar-title">Interdisciplinary Excellence</h3>
               <p class="mission-pillar-text">
@@ -284,7 +436,6 @@
               </p>
             </div>
 
-            <!-- Pillar 2 -->
             <div class="mission-pillar">
               <h3 class="mission-pillar-title">Punctual Delivery</h3>
               <p class="mission-pillar-text">
@@ -294,7 +445,6 @@
               </p>
             </div>
 
-            <!-- Pillar 3 -->
             <div class="mission-pillar">
               <h3 class="mission-pillar-title">Resource Optimization</h3>
               <p class="mission-pillar-text">
@@ -305,7 +455,7 @@
             </div>
           </div>
 
-          <div class="mission-accent-line"></div>
+          <div class="mission-accent-line" aria-hidden="true"></div>
 
           <p class="mission-closing">
             We are committed to helping you unlock your full potential through
@@ -314,13 +464,13 @@
           </p>
         </div>
       </section>
-      <!-- ========== CORE VALUES SECTION ========== -->
 
-      <section class="values-section">
+      <!-- ========== CORE VALUES SECTION ========== -->
+      <section class="values-section" aria-labelledby="values-heading">
         <div class="container">
           <div class="values-header-area">
             <span class="values-badge">Core Values</span>
-            <h2 class="values-title">What We<br />Believe In</h2>
+            <h2 class="values-title" id="values-heading">What We<br />Believe In</h2>
           </div>
 
           <div class="values-intro">
@@ -333,98 +483,144 @@
           </div>
 
           <div class="values-grid">
-            <!-- Value 1 -->
             <div class="value-card">
-              <div class="value-number">01</div>
+              <div class="value-number" aria-hidden="true">01</div>
               <h3 class="value-title">People First</h3>
               <p class="value-description">
                 At our core, we believe in the potential of every individual. We
                 prioritize human connection, growth, and well-being in
                 everything we do.
               </p>
-              <div class="value-dot"></div>
+              <div class="value-dot" aria-hidden="true"></div>
             </div>
 
-            <!-- Value 2 -->
             <div class="value-card">
-              <div class="value-number">02</div>
+              <div class="value-number" aria-hidden="true">02</div>
               <h3 class="value-title">Success Driven</h3>
               <p class="value-description">
                 We are committed to delivering meaningful results. Success isn't
                 just a destination—it's a journey we undertake together with our
                 partners.
               </p>
-              <div class="value-dot"></div>
+              <div class="value-dot" aria-hidden="true"></div>
             </div>
 
-            <!-- Value 3 -->
             <div class="value-card">
-              <div class="value-number">03</div>
+              <div class="value-number" aria-hidden="true">03</div>
               <h3 class="value-title">Hardwork & Dedication</h3>
               <p class="value-description">
                 We believe hard work pays off. Excellence demands commitment,
                 and we invest the time and effort to exceed expectations
                 consistently.
               </p>
-              <div class="value-dot"></div>
+              <div class="value-dot" aria-hidden="true"></div>
             </div>
 
-            <!-- Value 4 -->
             <div class="value-card">
-              <div class="value-number">04</div>
+              <div class="value-number" aria-hidden="true">04</div>
               <h3 class="value-title">Technology for Good</h3>
               <p class="value-description">
                 We leverage cutting-edge technology as a tool to serve humanity.
                 Innovation means nothing if it doesn't improve people's lives
                 and unlock potential.
               </p>
-              <div class="value-dot"></div>
+              <div class="value-dot" aria-hidden="true"></div>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      // ========== SCROLL DETECTION & ANIMATIONS ==========
-      
-      // Header scroll effect
-      window.addEventListener("scroll", function () {
-        const header = document.querySelector(".header");
-        header.classList.toggle("scrolled", window.scrollY > 50);
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Company Info -->
+          <div>
+            <a href="index.html" aria-label="Insight Intelli Home">
+              <img src="images/logo.png" alt="Insight Intelli" width="140" height="46" />
+            </a>
+            <p class="footer-brand-text">
+              Driving growth with strategic staffing, smart automation, and
+              digital solutions that scale with your goals.
+            </p>
+            <div class="footer-social">
+              <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+              <a href="#" aria-label="Twitter"><i class="bi bi-twitter" aria-hidden="true"></i></a>
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+              <a href="#" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+            </div>
+          </div>
 
-        // Scroll Progress Logic
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
-        header.style.setProperty("--scroll", scrolled + "%");
-      });
+          <!-- Quick Links -->
+          <div>
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="careers.html">Careers</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div>
+            <h3 class="footer-heading">Contact Us</h3>
+            <div class="footer-contact-item">
+              <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+              <span>+1 (234) 567-890</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+              <span>care@insightintelli.com</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 Insight Intelli. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+      <i class="bi bi-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // ========== HEADER SCROLL EFFECT ==========
+
+      const header = document.querySelector(".header");
+      window.addEventListener("scroll", function () {
+        header.classList.toggle("scrolled", window.scrollY > 50);
+      }, { passive: true });
+
 
       // ========== INTERSECTION OBSERVER FOR SCROLL ANIMATIONS ==========
-      
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
-      };
 
-      const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("scroll-animate");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
+      const scrollObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("scroll-animate");
+              scrollObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+      );
 
-      // Observe all elements with scroll-animation class
-      document.querySelectorAll(".card, .mission-pillar, .value-card").forEach(el => {
-        observer.observe(el);
-      });
+      document
+        .querySelectorAll(".vision-item, .service-card, .mission-pillar, .value-card")
+        .forEach((el) => scrollObserver.observe(el));
 
-      // ========== DYNAMIC HERO CAROUSEL ==========
-      
+
+      // ========== DYNAMIC HERO CAROUSEL TEXT ==========
+
       const dynamicTitle = document.getElementById("dynamic-title");
       const dynamicDescription = document.getElementById("hero-description-text");
       const carousel = document.getElementById("heroCarousel");
@@ -433,7 +629,7 @@
         if (!item) return;
         const title = item.getAttribute("data-title");
         const description = item.getAttribute("data-description");
-        
+
         if (title && dynamicTitle) {
           dynamicTitle.style.opacity = "0";
           setTimeout(() => {
@@ -442,7 +638,7 @@
             dynamicTitle.style.opacity = "1";
           }, 250);
         }
-        
+
         if (description && dynamicDescription) {
           dynamicDescription.style.opacity = "0";
           setTimeout(() => {
@@ -455,89 +651,80 @@
 
       if (carousel) {
         carousel.addEventListener("slid.bs.carousel", function (event) {
-          const activeItem = event.relatedTarget;
-          updateHeroText(activeItem);
+          updateHeroText(event.relatedTarget);
         });
-
-        // Initialize hero text from first slide
         updateHeroText(carousel.querySelector(".carousel-item.active"));
       }
 
+
       // ========== CAROUSEL PROGRESS BAR ==========
-      
+
       const progressBar = document.getElementById("carouselProgress");
       const totalSlides = 4;
       let currentSlide = 0;
 
       function updateProgress() {
         if (!progressBar) return;
-        const progress = ((currentSlide + 1) / totalSlides) * 100;
-        progressBar.style.width = progress + "%";
+        progressBar.style.width = ((currentSlide + 1) / totalSlides) * 100 + "%";
       }
 
       if (carousel) {
         carousel.addEventListener("slid.bs.carousel", function (event) {
-          currentSlide = Array.from(
-            event.relatedTarget.parentNode.children,
-          ).indexOf(event.relatedTarget);
+          currentSlide = Array.from(event.relatedTarget.parentNode.children).indexOf(
+            event.relatedTarget
+          );
           updateProgress();
         });
         updateProgress();
       }
 
-      // ========== MOBILE MENU AUTO-CLOSE ==========
-      
+
+      // ========== MOBILE MENU ==========
+
+      // Auto-close on link click
       document.querySelectorAll(".navbar-nav .nav-link").forEach((link) => {
         link.addEventListener("click", () => {
           const navbarCollapse = document.getElementById("navbarNav");
           if (navbarCollapse && navbarCollapse.classList.contains("show")) {
-            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-              toggle: false
-            });
-            bsCollapse.hide();
+            new bootstrap.Collapse(navbarCollapse, { toggle: false }).hide();
           }
         });
       });
 
-      // ========== MOBILE MENU CLOSE BUTTON ==========
-      
+      // Close button
       const mobileMenuCloseBtn = document.querySelector(".mobile-menu-close");
       if (mobileMenuCloseBtn) {
         mobileMenuCloseBtn.addEventListener("click", () => {
           const navbarCollapse = document.getElementById("navbarNav");
           if (navbarCollapse && navbarCollapse.classList.contains("show")) {
-            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-              toggle: false
-            });
-            bsCollapse.hide();
+            new bootstrap.Collapse(navbarCollapse, { toggle: false }).hide();
           }
         });
       }
 
+
       // ========== SMOOTH SCROLL FOR ANCHOR LINKS ==========
-      
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
           const href = this.getAttribute("href");
           if (href === "#") return;
-          
+
           e.preventDefault();
           const target = document.querySelector(href);
           if (target) {
-            target.scrollIntoView({
-              behavior: "smooth",
-              block: "start"
-            });
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
           }
         });
       });
 
+
       // ========== ANIMATED COUNTERS ==========
-      
+
       function animateCounter(element, target, duration = 2000) {
         let current = 0;
         const increment = target / (duration / 16);
-        
+
         const timer = setInterval(() => {
           current += increment;
           if (current >= target) {
@@ -549,204 +736,118 @@
         }, 16);
       }
 
-      // Trigger counters when they come into view
       const counters = document.querySelectorAll("[data-count]");
       if (counters.length > 0) {
-        const counterObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              const target = parseInt(entry.target.getAttribute("data-count"));
-              animateCounter(entry.target, target);
-              counterObserver.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.5 });
-
-        counters.forEach(counter => counterObserver.observe(counter));
+        const counterObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const target = parseInt(entry.target.getAttribute("data-count"));
+                animateCounter(entry.target, target);
+                counterObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.5 }
+        );
+        counters.forEach((counter) => counterObserver.observe(counter));
       }
 
-      // ========== BUTTON CLICK EFFECTS ==========
-      
-      document.querySelectorAll(".btn").forEach(btn => {
-        btn.addEventListener("click", function(e) {
-          // Create ripple effect
+
+      // ========== BUTTON RIPPLE EFFECTS ==========
+
+      document.querySelectorAll(".btn").forEach((btn) => {
+        btn.addEventListener("click", function (e) {
           const ripple = document.createElement("span");
           const rect = this.getBoundingClientRect();
           const size = Math.max(rect.width, rect.height);
           const x = e.clientX - rect.left - size / 2;
           const y = e.clientY - rect.top - size / 2;
-          
+
           ripple.style.width = ripple.style.height = size + "px";
           ripple.style.left = x + "px";
           ripple.style.top = y + "px";
           ripple.className = "ripple";
-          
+
           this.appendChild(ripple);
-          
           setTimeout(() => ripple.remove(), 600);
         });
       });
 
-      // ========== PARALLAX EFFECT ==========
-      
-      window.addEventListener("scroll", function() {
-        const heroSection = document.querySelector(".hero-section");
-        if (!heroSection) return;
-        
-        const scrolled = window.pageYOffset;
-        const parallaxElements = document.querySelectorAll(".hero-section::before, .hero-section::after");
-        
-        // Subtle parallax effect
-        if (scrolled < 500) {
-          heroSection.style.backgroundPosition = `0 ${scrolled * 0.5}px`;
-        }
-      });
-
-      // ========== NAVBAR ACTIVE LINK ==========
-      
-      const currentLocation = location.pathname;
-      const menuItems = document.querySelectorAll(".navbar-nav .nav-link");
-      
-      menuItems.forEach(item => {
-        if (item.getAttribute("href") === currentLocation) {
-          item.classList.add("active");
-        }
-      });
-
-      // ========== SCROLL TO TOP BUTTON ==========
-      
-      function createScrollToTopButton() {
-        if (document.getElementById("scrollToTop")) return;
-        
-        const button = document.createElement("button");
-        button.id = "scrollToTop";
-        button.innerHTML = '<i class="bi bi-arrow-up"></i>';
-        button.className = "scroll-to-top";
-        button.style.cssText = `
-          position: fixed;
-          bottom: 30px;
-          right: 30px;
-          width: 50px;
-          height: 50px;
-          background: linear-gradient(135deg, #ff6d00, #ff8c3a);
-          color: white;
-          border: none;
-          border-radius: 50%;
-          cursor: pointer;
-          opacity: 0;
-          transition: all 0.3s ease;
-          z-index: 999;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 20px;
-          box-shadow: 0 4px 15px rgba(255, 109, 0, 0.3);
-        `;
-        
-        button.addEventListener("click", () => {
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-          });
-        });
-        
-        window.addEventListener("scroll", () => {
-          if (window.pageYOffset > 300) {
-            button.style.opacity = "1";
-            button.style.pointerEvents = "auto";
-          } else {
-            button.style.opacity = "0";
-            button.style.pointerEvents = "none";
-          }
-        });
-        
-        button.addEventListener("mouseenter", () => {
-          button.style.transform = "scale(1.1)";
-        });
-        
-        button.addEventListener("mouseleave", () => {
-          button.style.transform = "scale(1)";
-        });
-        
-        document.body.appendChild(button);
-      }
-      
-      createScrollToTopButton();
-
-      // ========== FORM VALIDATION ==========
-      
-      const forms = document.querySelectorAll("form");
-      forms.forEach(form => {
-        form.addEventListener("submit", function(e) {
-          if (!this.checkValidity() === false) {
-            e.preventDefault();
-            e.stopPropagation();
-          }
-          this.classList.add("was-validated");
-        });
-      });
-
-      // ========== LAZY LOAD IMAGES ==========
-      
-      if ("IntersectionObserver" in window) {
-        const imageObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              const img = entry.target;
-              img.src = img.dataset.src || img.src;
-              img.classList.remove("lazy");
-              imageObserver.unobserve(img);
-            }
-          });
-        });
-        
-        document.querySelectorAll("img.lazy").forEach(img => imageObserver.observe(img));
-      }
-
-      // ========== PERFORMANCE MONITORING ==========
-      
-      window.addEventListener("load", function() {
-        if (window.performance) {
-          const perfData = window.performance.timing;
-          const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-          console.log("Page Load Time: " + pageLoadTime + "ms");
-        }
-      });
 
       // ========== KEYBOARD NAVIGATION ==========
-      
-      document.addEventListener("keydown", function(e) {
-        // Escape to close mobile menu
+
+      document.addEventListener("keydown", function (e) {
         if (e.key === "Escape") {
           const navbarCollapse = document.getElementById("navbarNav");
           if (navbarCollapse && navbarCollapse.classList.contains("show")) {
             new bootstrap.Collapse(navbarCollapse).hide();
           }
         }
-        
-        // Skip to main content (accessibility)
-        if (e.key === "s" && e.ctrlKey) {
-          const main = document.querySelector("main");
-          if (main) main.focus();
+      });
+
+
+      // ========== SCROLL TO TOP BUTTON ==========
+
+      const scrollTopBtn = document.getElementById("scrollToTop");
+
+      window.addEventListener("scroll", function () {
+        if (window.pageYOffset > 300) {
+          scrollTopBtn.classList.add("visible");
+        } else {
+          scrollTopBtn.classList.remove("visible");
+        }
+      }, { passive: true });
+
+      scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+
+      // ========== NAVBAR ACTIVE LINK ==========
+
+      const currentPage = location.pathname.split("/").pop() || "index.html";
+      document.querySelectorAll(".navbar-nav .nav-link").forEach((item) => {
+        const linkHref = item.getAttribute("href");
+        if (linkHref === currentPage) {
+          item.classList.add("active");
+        } else if (currentPage !== "index.html") {
+          item.classList.remove("active");
         }
       });
 
-      // ========== PREFETCH LINKS ==========
-      
-      document.querySelectorAll("a[href]").forEach(link => {
-        const href = link.getAttribute("href");
-        if (href && href.startsWith("/")) {
-          const link_tag = document.createElement("link");
-          link_tag.rel = "prefetch";
-          link_tag.href = href;
-          document.head.appendChild(link_tag);
-        }
-      });
 
-      // ========== DOCUMENT READY ==========
-      
-      console.log("✅ All scripts loaded successfully!");
-      console.log("🚀 Website is ready for interaction!");
+      // ========== LAZY LOAD IMAGES ==========
+
+      if ("IntersectionObserver" in window) {
+        const imageObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              if (img.dataset.src) {
+                img.src = img.dataset.src;
+              }
+              img.classList.remove("lazy");
+              imageObserver.unobserve(img);
+            }
+          });
+        });
+
+        document.querySelectorAll("img.lazy").forEach((img) => imageObserver.observe(img));
+      }
+
+
+      // ========== FORM VALIDATION ==========
+
+      document.querySelectorAll("form").forEach((form) => {
+        form.addEventListener("submit", function (e) {
+          if (!this.checkValidity()) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+          this.classList.add("was-validated");
+        });
+      });
     </script>
   </body>
 </html>
