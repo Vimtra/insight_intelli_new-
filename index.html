@@ -23,8 +23,41 @@
   </head>
   <body>
     <header class="header">
-      <nav class="navbar navbar-expand-lg modern-navbar">
+      <!-- TOP BAR WITH CONTACT & SOCIAL -->
+      <div class="top-bar">
         <div class="container">
+          <div class="top-bar-left">
+            <a href="tel:+1234567890" class="top-bar-link">
+              <i class="bi bi-telephone-fill"></i>
+              <span>+1 (234) 567-890</span>
+            </a>
+            <a href="mailto:care@insightintelli.com" class="top-bar-link">
+              <i class="bi bi-envelope-fill"></i>
+              <span>care@insightintelli.com</span>
+            </a>
+          </div>
+          <div class="top-bar-right">
+            <div class="top-social">
+              <a href="#" class="social-icon" title="LinkedIn">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a href="#" class="social-icon" title="Twitter">
+                <i class="bi bi-twitter"></i>
+              </a>
+              <a href="#" class="social-icon" title="Facebook">
+                <i class="bi bi-facebook"></i>
+              </a>
+              <a href="#" class="social-icon" title="Instagram">
+                <i class="bi bi-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN NAVBAR -->
+      <nav class="navbar navbar-expand-lg modern-navbar">
+        <div class="container-fluid nav-container">
           <a class="navbar-brand" href="index.html">
             <img
               src="images/logo.png"
@@ -32,197 +65,128 @@
               class="img-fluid"
             />
           </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html"
-                  >Home</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="usstaffing.html">US Staffing</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="partners.html">Partners</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="careers.html">Careers</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
-              </li>
-            </ul>
-            <a href="contact.html" class="btn btn-primary nav-cta">Get a Quote</a>
+          
+          <div class="navbar-right-section">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <div class="mobile-menu-header">
+                <button class="mobile-menu-close" aria-label="Close menu">
+                  <i class="bi bi-x-lg"></i>
+                </button>
+              </div>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="careers.html">Careers</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+              </ul>
+            </div>
           </div>
+          
+          <a href="contact.html" class="btn btn-primary nav-cta">Get a Quote</a>
         </div>
       </nav>
     </header>
 
     <main>
       <section class="hero-section">
+        <div class="hero-animated-bg"></div>
         <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-6">
+          <div class="hero-grid">
+            <!-- LEFT SIDE -->
+            <div class="hero-left">
               <div class="hero-content">
-                <span class="badge-modern">Next-Gen Intelligence</span>
-                <h1 class="hero-title text-gradient" id="dynamic-title">
-                  You Dream It, We Do It
+                <div class="hero-badge">
+                  <span class="badge-dot"></span>
+                  <span>Next-Gen Intelligence</span>
+                </div>
+                <h1 class="hero-title" id="dynamic-title">
+                  You Dream It,<br>We Do It
                 </h1>
-                <p class="hero-description">
+                <p class="hero-description" id="hero-description-text">
                   Driving growth with strategic staffing, smart automation, and
                   digital solutions that scale with your goals.
                 </p>
                 <div class="hero-buttons">
-                  <a href="contact.html" class="btn btn-brand me-3"
-                    >Get a Quote</a
-                  >
-                  <a href="about.html" class="btn btn-outline-secondary"
-                    >Learn More</a
-                  >
+                  <a href="contact.html" class="btn btn-brand">Get a Quote</a>
+                  <a href="about.html" class="btn btn-outline-white">Learn More</a>
                 </div>
               </div>
             </div>
-            <div class="col-lg-6">
-              <div class="hero-carousel-wrapper">
-                <div
-                  id="heroCarousel"
-                  class="carousel slide"
-                  data-bs-ride="carousel"
-                >
-                  <div class="carousel-indicators">
-                    <button
-                      type="button"
-                      data-bs-target="#heroCarousel"
-                      data-bs-slide-to="0"
-                      class="active"
-                      aria-current="true"
-                      aria-label="Slide 1"
-                    ></button>
-                    <button
-                      type="button"
-                      data-bs-target="#heroCarousel"
-                      data-bs-slide-to="1"
-                      aria-label="Slide 2"
-                    ></button>
-                    <button
-                      type="button"
-                      data-bs-target="#heroCarousel"
-                      data-bs-slide-to="2"
-                      aria-label="Slide 3"
-                    ></button>
-                    <button
-                      type="button"
-                      data-bs-target="#heroCarousel"
-                      data-bs-slide-to="3"
-                      aria-label="Slide 4"
-                    ></button>
-                  </div>
-                  <div class="carousel-inner">
-                    <div
-                      class="carousel-item active"
-                      data-title="You dream it, we do it"
-                      data-description="Driving growth with strategic staffing, smart automation, and digital solutions that scale with your goals."
-                    >
-                      <img
-                        src="images/slider/01.jpg"
-                        class="d-block w-100 hero-carousel-img"
-                        alt="Collaborating professionals"
-                      />
-                      <div class="carousel-caption d-none d-md-block">
-                        <h5>Innovation</h5>
-                        <p>Turning dreams into reality</p>
-                      </div>
+
+            <!-- RIGHT SIDE - CAROUSEL -->
+            <div class="hero-right">
+              <div class="hero-carousel-container">
+                <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel">
+                  <!-- Carousel Items -->
+                  <div class="carousel-inner hero-carousel-inner">
+                    <div class="carousel-item active" 
+                         data-title="You dream it, we do it"
+                         data-description="Driving growth with strategic staffing, smart automation, and digital solutions that scale with your goals.">
+                      <img src="images/slider/01.jpg" class="hero-carousel-img" alt="Slide 1" />
                     </div>
-                    <div
-                      class="carousel-item"
-                      data-title="We excel in finding the best talent"
-                      data-description="We match top talent with mission-critical roles using data-powered sourcing and personal care."
-                    >
-                      <img
-                        src="images/slider/02.jpg"
-                        class="d-block w-100 hero-carousel-img"
-                        alt="Teamwork"
-                      />
-                      <div class="carousel-caption d-none d-md-block">
-                        <h5>Talent excellence</h5>
-                        <p>Finding the perfect match</p>
-                      </div>
+                    <div class="carousel-item"
+                         data-title="We excel in finding the best talent"
+                         data-description="We match top talent with mission-critical roles using data-powered sourcing and personal care.">
+                      <img src="images/slider/02.jpg" class="hero-carousel-img" alt="Slide 2" />
                     </div>
-                    <div
-                      class="carousel-item"
-                      data-title="Timely delivery: we shorten the onboarding process"
-                      data-description="Our streamlined workflows and automation reduce time-to-hire and ramp-up."
-                    >
-                      <img
-                        src="images/slider/03.jpg"
-                        class="d-block w-100 hero-carousel-img"
-                        alt="Onboarding process"
-                      />
-                      <div class="carousel-caption d-none d-md-block">
-                        <h5>Timely delivery</h5>
-                        <p>Streamlined onboarding</p>
-                      </div>
+                    <div class="carousel-item"
+                         data-title="Timely delivery: we shorten the onboarding process"
+                         data-description="Our streamlined workflows and automation reduce time-to-hire and ramp-up.">
+                      <img src="images/slider/03.jpg" class="hero-carousel-img" alt="Slide 3" />
                     </div>
-                    <div
-                      class="carousel-item"
-                      data-title="Connecting the best talent with available opportunities"
-                      data-description="We connect skilled professionals to opportunities where they can deliver impact fast."
-                    >
-                      <img
-                        src="images/slider/04.jpg"
-                        class="d-block w-100 hero-carousel-img"
-                        alt="Professional connections"
-                      />
-                      <div class="carousel-caption d-none d-md-block">
-                        <h5>Connections</h5>
-                        <p>Linking talent to opportunities</p>
-                      </div>
+                    <div class="carousel-item"
+                         data-title="Connecting the best talent with available opportunities"
+                         data-description="We connect skilled professionals to opportunities where they can deliver impact fast.">
+                      <img src="images/slider/04.jpg" class="hero-carousel-img" alt="Slide 4" />
                     </div>
                   </div>
+
+                  <!-- Progress Bar -->
                   <div class="carousel-progress">
                     <div class="progress-bar" id="carouselProgress"></div>
                   </div>
-                  <button
-                    class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#heroCarousel"
-                    data-bs-slide="prev"
-                  >
-                    <span
-                      class="carousel-control-prev-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span class="visually-hidden">Previous</span>
+
+                  <!-- NEW MODERN INDICATORS -->
+                  <div class="carousel-indicators-modern">
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  </div>
+
+                  <!-- Controls -->
+                  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                    <i class="bi bi-chevron-left"></i>
                   </button>
-                  <button
-                    class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#heroCarousel"
-                    data-bs-slide="next"
-                  >
-                    <span
-                      class="carousel-control-next-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span class="visually-hidden">Next</span>
+                  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                    <i class="bi bi-chevron-right"></i>
                   </button>
                 </div>
               </div>
@@ -421,71 +385,368 @@
       </section>
     </main>
 
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+      // ========== SCROLL DETECTION & ANIMATIONS ==========
+      
+      // Header scroll effect
       window.addEventListener("scroll", function () {
         const header = document.querySelector(".header");
         header.classList.toggle("scrolled", window.scrollY > 50);
 
         // Scroll Progress Logic
-        const winScroll =
-          document.body.scrollTop || document.documentElement.scrollTop;
-        const height =
-          document.documentElement.scrollHeight -
-          document.documentElement.clientHeight;
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = (winScroll / height) * 100;
         header.style.setProperty("--scroll", scrolled + "%");
       });
 
-      // Dynamic title + description for hero slider
+      // ========== INTERSECTION OBSERVER FOR SCROLL ANIMATIONS ==========
+      
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("scroll-animate");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Observe all elements with scroll-animation class
+      document.querySelectorAll(".card, .mission-pillar, .value-card").forEach(el => {
+        observer.observe(el);
+      });
+
+      // ========== DYNAMIC HERO CAROUSEL ==========
+      
       const dynamicTitle = document.getElementById("dynamic-title");
-      const dynamicDescription = document.querySelector(".hero-description");
+      const dynamicDescription = document.getElementById("hero-description-text");
       const carousel = document.getElementById("heroCarousel");
 
       function updateHeroText(item) {
+        if (!item) return;
         const title = item.getAttribute("data-title");
         const description = item.getAttribute("data-description");
-        if (title) dynamicTitle.textContent = title;
-        if (description) dynamicDescription.textContent = description;
+        
+        if (title && dynamicTitle) {
+          dynamicTitle.style.opacity = "0";
+          setTimeout(() => {
+            dynamicTitle.textContent = title;
+            dynamicTitle.style.transition = "opacity 0.5s ease";
+            dynamicTitle.style.opacity = "1";
+          }, 250);
+        }
+        
+        if (description && dynamicDescription) {
+          dynamicDescription.style.opacity = "0";
+          setTimeout(() => {
+            dynamicDescription.textContent = description;
+            dynamicDescription.style.transition = "opacity 0.5s ease";
+            dynamicDescription.style.opacity = "1";
+          }, 250);
+        }
       }
 
-      carousel.addEventListener("slid.bs.carousel", function (event) {
-        const activeItem = event.relatedTarget;
-        updateHeroText(activeItem);
-      });
+      if (carousel) {
+        carousel.addEventListener("slid.bs.carousel", function (event) {
+          const activeItem = event.relatedTarget;
+          updateHeroText(activeItem);
+        });
 
-      // Initialize hero text from first slide
-      updateHeroText(carousel.querySelector(".carousel-item.active"));
+        // Initialize hero text from first slide
+        updateHeroText(carousel.querySelector(".carousel-item.active"));
+      }
 
-      // Carousel progress bar
+      // ========== CAROUSEL PROGRESS BAR ==========
+      
       const progressBar = document.getElementById("carouselProgress");
       const totalSlides = 4;
       let currentSlide = 0;
 
       function updateProgress() {
+        if (!progressBar) return;
         const progress = ((currentSlide + 1) / totalSlides) * 100;
         progressBar.style.width = progress + "%";
       }
 
-      carousel.addEventListener("slid.bs.carousel", function (event) {
-        currentSlide = Array.from(
-          event.relatedTarget.parentNode.children,
-        ).indexOf(event.relatedTarget);
+      if (carousel) {
+        carousel.addEventListener("slid.bs.carousel", function (event) {
+          currentSlide = Array.from(
+            event.relatedTarget.parentNode.children,
+          ).indexOf(event.relatedTarget);
+          updateProgress();
+        });
         updateProgress();
-      });
+      }
 
-      // Initialize progress
-      updateProgress();
-
-      // Auto-close mobile menu on nav click
+      // ========== MOBILE MENU AUTO-CLOSE ==========
+      
       document.querySelectorAll(".navbar-nav .nav-link").forEach((link) => {
         link.addEventListener("click", () => {
-          const navCollapse = document.getElementById("navbarNav");
-          if (navCollapse.classList.contains("show")) {
-            bootstrap.Collapse.getOrCreateInstance(navCollapse).hide();
+          const navbarCollapse = document.getElementById("navbarNav");
+          if (navbarCollapse && navbarCollapse.classList.contains("show")) {
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+              toggle: false
+            });
+            bsCollapse.hide();
           }
         });
       });
+
+      // ========== MOBILE MENU CLOSE BUTTON ==========
+      
+      const mobileMenuCloseBtn = document.querySelector(".mobile-menu-close");
+      if (mobileMenuCloseBtn) {
+        mobileMenuCloseBtn.addEventListener("click", () => {
+          const navbarCollapse = document.getElementById("navbarNav");
+          if (navbarCollapse && navbarCollapse.classList.contains("show")) {
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+              toggle: false
+            });
+            bsCollapse.hide();
+          }
+        });
+      }
+
+      // ========== SMOOTH SCROLL FOR ANCHOR LINKS ==========
+      
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+          const href = this.getAttribute("href");
+          if (href === "#") return;
+          
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+          }
+        });
+      });
+
+      // ========== ANIMATED COUNTERS ==========
+      
+      function animateCounter(element, target, duration = 2000) {
+        let current = 0;
+        const increment = target / (duration / 16);
+        
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            element.textContent = target;
+            clearInterval(timer);
+          } else {
+            element.textContent = Math.floor(current);
+          }
+        }, 16);
+      }
+
+      // Trigger counters when they come into view
+      const counters = document.querySelectorAll("[data-count]");
+      if (counters.length > 0) {
+        const counterObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const target = parseInt(entry.target.getAttribute("data-count"));
+              animateCounter(entry.target, target);
+              counterObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => counterObserver.observe(counter));
+      }
+
+      // ========== BUTTON CLICK EFFECTS ==========
+      
+      document.querySelectorAll(".btn").forEach(btn => {
+        btn.addEventListener("click", function(e) {
+          // Create ripple effect
+          const ripple = document.createElement("span");
+          const rect = this.getBoundingClientRect();
+          const size = Math.max(rect.width, rect.height);
+          const x = e.clientX - rect.left - size / 2;
+          const y = e.clientY - rect.top - size / 2;
+          
+          ripple.style.width = ripple.style.height = size + "px";
+          ripple.style.left = x + "px";
+          ripple.style.top = y + "px";
+          ripple.className = "ripple";
+          
+          this.appendChild(ripple);
+          
+          setTimeout(() => ripple.remove(), 600);
+        });
+      });
+
+      // ========== PARALLAX EFFECT ==========
+      
+      window.addEventListener("scroll", function() {
+        const heroSection = document.querySelector(".hero-section");
+        if (!heroSection) return;
+        
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll(".hero-section::before, .hero-section::after");
+        
+        // Subtle parallax effect
+        if (scrolled < 500) {
+          heroSection.style.backgroundPosition = `0 ${scrolled * 0.5}px`;
+        }
+      });
+
+      // ========== NAVBAR ACTIVE LINK ==========
+      
+      const currentLocation = location.pathname;
+      const menuItems = document.querySelectorAll(".navbar-nav .nav-link");
+      
+      menuItems.forEach(item => {
+        if (item.getAttribute("href") === currentLocation) {
+          item.classList.add("active");
+        }
+      });
+
+      // ========== SCROLL TO TOP BUTTON ==========
+      
+      function createScrollToTopButton() {
+        if (document.getElementById("scrollToTop")) return;
+        
+        const button = document.createElement("button");
+        button.id = "scrollToTop";
+        button.innerHTML = '<i class="bi bi-arrow-up"></i>';
+        button.className = "scroll-to-top";
+        button.style.cssText = `
+          position: fixed;
+          bottom: 30px;
+          right: 30px;
+          width: 50px;
+          height: 50px;
+          background: linear-gradient(135deg, #ff6d00, #ff8c3a);
+          color: white;
+          border: none;
+          border-radius: 50%;
+          cursor: pointer;
+          opacity: 0;
+          transition: all 0.3s ease;
+          z-index: 999;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 20px;
+          box-shadow: 0 4px 15px rgba(255, 109, 0, 0.3);
+        `;
+        
+        button.addEventListener("click", () => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+        });
+        
+        window.addEventListener("scroll", () => {
+          if (window.pageYOffset > 300) {
+            button.style.opacity = "1";
+            button.style.pointerEvents = "auto";
+          } else {
+            button.style.opacity = "0";
+            button.style.pointerEvents = "none";
+          }
+        });
+        
+        button.addEventListener("mouseenter", () => {
+          button.style.transform = "scale(1.1)";
+        });
+        
+        button.addEventListener("mouseleave", () => {
+          button.style.transform = "scale(1)";
+        });
+        
+        document.body.appendChild(button);
+      }
+      
+      createScrollToTopButton();
+
+      // ========== FORM VALIDATION ==========
+      
+      const forms = document.querySelectorAll("form");
+      forms.forEach(form => {
+        form.addEventListener("submit", function(e) {
+          if (!this.checkValidity() === false) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+          this.classList.add("was-validated");
+        });
+      });
+
+      // ========== LAZY LOAD IMAGES ==========
+      
+      if ("IntersectionObserver" in window) {
+        const imageObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src || img.src;
+              img.classList.remove("lazy");
+              imageObserver.unobserve(img);
+            }
+          });
+        });
+        
+        document.querySelectorAll("img.lazy").forEach(img => imageObserver.observe(img));
+      }
+
+      // ========== PERFORMANCE MONITORING ==========
+      
+      window.addEventListener("load", function() {
+        if (window.performance) {
+          const perfData = window.performance.timing;
+          const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+          console.log("Page Load Time: " + pageLoadTime + "ms");
+        }
+      });
+
+      // ========== KEYBOARD NAVIGATION ==========
+      
+      document.addEventListener("keydown", function(e) {
+        // Escape to close mobile menu
+        if (e.key === "Escape") {
+          const navbarCollapse = document.getElementById("navbarNav");
+          if (navbarCollapse && navbarCollapse.classList.contains("show")) {
+            new bootstrap.Collapse(navbarCollapse).hide();
+          }
+        }
+        
+        // Skip to main content (accessibility)
+        if (e.key === "s" && e.ctrlKey) {
+          const main = document.querySelector("main");
+          if (main) main.focus();
+        }
+      });
+
+      // ========== PREFETCH LINKS ==========
+      
+      document.querySelectorAll("a[href]").forEach(link => {
+        const href = link.getAttribute("href");
+        if (href && href.startsWith("/")) {
+          const link_tag = document.createElement("link");
+          link_tag.rel = "prefetch";
+          link_tag.href = href;
+          document.head.appendChild(link_tag);
+        }
+      });
+
+      // ========== DOCUMENT READY ==========
+      
+      console.log("✅ All scripts loaded successfully!");
+      console.log("🚀 Website is ready for interaction!");
     </script>
   </body>
 </html>
