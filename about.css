@@ -6,6 +6,339 @@
   =======================================================
 */
 
-.about-section {
-    /* Add page-specific layout styles here */
+/* HERO SECTION */
+.about-hero {
+  /* Use a viewport-based height that adjusts for the navbar, similar to index hero */
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-white, #ffffff);
+  /* Unsplash background with dark gradient overlay */
+  background: linear-gradient(rgba(10, 15, 30, 0.7), rgba(10, 15, 30, 0.7)),
+              url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Parallax-like modern feel */
+  /* Remove top spacing because it acts as the primary visual block */
+  margin-top: 0;
+}
+
+.about-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Add subtle entrance animation like index.html elements */
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.about-hero-content h1 {
+  /* Responsive font scaling similar to our design tokens */
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.about-hero-content p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.6;
+  max-width: 680px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* MOBILE ADJUSTMENTS */
+@media (max-width: 768px) {
+  .about-hero {
+    height: 50vh;
+    min-height: 350px;
+    background-attachment: scroll; /* Disable fixed attachment on mobile for better performance */
+    /* Add padding so it doesn't collide with the fixed transparent header initially */
+    padding-top: 60px; 
+  }
+}
+
+/* =======================================================
+   ABOUT CONTENT SECTION (Image & Text Split)
+   ======================================================= */
+
+.about-content-section {
+  padding: 80px 0;
+  background-color: var(--color-white, #ffffff);
+}
+
+.about-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-4xl); /* Increased gap for better breathing room */
+  align-items: center;
+}
+
+/* Image Side */
+.about-image-wrapper {
+  position: relative;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden; /* Prevent zoom overflow */
+}
+
+.about-main-img {
+  width: 100%;
+  height: auto;
+  min-height: 500px;
+  object-fit: cover;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: block;
+}
+
+.about-image-wrapper:hover .about-main-img {
+  transform: scale(1.05); /* Subtle smooth zoom effect */
+}
+
+/* Text Side */
+.about-text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center the text block relative to the image */
+}
+
+.about-paragraphs {
+  margin-top: var(--space-md); /* Reduced from lg to prevent pushing text down */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.lead-text {
+  font-size: 1.15rem;
+  color: var(--color-gray-800);
+  line-height: 1.6;
+  font-weight: 500;
+  margin: 0;
+}
+
+.about-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-md) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.about-feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  color: var(--color-gray-600);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.about-feature-list i {
+  font-size: 1.25rem;
+  margin-top: 2px;
+}
+
+.about-cta-wrapper {
+  margin-top: var(--space-md);
+  display: flex;
+  gap: var(--space-md);
+}
+
+.about-cta-wrapper .btn {
+  padding: 12px 28px;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+.btn-brand {
+  background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-light) 100%);
+  color: var(--color-white);
+  box-shadow: var(--shadow-brand);
+  border: none;
+}
+
+.btn-brand:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(255, 109, 0, 0.4);
+  background: linear-gradient(135deg, var(--color-brand-light) 0%, var(--color-brand) 100%);
+  color: var(--color-white);
+}
+
+/* RESPONSIVE LAYOUT */
+@media (max-width: 991px) {
+  .about-content-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4xl);
+  }
+
+  .about-image-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+/* =======================================================
+   EXPERTISE GRID SECTION
+   ======================================================= */
+
+.expertise-section {
+  padding: 100px 0;
+  background-color: var(--color-gray-50);
+}
+
+.section-header {
+  margin-bottom: var(--space-4xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 109, 0, 0.1);
+  color: var(--color-brand);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+}
+
+.section-title span {
+  color: var(--color-brand);
+}
+
+.section-subtitle {
+  color: var(--color-gray-500);
+  font-size: 1.1rem;
+  margin-top: var(--space-sm);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.expertise-card {
+  background: var(--color-white);
+  padding: var(--space-2xl);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.4s var(--ease-spring), box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* Staggered entrance animation */
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Active class added by JS observer with cascaded delays */
+.expertise-card.in-view {
+  animation: fadeInUp 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  animation-delay: calc(var(--anim-order, 1) * 0.1s);
+}
+
+.expertise-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-brand-alpha-30);
+}
+
+.expertise-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--color-brand-alpha-10) 0%, rgba(255, 109, 0, 0.02) 100%);
+  color: var(--color-brand);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-bottom: var(--space-lg);
+  transition: all 0.4s var(--ease-spring);
+  border: 1px solid var(--color-brand-alpha-10);
+}
+
+.expertise-card:hover .expertise-icon {
+  background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-light) 100%);
+  color: var(--color-white);
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: 0 10px 20px var(--color-brand-alpha-30);
+}
+
+.expertise-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+  margin-bottom: var(--space-md);
+}
+
+.expertise-title span {
+  color: var(--color-brand);
+}
+
+.expertise-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: auto; /* Pushes tags to the bottom if container grows */
+}
+
+.tech-tag {
+  background: var(--color-gray-100);
+  color: var(--color-gray-700);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.expertise-card:hover .tech-tag {
+  background: var(--color-brand-alpha-10);
+  color: var(--color-brand-dark);
+}
+
+/* EXPERTISE RESPONSIVE */
+@media (max-width: 991px) {
+  .expertise-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .expertise-section {
+    padding: 70px 0;
+  }
+  
+  .expertise-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .expertise-card {
+    padding: var(--space-xl);
+  }
 }
