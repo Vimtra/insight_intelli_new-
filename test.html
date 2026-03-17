@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Corporate Navigation</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: linear-gradient(135deg, #f8f9fa 0%, #f0f2f5 100%);
+        padding: 60px 20px;
+        font-family: "Inter", sans-serif;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        color: #1a1a1a;
+        margin-bottom: 60px;
+        font-size: 32px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+      }
+
+      .nav-example {
+        margin-bottom: 60px;
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      }
+
+      .nav-title {
+        padding: 20px 40px;
+        background: linear-gradient(90deg, #f8f9fa, #f0f2f5);
+        border-bottom: 1px solid #e5e7eb;
+        font-weight: 600;
+        color: #4b5563;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* NAV 1: Executive Clean */
+      .nav-1 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 50px;
+        background: white;
+        gap: 60px;
+      }
+
+      .nav-1 .logo {
+        font-size: 18px;
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        color: #1a1a1a;
+        letter-spacing: -0.5px;
+      }
+
+      .nav-1 .menu {
+        display: flex;
+        list-style: none;
+        gap: 45px;
+        flex: 1;
+      }
+
+      .nav-1 .menu a {
+        text-decoration: none;
+        color: #4b5563;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .nav-1 .menu a::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #ff9500;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .nav-1 .menu a:hover {
+        color: #1a1a1a;
+      }
+
+      .nav-1 .menu a:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+      .nav-1 .cta {
+        background: #ff9500;
+        color: white;
+        padding: 11px 28px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+      }
+
+      .nav-1 .cta:hover {
+        background: #e68a00;
+        box-shadow: 0 4px 12px rgba(255, 149, 0, 0.25);
+        transform: translateY(-2px);
+      }
+
+      /* NAV 2: Luxury Enterprise */
+      .nav-2 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px 50px;
+        background: #ffffff;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      .nav-2 .logo {
+        font-size: 16px;
+        font-weight: 700;
+        color: #1a1a1a;
+        letter-spacing: -0.3px;
+      }
+
+      .nav-2 .logo span {
+        color: #ff9500;
+      }
+
+      .nav-2 .menu {
+        display: flex;
+        list-style: none;
+        gap: 50px;
+        flex: 1;
+        justify-content: center;
+      }
+
+      .nav-2 .menu a {
+        text-decoration: none;
+        color: #6b7280;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        position: relative;
+        transition: color 0.3s ease;
+      }
+
+      .nav-2 .menu a::before {
+        content: "";
+        position: absolute;
+        inset: -6px -10px;
+        background: rgba(255, 149, 0, 0);
+        border-radius: 4px;
+        transition: background 0.3s ease;
+        z-index: -1;
+      }
+
+      .nav-2 .menu a:hover {
+        color: #ff9500;
+      }
+
+      .nav-2 .menu a:hover::before {
+        background: rgba(255, 149, 0, 0.08);
+      }
+
+      .nav-2 .cta {
+        background: linear-gradient(135deg, #ff9500, #ff7a00);
+        color: white;
+        padding: 12px 32px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        box-shadow: 0 6px 20px rgba(255, 149, 0, 0.15);
+      }
+
+      .nav-2 .cta:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(255, 149, 0, 0.3);
+      }
+
+      /* NAV 3: Minimal Sophisticated */
+      .nav-3 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 50px;
+        background: white;
+      }
+
+      .nav-3 .logo {
+        font-size: 16px;
+        font-weight: 700;
+        color: #1a1a1a;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .nav-3 .logo::before {
+        content: "";
+        width: 28px;
+        height: 28px;
+        background: linear-gradient(135deg, #ff9500, #ffb347);
+        border-radius: 4px;
+      }
+
+      .nav-3 .menu {
+        display: flex;
+        list-style: none;
+        gap: 55px;
+        flex: 1;
+        justify-content: center;
+      }
+
+      .nav-3 .menu a {
+        text-decoration: none;
+        color: #6b7280;
+        font-size: 14px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .nav-3 .menu a::after {
+        content: "";
+        display: block;
+        width: 3px;
+        height: 3px;
+        background: #ff9500;
+        border-radius: 50%;
+        margin-top: 6px;
+        transform: scale(0);
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+
+      .nav-3 .menu a:hover {
+        color: #1a1a1a;
+      }
+
+      .nav-3 .menu a:hover::after {
+        transform: scale(1);
+      }
+
+      .nav-3 .cta {
+        background: transparent;
+        color: #ff9500;
+        padding: 10px 24px;
+        border: 2px solid #ff9500;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .nav-3 .cta:hover {
+        background: #ff9500;
+        color: white;
+        box-shadow: 0 4px 12px rgba(255, 149, 0, 0.2);
+      }
+
+      /* NAV 4: Tech Professional */
+      .nav-4 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 50px;
+        background: linear-gradient(90deg, #ffffff 0%, #fafbfc 100%);
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      .nav-4 .logo {
+        font-size: 15px;
+        font-weight: 700;
+        background: linear-gradient(135deg, #1a1a1a, #4b5563);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: -0.3px;
+      }
+
+      .nav-4 .menu {
+        display: flex;
+        list-style: none;
+        gap: 40px;
+        flex: 1;
+        justify-content: center;
+      }
+
+      .nav-4 .menu li {
+        position: relative;
+      }
+
+      .nav-4 .menu a {
+        text-decoration: none;
+        color: #6b7280;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+      }
+
+      .nav-4 .menu a::before {
+        content: "";
+        width: 2px;
+        height: 2px;
+        background: #ff9500;
+        border-radius: 50%;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .nav-4 .menu a:hover {
+        color: #1a1a1a;
+      }
+
+      .nav-4 .menu a:hover::before {
+        opacity: 1;
+      }
+
+      .nav-4 .cta {
+        background: #ff9500;
+        color: white;
+        padding: 10px 26px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(255, 149, 0, 0.12);
+      }
+
+      .nav-4 .cta:hover {
+        background: #e68a00;
+        box-shadow: 0 4px 16px rgba(255, 149, 0, 0.2);
+      }
+
+      /* NAV 5: Modern Premium */
+      .nav-5 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 50px;
+        background: white;
+      }
+
+      .nav-5 .logo {
+        font-size: 16px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        color: #1a1a1a;
+        letter-spacing: -0.3px;
+      }
+
+      .nav-5 .menu {
+        display: flex;
+        list-style: none;
+        gap: 50px;
+        flex: 1;
+        justify-content: center;
+      }
+
+      .nav-5 .menu a {
+        text-decoration: none;
+        color: #6b7280;
+        font-size: 14px;
+        font-weight: 500;
+        position: relative;
+        transition: color 0.3s ease;
+      }
+
+      .nav-5 .menu a::before {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, #ff9500, transparent);
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .nav-5 .menu a:hover {
+        color: #ff9500;
+      }
+
+      .nav-5 .menu a:hover::before {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+      .nav-5 .cta {
+        background: #1a1a1a;
+        color: white;
+        padding: 11px 28px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .nav-5 .cta:hover {
+        background: #ff9500;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(255, 149, 0, 0.25);
+      }
+
+      /* NAV 6: Corporate Refined */
+      .nav-6 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 50px;
+        background: white;
+        border-bottom: 2px solid #f0f2f5;
+      }
+
+      .nav-6 .logo {
+        font-size: 16px;
+        font-weight: 700;
+        color: #1a1a1a;
+        letter-spacing: -0.3px;
+      }
+
+      .nav-6 .menu {
+        display: flex;
+        list-style: none;
+        gap: 50px;
+        flex: 1;
+        justify-content: center;
+      }
+
+      .nav-6 .menu a {
+        text-decoration: none;
+        color: #6b7280;
+        font-size: 14px;
+        font-weight: 500;
+        position: relative;
+        transition: all 0.3s ease;
+        padding: 8px 0;
+      }
+
+      .nav-6 .menu a::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-bottom: 2px solid #ff9500;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .nav-6 .menu a:hover {
+        color: #1a1a1a;
+      }
+
+      .nav-6 .menu a:hover::before {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+      .nav-6 .cta {
+        background: linear-gradient(135deg, #ff9500, #ff8800);
+        color: white;
+        padding: 11px 28px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .nav-6 .cta::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(255, 255, 255, 0);
+        transition: background 0.3s ease;
+      }
+
+      .nav-6 .cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 149, 0, 0.25);
+      }
+
+      .nav-6 .cta:hover::before {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        .nav-1,
+        .nav-2,
+        .nav-3,
+        .nav-4,
+        .nav-5,
+        .nav-6 {
+          flex-direction: column;
+          gap: 15px;
+          padding: 20px 25px;
+        }
+
+        .nav-1 .menu,
+        .nav-2 .menu,
+        .nav-3 .menu,
+        .nav-4 .menu,
+        .nav-5 .menu,
+        .nav-6 .menu {
+          flex-direction: column;
+          gap: 12px;
+          width: 100%;
+          justify-content: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Modern Corporate Navigation</h1>
+
+      <!-- NAV 1 -->
+      <div class="nav-example">
+        <div class="nav-title">1. Executive Clean</div>
+        <nav class="nav-1">
+          <div class="logo">Insight Intelli</div>
+          <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <button class="cta">Get a Quote</button>
+        </nav>
+      </div>
+
+      <!-- NAV 2 -->
+      <div class="nav-example">
+        <div class="nav-title">2. Luxury Enterprise</div>
+        <nav class="nav-2">
+          <div class="logo">Insight <span>Intelli</span></div>
+          <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <button class="cta">Get a Quote</button>
+        </nav>
+      </div>
+
+      <!-- NAV 3 -->
+      <div class="nav-example">
+        <div class="nav-title">3. Minimal Sophisticated</div>
+        <nav class="nav-3">
+          <div class="logo">Insight Intelli</div>
+          <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <button class="cta">Get a Quote</button>
+        </nav>
+      </div>
+
+      <!-- NAV 4 -->
+      <div class="nav-example">
+        <div class="nav-title">4. Tech Professional</div>
+        <nav class="nav-4">
+          <div class="logo">Insight Intelli</div>
+          <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <button class="cta">Get a Quote</button>
+        </nav>
+      </div>
+
+      <!-- NAV 5 -->
+      <div class="nav-example">
+        <div class="nav-title">5. Modern Premium</div>
+        <nav class="nav-5">
+          <div class="logo">Insight Intelli</div>
+          <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <button class="cta">Get a Quote</button>
+        </nav>
+      </div>
+
+      <!-- NAV 6 -->
+      <div class="nav-example">
+        <div class="nav-title">6. Corporate Refined</div>
+        <nav class="nav-6">
+          <div class="logo">Insight Intelli</div>
+          <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <button class="cta">Get a Quote</button>
+        </nav>
+      </div>
+    </div>
+  </body>
+</html>
