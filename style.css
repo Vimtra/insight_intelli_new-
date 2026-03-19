@@ -1722,6 +1722,19 @@ body {
   width: 100%;
 }
 
+/* Static Style overrides for "Our Expertise" Links */
+.footer-links.expertise-links a::after {
+  display: none !important;
+}
+
+.footer-links.expertise-links a.active {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.footer-links.expertise-links a:hover {
+  color: var(--color-brand) !important;
+}
+
 /* Contact Info */
 .footer-contact-item {
   display: flex;
