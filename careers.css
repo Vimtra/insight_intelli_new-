@@ -9,6 +9,7 @@
 /* Replace inline padding with a responsive class */
 .careers-section {
     padding: 120px 0 80px;
+    margin-top: 80px;
 }
 
 .careers-title {

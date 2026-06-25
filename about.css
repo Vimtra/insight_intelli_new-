@@ -23,8 +23,8 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* Parallax-like modern feel */
-  /* Remove top spacing because it acts as the primary visual block */
-  margin-top: 0;
+  /* Add top margin for fixed navbar */
+  margin-top: 80px;
 }
 
 .about-hero-content {
