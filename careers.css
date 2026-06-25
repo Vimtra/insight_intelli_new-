@@ -6,6 +6,30 @@
   =======================================================
 */
 
+/* Replace inline padding with a responsive class */
 .careers-section {
-    /* Add page-specific layout styles here */
+    padding: 120px 0 80px;
+}
+
+.careers-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: var(--color-gray-900);
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 991px) {
+    .careers-section {
+        padding: 90px 0 60px;
+    }
+}
+
+@media (max-width: 575px) {
+    .careers-section {
+        padding: 70px 0 48px;
+    }
+
+    .careers-title {
+        font-size: clamp(1.8rem, 8vw, 2.4rem);
+    }
 }
