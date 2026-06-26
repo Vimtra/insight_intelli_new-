@@ -1,92 +1,56 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- SEO Meta Tags -->
-    <title>Our Services — Insight Intelli</title>
     <meta
       name="description"
-      content="Explore the services offered by Insight Intelli, from digital solutions to smart automation and talent development."
+      content="Insight Intelli delivers strategic staffing, smart automation, talent development, and digital solutions. Learn how we work to connect top talent with opportunity."
     />
     <meta name="robots" content="index, follow" />
-
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="Insight Intelli — Strategic Staffing & Digital Solutions"
-    />
+    <meta property="og:title" content="Our Services — Insight Intelli" />
     <meta
       property="og:description"
-      content="Driving growth with strategic staffing, smart automation, and digital solutions that scale with your goals."
+      content="Strategic staffing, smart automation, talent development, and digital solutions from Insight Intelli."
     />
     <meta property="og:image" content="images/logo.png" />
-    <meta property="og:url" content="https://insightintelli.com" />
+    <meta property="og:url" content="https://insightintelli.com/services.html" />
     <meta property="og:site_name" content="Insight Intelli" />
-
-    <!-- Preconnect for Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
+ 
+    <title>Our Services — Insight Intelli</title>
+ 
     <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-
     <!-- Bootstrap CSS -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
     />
-
     <!-- Bootstrap Icons -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
     />
-
-    <!-- Custom Stylesheet -->
+    <!-- Shared styles -->
     <link rel="stylesheet" href="style.css" />
+    <!-- Page-specific styles -->
     <link rel="stylesheet" href="services.css" />
-
-    <!-- Favicon -->
-    <link rel="icon" href="images/logo.png" type="image/png" />
-
-    <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Insight Intelli",
-        "url": "https://insightintelli.com",
-        "logo": "https://insightintelli.com/images/logo.png",
-        "description": "Strategic staffing, smart automation, and scalable digital solutions.",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+1-234-567-890",
-          "contactType": "customer service",
-          "email": "care@insightintelli.com"
-        },
-        "sameAs": [
-          "https://www.linkedin.com/company/insightintelli-inc./",
-          "https://www.facebook.com/insightintelli/"
-        ]
-      }
-    </script>
   </head>
   <body>
     <!-- Skip to Content (Accessibility) -->
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
-
+ 
+    <!-- ========== HEADER ========== -->
     <header class="header" role="banner">
       <!-- TOP INFO BAR -->
       <div class="top-bar">
         <div class="container">
           <div class="top-bar-left">
-            We offer Software Development & IT Consulting services
+            We offer Software Development &amp; IT Consulting services
           </div>
           <div class="top-bar-right d-none d-md-flex">
             <a href="tel:+1234567890" class="top-bar-link">
@@ -104,14 +68,14 @@
           </div>
         </div>
       </div>
-
+ 
       <!-- MAIN NAVBAR -->
       <nav class="navbar navbar-expand-lg modern-navbar">
         <div class="container">
           <a class="navbar-brand" href="index.html">
             <img src="images/logo.png" alt="Insight Intelli" />
           </a>
-
+ 
           <button
             class="navbar-toggler"
             type="button"
@@ -125,7 +89,7 @@
             <span class="toggler-icon"></span>
             <span class="toggler-icon"></span>
           </button>
-
+ 
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
               <li class="nav-item">
@@ -144,21 +108,19 @@
             <div class="d-none d-lg-block">
               <a href="contact.html" class="nav-cta">Contact Us</a>
             </div>
-            <!-- Mobile only CTA -->
             <div class="d-lg-none mt-3">
-              <a href="contact.html" class="nav-cta w-100 text-center"
-                >Contact Us</a
-              >
+              <a href="contact.html" class="nav-cta w-100 text-center">Contact Us</a>
             </div>
           </div>
         </div>
       </nav>
     </header>
-
+ 
     <main id="main-content">
-      <!-- Page Hero Section (Light SaaS Theme) -->
-      <section class="services-hero-light">
-        <div class="hero-bg-shapes">
+ 
+      <!-- ========== HERO SECTION ========== -->
+      <section class="services-hero-light" aria-label="Services hero">
+        <div class="hero-bg-shapes" aria-hidden="true">
           <div class="shape shape-1"></div>
           <div class="shape shape-2"></div>
         </div>
@@ -168,22 +130,33 @@
               <nav aria-label="breadcrumb" class="minimal-breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">US Staffing</li>
+                  <li class="breadcrumb-item active" aria-current="page">Services</li>
                 </ol>
               </nav>
-              <h1 class="hero-title">US Staffing</h1>
+              <h1 class="hero-title">What We Do</h1>
               <p class="hero-subtitle">
-                Empowering your business with top-tier talent and strategic workforce solutions tailored to your unique needs.
+                End-to-end solutions designed to accelerate your growth — from strategic
+                talent acquisition to cutting-edge digital transformation.
               </p>
+              <div class="d-flex flex-wrap gap-3">
+                <a href="#how-we-work" class="btn-brand">How We Work</a>
+                <a href="contact.html" class="btn-outline-white" style="border-color: rgba(0,0,0,0.15); color: var(--color-gray-800);">
+                  Get a Quote
+                </a>
+              </div>
             </div>
             <div class="col-lg-6 hero-visual-right text-center text-lg-end mt-5 mt-lg-0">
               <div class="floating-image-wrapper">
-                <img src="images/pagetitlebg.jpg" alt="US Staffing Professionals" class="floating-image img-fluid" />
+                <img
+                  src="images/pagetitlebg.jpg"
+                  alt="Insight Intelli team collaborating on strategic solutions"
+                  class="floating-image img-fluid"
+                />
                 <div class="stat-card">
-                  <i class="bi bi-graph-up-arrow"></i>
-                  <div class="text-start">
-                    <strong>Top Talent</strong>
-                    <span>Vetted Professionals</span>
+                  <i class="bi bi-people-fill" aria-hidden="true"></i>
+                  <div>
+                    <strong>500+ Placements</strong>
+                    <span>Across the US annually</span>
                   </div>
                 </div>
               </div>
@@ -191,25 +164,279 @@
           </div>
         </div>
       </section>
+ 
+      <!-- ========== SERVICES STRIP ========== -->
+      <div class="services-strip" aria-label="Service categories">
+        <div class="container">
+          <div class="strip-inner">
+            <div class="strip-item">
+              <i class="bi bi-people" aria-hidden="true"></i>
+              Strategic Staffing
+            </div>
+            <div class="strip-item">
+              <i class="bi bi-gear" aria-hidden="true"></i>
+              Smart Automation
+            </div>
+            <div class="strip-item">
+              <i class="bi bi-code-slash" aria-hidden="true"></i>
+              Digital Solutions
+            </div>
+            <div class="strip-item">
+              <i class="bi bi-mortarboard" aria-hidden="true"></i>
+              Talent Development
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- ========== SERVICE CARDS GRID ========== -->
+      <section
+        class="services-grid-section"
+        aria-labelledby="services-grid-heading"
+      >
+        <div class="container">
+          <div class="section-header text-center">
+            <span class="section-badge">
+              <span class="badge-dot" aria-hidden="true"></span>
+              Our Offerings
+            </span>
+            <h2 class="section-title" id="services-grid-heading">
+              Four Pillars of <span>Excellence</span>
+            </h2>
+            <p class="section-subtitle">
+              Every engagement is built on these core service lines — each one
+              reinforcing the others to drive lasting results.
+            </p>
+          </div>
+ 
+          <div class="svc-grid">
+            <!-- Strategic Staffing -->
+            <div class="svc-card">
+              <div class="svc-icon" aria-hidden="true">
+                <i class="bi bi-people-fill"></i>
+              </div>
+              <h3 class="svc-card-title">Strategic Staffing</h3>
+              <p class="svc-card-body">
+                We connect top-tier talent with mission-critical roles using
+                data-driven sourcing and rigorous candidate vetting. From direct
+                placements to contract staffing, our approach is built on deep
+                market intelligence and client-specific criteria.
+              </p>
+            </div>
+            <!-- Smart Automation -->
+            <div class="svc-card">
+              <div class="svc-icon" aria-hidden="true">
+                <i class="bi bi-cpu-fill"></i>
+              </div>
+              <h3 class="svc-card-title">Smart Automation</h3>
+              <p class="svc-card-body">
+                Streamline operations with intelligent automation that reduces
+                manual effort, accelerates throughput, and frees your team to
+                focus on high-value work. We design, implement, and optimize
+                workflow automation tailored to your business processes.
+              </p>
+            </div>
+            <!-- Digital Solutions -->
+            <div class="svc-card">
+              <div class="svc-icon" aria-hidden="true">
+                <i class="bi bi-code-slash"></i>
+              </div>
+              <h3 class="svc-card-title">Digital Solutions</h3>
+              <p class="svc-card-body">
+                Custom software, web platforms, and digital tools built to scale
+                with your business growth. From cloud-native architectures to
+                full-stack web applications, we deliver production-ready systems
+                aligned with your strategic roadmap.
+              </p>
+            </div>
+            <!-- Talent Development -->
+            <div class="svc-card">
+              <div class="svc-icon" aria-hidden="true">
+                <i class="bi bi-mortarboard-fill"></i>
+              </div>
+              <h3 class="svc-card-title">Talent Development</h3>
+              <p class="svc-card-body">
+                Upskill your workforce with targeted training programs, career
+                coaching, and professional development pathways. We identify
+                skill gaps, curate learning tracks, and connect candidates with
+                mentors of higher expertise.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+ 
+      <!-- ========== HOW WE WORK ========== -->
+      <section
+        class="how-we-work"
+        id="how-we-work"
+        aria-labelledby="how-we-work-heading"
+      >
+        <div class="container">
+          <div class="section-header text-center">
+            <span class="section-badge">
+              <span class="badge-dot" aria-hidden="true"></span>
+              Our Process
+            </span>
+            <h2 class="section-title" id="how-we-work-heading">
+              How We <span>Work</span>
+            </h2>
+            <p class="section-subtitle">
+              A disciplined five-step methodology that transforms raw data into
+              precision placements and lasting career growth.
+            </p>
+          </div>
+ 
+          <div class="process-steps" role="list">
+ 
+            <!-- Step 1: Aspirant Insight -->
+            <div class="process-step" role="listitem">
+              <div class="step-content">
+                <span class="step-label">Step 01</span>
+                <h3 class="step-title">Aspirant Insight</h3>
+                <p class="step-body">
+                  We use analytics and sophisticated metrics to find the right candidate
+                  for the right position. Our primary goal is connecting the best talent
+                  with available job opportunities. Fervent and capable job-seekers have
+                  come to the right place.
+                </p>
+              </div>
+              <div class="step-node" aria-hidden="true">
+                <div class="step-number">01</div>
+                <div class="step-icon-wrap">
+                  <i class="bi bi-person-search"></i>
+                </div>
+              </div>
+              <div class="step-empty"></div>
+            </div>
+ 
+            <!-- Step 2: Customer's Insight -->
+            <div class="process-step" role="listitem">
+              <div class="step-empty"></div>
+              <div class="step-node" aria-hidden="true">
+                <div class="step-number">02</div>
+                <div class="step-icon-wrap">
+                  <i class="bi bi-graph-up-arrow"></i>
+                </div>
+              </div>
+              <div class="step-content">
+                <span class="step-label">Step 02</span>
+                <h3 class="step-title">Customer's Insight</h3>
+                <p class="step-body">
+                  We use qualitative and quantitative data analysis to connect you with
+                  the most optimal resource allocation for your goals. We consider your
+                  core ethics, mission, values, and strategy to deliver customized
+                  intelligence tailored to your various needs.
+                </p>
+              </div>
+            </div>
+ 
+            <!-- Step 3: Training Aspirant -->
+            <div class="process-step" role="listitem">
+              <div class="step-content">
+                <span class="step-label">Step 03</span>
+                <h3 class="step-title">Training Aspirant</h3>
+                <p class="step-body">
+                  Many candidates from different regions of the globe are becoming
+                  proficient in IT modalities. We further hone such talent and introduce
+                  them to educational imperatives that help them move further along their
+                  chosen career path — or connect them with persons of even higher
+                  expertise to expand their skill-sets.
+                </p>
+              </div>
+              <div class="step-node" aria-hidden="true">
+                <div class="step-number">03</div>
+                <div class="step-icon-wrap">
+                  <i class="bi bi-mortarboard"></i>
+                </div>
+              </div>
+              <div class="step-empty"></div>
+            </div>
+ 
+            <!-- Step 4: Exploring Intelligence Options -->
+            <div class="process-step" role="listitem">
+              <div class="step-empty"></div>
+              <div class="step-node" aria-hidden="true">
+                <div class="step-number">04</div>
+                <div class="step-icon-wrap">
+                  <i class="bi bi-globe2"></i>
+                </div>
+              </div>
+              <div class="step-content">
+                <span class="step-label">Step 04</span>
+                <h3 class="step-title">Exploring Intelligence Options</h3>
+                <p class="step-body">
+                  Intelligence is global and multi-tiered in scope. We mine the global
+                  IT landscape for new data, intelligence, and trends to help you expand
+                  your skill-sets. As the technocratic age evolves, technological
+                  criterion changes quickly — staying competitive demands constant
+                  skill-set refresh.
+                </p>
+              </div>
+            </div>
+ 
+            <!-- Step 5: Implementing Intelligence Modalities -->
+            <div class="process-step" role="listitem">
+              <div class="step-content">
+                <span class="step-label">Step 05</span>
+                <h3 class="step-title">Implementing Intelligence Modalities</h3>
+                <p class="step-body">
+                  This is the culmination of all you have worked for. We help you
+                  compositely test your intelligence and enhance your skills to mold your
+                  career in the direction of your choosing. Depending on your passion and
+                  work ethic, you can vastly improve the technical and financial yield of
+                  your career.
+                </p>
+              </div>
+              <div class="step-node" aria-hidden="true">
+                <div class="step-number">05</div>
+                <div class="step-icon-wrap">
+                  <i class="bi bi-rocket-takeoff"></i>
+                </div>
+              </div>
+              <div class="step-empty"></div>
+            </div>
+ 
+          </div>
+        </div>
+      </section>
+ 
+      <!-- ========== CTA BANNER ========== -->
+      <section class="services-cta" aria-label="Call to action">
+        <div class="container">
+          <div class="cta-inner">
+            <div class="cta-eyebrow">
+              <span class="badge-dot" aria-hidden="true"></span>
+              Ready to grow?
+            </div>
+            <h2 class="cta-title">Let's build your next chapter together</h2>
+            <p class="cta-subtitle">
+              Whether you're a company seeking top talent or a candidate ready
+              to advance — we have the intelligence and the network to make it happen.
+            </p>
+            <div class="d-flex flex-wrap gap-3 justify-content-center">
+              <a href="contact.html" class="btn-brand">
+                Get in Touch
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+              <a href="about.html" class="btn-outline-white">
+                Learn About Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+ 
     </main>
-
+ 
     <!-- ========== FOOTER ========== -->
     <footer class="site-footer" role="contentinfo">
       <div class="container">
         <div class="footer-grid">
           <!-- Column 1: Brand & Social -->
           <div class="footer-column">
-            <a
-              href="index.html"
-              class="footer-logo"
-              aria-label="Insight Intelli Home"
-            >
-              <img
-                src="images/logo.png"
-                alt="Insight Intelli"
-                width="200"
-                height="60"
-              />
+            <a href="index.html" class="footer-logo" aria-label="Insight Intelli Home">
+              <img src="images/logo.png" alt="Insight Intelli" width="200" height="60" />
             </a>
             <p class="footer-brand-text">
               Empowering businesses through strategic staffing and innovative
@@ -233,7 +460,7 @@
               ></a>
             </div>
           </div>
-
+ 
           <!-- Column 2: Quick Links -->
           <div class="footer-column">
             <h3 class="footer-heading">Quick Links</h3>
@@ -245,7 +472,7 @@
               <li><a href="contact.html">Contact Us</a></li>
             </ul>
           </div>
-
+ 
           <!-- Column 3: Our Expertise -->
           <div class="footer-column">
             <h3 class="footer-heading">Our Expertise</h3>
@@ -257,16 +484,14 @@
               <li><a href="about.html#expertise">Database Tools</a></li>
             </ul>
           </div>
-
+ 
           <!-- Column 4: Contact & Newsletter -->
           <div class="footer-column">
             <h3 class="footer-heading">Get in Touch</h3>
             <div class="footer-contact-info">
               <div class="footer-contact-item">
                 <i class="bi bi-geo-alt" aria-hidden="true"></i>
-                <span
-                  >1909 J N Pease Place, Suite 103, Charlotte NC – 28262</span
-                >
+                <span>1909 J N Pease Place, Suite 103, Charlotte NC – 28262</span>
               </div>
               <div class="footer-contact-item">
                 <i class="bi bi-telephone" aria-hidden="true"></i>
@@ -274,14 +499,12 @@
               </div>
               <div class="footer-contact-item">
                 <i class="bi bi-envelope" aria-hidden="true"></i>
-                <a href="mailto:care@insightintelli.com"
-                  >care@insightintelli.com</a
-                >
+                <a href="mailto:care@insightintelli.com">care@insightintelli.com</a>
               </div>
             </div>
             <div class="footer-newsletter">
               <h4 class="newsletter-title">Subscribe to our News</h4>
-              <form class="newsletter-form">
+              <form class="newsletter-form" onsubmit="return false;">
                 <input type="email" placeholder="Your email" required />
                 <button type="submit" aria-label="Subscribe">
                   <i class="bi bi-send"></i>
@@ -290,7 +513,7 @@
             </div>
           </div>
         </div>
-
+ 
         <div class="footer-bottom">
           <div class="footer-separator"></div>
           <div class="footer-copyright-wrapper">
@@ -303,276 +526,65 @@
         </div>
       </div>
     </footer>
-
+ 
     <!-- Scroll to Top -->
     <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
       <i class="bi bi-arrow-up" aria-hidden="true"></i>
     </button>
-
+ 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+ 
     <script>
       // ========== HEADER SCROLL EFFECT ==========
       const header = document.querySelector(".header");
-      window.addEventListener(
-        "scroll",
-        function () {
-          header.classList.toggle("scrolled", window.scrollY > 50);
-        },
-        { passive: true },
-      );
-
-      // ========== INTERSECTION OBSERVER FOR SCROLL ANIMATIONS ==========
-
-      const scrollObserver = new IntersectionObserver(
-        function (entries) {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("scroll-animate");
-              scrollObserver.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
-      );
-
-      document
-        .querySelectorAll(
-          ".vision-item, .service-card, .mission-pillar, .value-card",
-        )
-        .forEach((el) => scrollObserver.observe(el));
-
-      // ========== DYNAMIC HERO CAROUSEL TEXT ==========
-
-      const dynamicTitle = document.getElementById("dynamic-title");
-      const dynamicDescription = document.getElementById(
-        "hero-description-text",
-      );
-      const carousel = document.getElementById("heroCarousel");
-
-      function updateHeroText(item) {
-        if (!item) return;
-        const title = item.getAttribute("data-title");
-        const description = item.getAttribute("data-description");
-
-        if (title && dynamicTitle) {
-          dynamicTitle.style.opacity = "0";
-          setTimeout(() => {
-            dynamicTitle.textContent = title;
-            dynamicTitle.style.transition = "opacity 0.5s ease";
-            dynamicTitle.style.opacity = "1";
-          }, 250);
-        }
-
-        if (description && dynamicDescription) {
-          dynamicDescription.style.opacity = "0";
-          setTimeout(() => {
-            dynamicDescription.textContent = description;
-            dynamicDescription.style.transition = "opacity 0.5s ease";
-            dynamicDescription.style.opacity = "1";
-          }, 250);
-        }
-      }
-
-      if (carousel) {
-        carousel.addEventListener("slid.bs.carousel", function (event) {
-          updateHeroText(event.relatedTarget);
-        });
-        updateHeroText(carousel.querySelector(".carousel-item.active"));
-      }
-
-      // ========== CAROUSEL PROGRESS BAR ==========
-
-      const progressBar = document.getElementById("carouselProgress");
-      const totalSlides = 4;
-      let currentSlide = 0;
-
-      function updateProgress() {
-        if (!progressBar) return;
-        progressBar.style.width =
-          ((currentSlide + 1) / totalSlides) * 100 + "%";
-      }
-
-      if (carousel) {
-        carousel.addEventListener("slid.bs.carousel", function (event) {
-          currentSlide = Array.from(
-            event.relatedTarget.parentNode.children,
-          ).indexOf(event.relatedTarget);
-          updateProgress();
-        });
-        updateProgress();
-      }
-
-      // ========== MOBILE MENU ==========
-
-      // Auto-close on link click
-      document.querySelectorAll(".navbar-nav .nav-link").forEach((link) => {
-        link.addEventListener("click", () => {
-          const navbarCollapse = document.getElementById("navbarNav");
-          if (navbarCollapse && navbarCollapse.classList.contains("show")) {
-            new bootstrap.Collapse(navbarCollapse, { toggle: false }).hide();
-          }
-        });
+      window.addEventListener("scroll", function () {
+        header.classList.toggle("scrolled", window.scrollY > 50);
+      }, { passive: true });
+ 
+      // ========== SCROLL TO TOP ==========
+      const scrollToTopBtn = document.getElementById("scrollToTop");
+      window.addEventListener("scroll", function () {
+        scrollToTopBtn.classList.toggle("visible", window.scrollY > 400);
+      }, { passive: true });
+      scrollToTopBtn.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
       });
-
-      // Close button
-      const mobileMenuCloseBtn = document.querySelector(".mobile-menu-close");
-      if (mobileMenuCloseBtn) {
-        mobileMenuCloseBtn.addEventListener("click", () => {
-          const navbarCollapse = document.getElementById("navbarNav");
-          if (navbarCollapse && navbarCollapse.classList.contains("show")) {
-            new bootstrap.Collapse(navbarCollapse, { toggle: false }).hide();
+ 
+      // ========== INTERSECTION OBSERVER — scroll animations ==========
+      const scrollObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("scroll-animate");
+            scrollObserver.unobserve(entry.target);
           }
         });
-      }
-
-      // ========== SMOOTH SCROLL FOR ANCHOR LINKS ==========
-
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
+ 
+      // Observe service cards and process steps
+      document.querySelectorAll(".svc-card, .process-step").forEach(function (el) {
+        scrollObserver.observe(el);
+      });
+ 
+      // ========== SMOOTH SCROLL for anchor links ==========
+      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
         anchor.addEventListener("click", function (e) {
-          const href = this.getAttribute("href");
-          if (href === "#") return;
-
-          e.preventDefault();
-          const target = document.querySelector(href);
+          const target = document.querySelector(this.getAttribute("href"));
           if (target) {
+            e.preventDefault();
             target.scrollIntoView({ behavior: "smooth", block: "start" });
           }
         });
       });
-
-      // ========== ANIMATED COUNTERS ==========
-
-      function animateCounter(element, target, duration = 2000) {
-        let current = 0;
-        const increment = target / (duration / 16);
-
-        const timer = setInterval(() => {
-          current += increment;
-          if (current >= target) {
-            element.textContent = target;
-            clearInterval(timer);
-          } else {
-            element.textContent = Math.floor(current);
+ 
+      // ========== MOBILE MENU close on link click ==========
+      const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+      const navbarCollapse = document.querySelector(".navbar-collapse");
+      navLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+          if (navbarCollapse.classList.contains("show")) {
+            navbarCollapse.classList.remove("show");
           }
-        }, 16);
-      }
-
-      const counters = document.querySelectorAll("[data-count]");
-      if (counters.length > 0) {
-        const counterObserver = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                const target = parseInt(
-                  entry.target.getAttribute("data-count"),
-                );
-                animateCounter(entry.target, target);
-                counterObserver.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.5 },
-        );
-        counters.forEach((counter) => counterObserver.observe(counter));
-      }
-
-      // ========== BUTTON RIPPLE EFFECTS ==========
-
-      document.querySelectorAll(".btn").forEach((btn) => {
-        btn.addEventListener("click", function (e) {
-          const ripple = document.createElement("span");
-          const rect = this.getBoundingClientRect();
-          const size = Math.max(rect.width, rect.height);
-          const x = e.clientX - rect.left - size / 2;
-          const y = e.clientY - rect.top - size / 2;
-
-          ripple.style.width = ripple.style.height = size + "px";
-          ripple.style.left = x + "px";
-          ripple.style.top = y + "px";
-          ripple.className = "ripple";
-
-          this.appendChild(ripple);
-          setTimeout(() => ripple.remove(), 600);
-        });
-      });
-
-      // ========== KEYBOARD NAVIGATION ==========
-
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") {
-          const navbarCollapse = document.getElementById("navbarNav");
-          if (navbarCollapse && navbarCollapse.classList.contains("show")) {
-            new bootstrap.Collapse(navbarCollapse).hide();
-          }
-        }
-      });
-
-      // ========== SCROLL TO TOP BUTTON ==========
-
-      const scrollTopBtn = document.getElementById("scrollToTop");
-
-      window.addEventListener(
-        "scroll",
-        function () {
-          if (window.pageYOffset > 300) {
-            scrollTopBtn.classList.add("visible");
-          } else {
-            scrollTopBtn.classList.remove("visible");
-          }
-        },
-        { passive: true },
-      );
-
-      scrollTopBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-
-      // ========== NAVBAR & FOOTER ACTIVE LINK ==========
-
-      const currentPage = location.pathname.split("/").pop() || "index.html";
-      const allNavLinks = document.querySelectorAll(
-        ".navbar-nav .nav-link, .footer-links a",
-      );
-
-      allNavLinks.forEach((item) => {
-        const linkHref = item.getAttribute("href");
-        if (linkHref && linkHref.startsWith(currentPage)) {
-          item.classList.add("active");
-        }
-      });
-
-      // ========== LAZY LOAD IMAGES ==========
-
-      if ("IntersectionObserver" in window) {
-        const imageObserver = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const img = entry.target;
-              if (img.dataset.src) {
-                img.src = img.dataset.src;
-              }
-              img.classList.remove("lazy");
-              imageObserver.unobserve(img);
-            }
-          });
-        });
-
-        document
-          .querySelectorAll("img.lazy")
-          .forEach((img) => imageObserver.observe(img));
-      }
-
-      // ========== FORM VALIDATION ==========
-
-      document.querySelectorAll("form").forEach((form) => {
-        form.addEventListener("submit", function (e) {
-          if (!this.checkValidity()) {
-            e.preventDefault();
-            e.stopPropagation();
-          }
-          this.classList.add("was-validated");
         });
       });
     </script>
