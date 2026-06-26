@@ -1,0 +1,327 @@
+/* ========== PARTNERS HERO SECTION ========== */
+.partners-hero {
+  padding: 80px 0 60px;
+  background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+  position: relative;
+}
+
+.partners-hero-content {
+  text-align: center;
+  color: #ffffff;
+}
+
+.partners-hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.partners-hero-content p {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ========== PARTNERS BENEFITS SECTION ========== */
+.partners-benefits {
+  padding: 80px 0 100px;
+  background: #ffffff;
+}
+
+.section-header {
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1a1a2e;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: #6a6a85;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.benefit-card {
+  padding: 30px 25px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+  border-color: var(--color-brand);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.benefit-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-brand-alpha-10);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 1.25rem;
+  color: var(--color-brand);
+}
+
+.benefit-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1a1a2e;
+}
+
+.benefit-description {
+  color: #6a6a85;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* ========== PARTNERSHIP SERVICES SECTION ========== */
+.partnership-services {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.services-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.service-card.featured {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.service-card.featured:hover {
+  border-color: var(--color-brand);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.service-card-inner {
+  padding: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-brand);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.service-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1a1a2e;
+}
+
+.service-card-description {
+  color: #6a6a85;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+  font-size: 0.95rem;
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.service-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  color: #4a4a68;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.service-features li:last-child {
+  border-bottom: none;
+}
+
+.service-features i {
+  color: var(--color-brand);
+  font-size: 1rem;
+}
+
+.service-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--color-brand);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  font-size: 0.95rem;
+}
+
+.service-cta:hover {
+  background: var(--color-brand-dark);
+}
+
+/* ========== CLIENTS/LOGOS SECTION ========== */
+.clients-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.client-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.client-logo:hover {
+  border-color: var(--color-brand);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.client-logo img {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.client-logo:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 991px) {
+  .partners-hero {
+    padding: 60px 0 50px;
+  }
+
+  .partners-hero-content h1 {
+    font-size: 2.25rem;
+  }
+
+  .partners-hero-content p {
+    font-size: 1.125rem;
+  }
+
+  .services-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .clients-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .partners-hero {
+    padding: 50px 0 40px;
+  }
+
+  .partners-hero-content h1 {
+    font-size: 1.75rem;
+  }
+
+  .partners-hero-content p {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .clients-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ========== SCROLL ANIMATIONS ========== */
+.benefit-card,
+.service-card.featured {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.benefit-card.scroll-animate,
+.service-card.featured.scroll-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== BUTTON STYLES OVERRIDES ========== */
+.btn-outline-white {
+  border-color: #0d6efd;
+  color: #0d6efd;
+}
+
+.btn-outline-white:hover {
+  background: #0d6efd;
+  color: #ffffff;
+}
+
