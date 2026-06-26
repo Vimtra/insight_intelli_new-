@@ -4,7 +4,7 @@
   Navbar, footer, and shared tokens are in style.css.
   =======================================================
 */
- 
+
 /* -------------------------------------------------------
    Hero Section (light split layout — keep existing)
    ------------------------------------------------------- */
@@ -16,60 +16,60 @@
     color: var(--color-gray-900);
     margin-top: 80px;
 }
- 
+
 .hero-bg-shapes {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     z-index: 0; pointer-events: none; overflow: hidden;
 }
- 
+
 .hero-bg-shapes .shape {
     position: absolute;
     border-radius: 50%;
     filter: blur(80px);
     opacity: 0.6;
 }
- 
+
 .shape-1 {
     width: 400px; height: 400px;
     background: #bae6fd;
     top: -100px; right: -50px;
 }
- 
+
 .shape-2 {
     width: 300px; height: 300px;
     background: #fed7aa;
     bottom: -50px; left: -100px;
 }
- 
+
 .services-hero-light .container { position: relative; z-index: 1; }
- 
+
 .minimal-breadcrumb .breadcrumb {
     background: transparent; padding: 0;
     margin-bottom: var(--space-lg);
     font-size: var(--font-size-sm); font-weight: 500;
 }
- 
+
 .minimal-breadcrumb .breadcrumb-item a {
     color: var(--color-gray-500); text-decoration: none;
     transition: color var(--transition-base);
 }
- 
+
 .minimal-breadcrumb .breadcrumb-item a:hover { color: var(--color-brand); }
- 
+
 .minimal-breadcrumb .breadcrumb-item.active {
     color: var(--color-brand); font-weight: 600;
 }
- 
+
 .minimal-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
     content: "›"; color: var(--color-gray-400); padding: 0 10px;
 }
- 
+
 .hero-content-left {
     padding-right: var(--space-xl);
     animation: fadeInLeft 0.8s ease-out both;
 }
- 
+
 /* Override hero-title for light theme (services page) */
 .services-hero-light .hero-title {
     font-size: clamp(40px, 5vw, 64px);
@@ -79,21 +79,21 @@
     line-height: 1.1;
     letter-spacing: -1px;
 }
- 
+
 .services-hero-light .hero-title::after { display: none; }
- 
+
 .hero-subtitle {
     font-size: var(--font-size-lg);
     color: var(--color-gray-600);
     line-height: 1.6;
     margin-bottom: var(--space-xl);
 }
- 
+
 .hero-visual-right {
     animation: fadeInRight 0.8s ease-out both;
     position: relative;
 }
- 
+
 .floating-image-wrapper {
     position: relative;
     border-radius: var(--radius-xl);
@@ -105,7 +105,7 @@
     display: inline-block;
     max-width: 100%;
 }
- 
+
 .floating-image {
     width: 100%; height: auto;
     border-radius: var(--radius-lg);
@@ -113,7 +113,7 @@
     display: block; object-fit: cover;
     max-height: 400px;
 }
- 
+
 .stat-card {
     position: absolute;
     bottom: -20px; left: -20px;
@@ -124,7 +124,7 @@
     display: flex; align-items: center; gap: 16px;
     animation: floatAnimation 4s ease-in-out infinite;
 }
- 
+
 .stat-card i {
     font-size: 24px;
     color: var(--color-brand);
@@ -133,11 +133,11 @@
     display: flex; align-items: center; justify-content: center;
     border-radius: var(--radius-md);
 }
- 
+
 .stat-card div { display: flex; flex-direction: column; }
 .stat-card strong { font-size: 16px; color: var(--color-gray-900); }
 .stat-card span { font-size: 13px; color: var(--color-gray-500); }
- 
+
 /* -------------------------------------------------------
    Services Overview Strip
    ------------------------------------------------------- */
@@ -147,7 +147,7 @@
     border-bottom: 1px solid var(--color-gray-100);
     padding: 28px 0;
 }
- 
+
 .strip-inner {
     display: flex;
     align-items: center;
@@ -155,9 +155,9 @@
     overflow-x: auto;
     scrollbar-width: none;
 }
- 
+
 .strip-inner::-webkit-scrollbar { display: none; }
- 
+
 .strip-item {
     display: flex;
     align-items: center;
@@ -171,16 +171,16 @@
     border-right: 1px solid var(--color-gray-200);
     transition: color var(--transition-fast);
 }
- 
+
 .strip-item:last-child { border-right: none; }
- 
+
 .strip-item:hover { color: var(--color-brand); }
- 
+
 .strip-item i {
     font-size: 18px;
     color: var(--color-brand);
 }
- 
+
 /* -------------------------------------------------------
    How We Work Section
    ------------------------------------------------------- */
@@ -190,7 +190,7 @@
     position: relative;
     overflow: hidden;
 }
- 
+
 .how-we-work::before {
     content: "";
     position: absolute;
@@ -198,12 +198,12 @@
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--color-gray-200), transparent);
 }
- 
+
 /* Section header (reuses global pattern) */
 .how-we-work .section-header {
     margin-bottom: var(--space-4xl);
 }
- 
+
 /* -------------------------------------------------------
    Process Steps — alternating layout
    ------------------------------------------------------- */
@@ -213,7 +213,7 @@
     gap: 0;
     position: relative;
 }
- 
+
 /* Vertical connector line */
 .process-steps::before {
     content: "";
@@ -232,7 +232,7 @@
     transform: translateX(-50%);
     z-index: 0;
 }
- 
+
 .process-step {
     display: grid;
     grid-template-columns: 1fr 80px 1fr;
@@ -244,19 +244,19 @@
     transform: translateY(24px);
     transition: opacity 0.7s ease, transform 0.7s ease;
 }
- 
+
 .process-step.scroll-animate {
     opacity: 1;
     transform: translateY(0);
 }
- 
+
 /* Stagger delays */
 .process-step:nth-child(1) { transition-delay: 0s; }
 .process-step:nth-child(2) { transition-delay: 0.12s; }
 .process-step:nth-child(3) { transition-delay: 0.24s; }
 .process-step:nth-child(4) { transition-delay: 0.36s; }
 .process-step:nth-child(5) { transition-delay: 0.48s; }
- 
+
 /* Step number node — center column */
 .step-node {
     display: flex;
@@ -266,7 +266,7 @@
     position: relative;
     z-index: 2;
 }
- 
+
 .step-number {
     width: 56px; height: 56px;
     border-radius: 50%;
@@ -286,7 +286,7 @@
         box-shadow var(--transition-base);
     position: relative;
 }
- 
+
 .step-number::before {
     content: "";
     position: absolute;
@@ -295,7 +295,7 @@
     border: 1px solid transparent;
     transition: border-color var(--transition-base);
 }
- 
+
 /* Active state on hover of the parent step */
 .process-step:hover .step-number {
     background: var(--color-brand);
@@ -303,11 +303,11 @@
     color: var(--color-white);
     box-shadow: var(--shadow-brand);
 }
- 
+
 .process-step:hover .step-number::before {
     border-color: var(--color-brand-alpha-30);
 }
- 
+
 /* Step icon inside the number ring */
 .step-icon-wrap {
     margin-top: 12px;
@@ -323,12 +323,12 @@
         background var(--transition-base),
         transform var(--transition-base);
 }
- 
+
 .process-step:hover .step-icon-wrap {
     background: var(--color-brand-alpha-15);
     transform: scale(1.08);
 }
- 
+
 /* Step content card — left or right column */
 .step-content {
     padding: 36px 40px;
@@ -343,7 +343,7 @@
         border-color var(--transition-base);
     overflow: hidden;
 }
- 
+
 .step-content::before {
     content: "";
     position: absolute;
@@ -354,27 +354,27 @@
     transform-origin: left;
     transition: transform 0.4s var(--ease-out);
 }
- 
+
 .process-step:hover .step-content {
     box-shadow: var(--shadow-md);
     transform: translateY(-3px);
     border-color: var(--color-brand-alpha-15);
 }
- 
+
 .process-step:hover .step-content::before {
     transform: scaleX(1);
 }
- 
+
 /* Odd steps: card left, empty right */
 .process-step:nth-child(odd) .step-content { grid-column: 1; }
 .process-step:nth-child(odd) .step-node    { grid-column: 2; }
 .process-step:nth-child(odd) .step-empty   { grid-column: 3; }
- 
+
 /* Even steps: empty left, card right */
 .process-step:nth-child(even) .step-empty   { grid-column: 1; }
 .process-step:nth-child(even) .step-node    { grid-column: 2; }
 .process-step:nth-child(even) .step-content { grid-column: 3; }
- 
+
 /* Content typography */
 .step-label {
     font-size: 11px;
@@ -385,7 +385,7 @@
     margin-bottom: 10px;
     display: block;
 }
- 
+
 .step-title {
     font-size: clamp(1.15rem, 2vw, 1.35rem);
     font-weight: 700;
@@ -393,14 +393,14 @@
     margin-bottom: 14px;
     line-height: 1.25;
 }
- 
+
 .step-body {
     font-size: var(--font-size-base);
     color: var(--color-gray-600);
     line-height: 1.75;
     margin: 0;
 }
- 
+
 /* Arrow connector from node to card */
 .step-connector {
     position: absolute;
@@ -411,17 +411,17 @@
     background: var(--color-gray-200);
     z-index: 1;
 }
- 
+
 /* Odd: connector goes from left-edge of node to right-edge of card */
 .process-step:nth-child(odd) .step-connector {
     right: -40px;
 }
- 
+
 /* Even: connector goes from right-edge of node to left-edge of card */
 .process-step:nth-child(even) .step-connector {
     left: -40px;
 }
- 
+
 /* -------------------------------------------------------
    Service Cards Grid — 4 service offerings
    ------------------------------------------------------- */
@@ -429,14 +429,14 @@
     padding: var(--space-5xl) 0;
     background: var(--color-white);
 }
- 
+
 .svc-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
     margin-top: var(--space-3xl);
 }
- 
+
 .svc-card {
     background: var(--color-gray-50);
     border: 1px solid var(--color-gray-100);
@@ -451,7 +451,7 @@
     opacity: 0;
     transform: translateY(20px);
 }
- 
+
 .svc-card.scroll-animate {
     opacity: 1;
     transform: translateY(0);
@@ -461,12 +461,12 @@
         box-shadow 0.3s ease,
         border-color 0.3s ease;
 }
- 
+
 .svc-card:nth-child(1) { transition-delay: 0s; }
 .svc-card:nth-child(2) { transition-delay: 0.1s; }
 .svc-card:nth-child(3) { transition-delay: 0.2s; }
 .svc-card:nth-child(4) { transition-delay: 0.3s; }
- 
+
 .svc-card::before {
     content: "";
     position: absolute;
@@ -477,15 +477,15 @@
     transform-origin: left;
     transition: transform 0.4s var(--ease-out);
 }
- 
+
 .svc-card:hover {
     box-shadow: var(--shadow-lg);
     transform: translateY(-4px);
     border-color: var(--color-brand-alpha-15);
 }
- 
+
 .svc-card:hover::before { transform: scaleX(1); }
- 
+
 .svc-icon {
     width: 52px; height: 52px;
     border-radius: var(--radius-md);
@@ -498,26 +498,26 @@
     margin-bottom: 22px;
     transition: background var(--transition-base), transform var(--transition-base);
 }
- 
+
 .svc-card:hover .svc-icon {
     background: var(--color-brand-alpha-15);
     transform: scale(1.08);
 }
- 
+
 .svc-card-title {
     font-size: 1.15rem;
     font-weight: 700;
     color: var(--color-gray-900);
     margin-bottom: 10px;
 }
- 
+
 .svc-card-body {
     font-size: var(--font-size-base);
     color: var(--color-gray-600);
     line-height: 1.7;
     margin: 0;
 }
- 
+
 /* -------------------------------------------------------
    CTA Banner
    ------------------------------------------------------- */
@@ -528,7 +528,7 @@
     position: relative;
     overflow: hidden;
 }
- 
+
 .services-cta::before {
     content: "";
     position: absolute;
@@ -539,7 +539,7 @@
     filter: blur(80px);
     pointer-events: none;
 }
- 
+
 .services-cta::after {
     content: "";
     position: absolute;
@@ -550,12 +550,12 @@
     filter: blur(80px);
     pointer-events: none;
 }
- 
+
 .cta-inner {
     position: relative;
     z-index: 1;
 }
- 
+
 .cta-eyebrow {
     display: inline-flex;
     align-items: center;
@@ -567,7 +567,7 @@
     text-transform: uppercase;
     margin-bottom: 20px;
 }
- 
+
 .cta-title {
     font-size: clamp(1.8rem, 4vw, 2.6rem);
     font-weight: 800;
@@ -575,7 +575,7 @@
     margin-bottom: 16px;
     line-height: 1.15;
 }
- 
+
 .cta-subtitle {
     font-size: var(--font-size-lg);
     color: rgba(255,255,255,0.65);
@@ -583,7 +583,7 @@
     margin: 0 auto 36px;
     line-height: 1.6;
 }
- 
+
 .btn-outline-white {
     display: inline-flex;
     align-items: center;
@@ -600,14 +600,14 @@
     cursor: pointer;
     font-family: var(--font-family);
 }
- 
+
 .btn-outline-white:hover {
     background: rgba(255,255,255,0.1);
     border-color: rgba(255,255,255,0.5);
     color: var(--color-white);
     transform: translateY(-2px);
 }
- 
+
 /* -------------------------------------------------------
    Animations
    ------------------------------------------------------- */
@@ -615,17 +615,17 @@
     from { opacity: 0; transform: translateX(-30px); }
     to   { opacity: 1; transform: translateX(0); }
 }
- 
+
 @keyframes fadeInRight {
     from { opacity: 0; transform: translateX(30px); }
     to   { opacity: 1; transform: translateX(0); }
 }
- 
+
 @keyframes floatAnimation {
     0%, 100% { transform: translateY(0); }
     50%       { transform: translateY(-10px); }
 }
- 
+
 /* -------------------------------------------------------
    Responsive
    ------------------------------------------------------- */
@@ -636,7 +636,7 @@
     .stat-card { left: 20px; bottom: 20px; }
     .floating-image { max-height: 320px; }
     .how-we-work { padding: var(--space-4xl) 0; }
- 
+
     /* Stack process steps on tablet */
     .process-steps::before { display: none; }
     .process-step {
@@ -655,13 +655,13 @@
     .step-connector { display: none; }
     .step-content { padding: 24px 28px; }
 }
- 
+
 @media (max-width: 767.98px) {
     .svc-grid { grid-template-columns: 1fr; }
     .strip-item { padding: 8px 16px; }
     .how-we-work { padding: var(--space-3xl) 0; }
 }
- 
+
 @media (max-width: 575.98px) {
     .services-hero-light { padding: var(--space-2xl) 0 var(--space-xl); }
     .services-hero-light .hero-title { font-size: clamp(26px, 8vw, 36px); }
