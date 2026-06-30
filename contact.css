@@ -11,7 +11,11 @@
 .contact-hero {
   position: relative;
   padding: var(--space-5xl) 0 var(--space-4xl);
+<<<<<<< ours
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 60%, #fff7f0 100%);
+=======
+  background: linear-gradient(180deg, #ffffff 0%, #f7f8fb 100%);
+>>>>>>> theirs
   overflow: hidden;
   margin-top: 80px;
 }
@@ -47,12 +51,21 @@
 }
 
 .contact-hero-title {
+<<<<<<< ours
   font-size: clamp(2.2rem, 5vw, 3.4rem);
   font-weight: 800;
   color: var(--color-gray-900);
   line-height: 1.1;
   letter-spacing: -0.02em;
   margin-bottom: 16px;
+=======
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  color: var(--color-gray-900);
+  line-height: 1.05;
+  letter-spacing: var(--tracking-display);
+  margin-bottom: 18px;
+>>>>>>> theirs
 }
 
 .contact-hero-sub {
@@ -244,7 +257,11 @@
   border: 1px solid var(--color-gray-100);
   border-radius: var(--radius-xl);
   padding: 44px 40px 40px;
+<<<<<<< ours
   box-shadow: var(--shadow-md);
+=======
+  box-shadow: var(--shadow-lg);
+>>>>>>> theirs
 }
 
 .form-header {
@@ -390,17 +407,32 @@
 
 /* Submit button — angled parallelogram (signature from screenshot) */
 .btn-submit-wrap {
+<<<<<<< ours
   margin-top: 24px;
+=======
+  margin-top: 28px;
+>>>>>>> theirs
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
+<<<<<<< ours
+=======
+@media (max-width: 575.98px) {
+  .btn-submit-wrap {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+>>>>>>> theirs
 .btn-submit {
   position: relative;
   display: inline-flex;
   align-items: center;
   gap: 10px;
+<<<<<<< ours
   padding: 16px 48px 16px 32px;
   background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-light) 100%);
   color: var(--color-white);
@@ -412,10 +444,23 @@
   border: none;
   cursor: pointer;
   clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 100%, 0 100%);
+=======
+  padding: 15px 32px;
+  background: var(--gradient-brand);
+  color: var(--color-white);
+  font-family: var(--font-family);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  text-transform: none;
+  border: none;
+  cursor: pointer;
+>>>>>>> theirs
   transition:
     background var(--transition-base),
     box-shadow var(--transition-base),
     transform var(--transition-fast);
+<<<<<<< ours
   border-radius: 0;
   white-space: nowrap;
 }
@@ -423,6 +468,15 @@
 .btn-submit:hover {
   background: linear-gradient(135deg, var(--color-brand-light) 0%, var(--color-brand) 100%);
   box-shadow: var(--shadow-brand);
+=======
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  box-shadow: var(--shadow-brand);
+}
+
+.btn-submit:hover {
+  box-shadow: var(--shadow-brand-lg);
+>>>>>>> theirs
   transform: translateY(-2px);
 }
 
@@ -541,8 +595,15 @@
   }
 
   .btn-submit {
+<<<<<<< ours
     font-size: 12px;
     padding: 14px 42px 14px 24px;
+=======
+    font-size: 0.875rem;
+    padding: 14px 28px;
+    width: 100%;
+    justify-content: center;
+>>>>>>> theirs
   }
 
   .address-card {

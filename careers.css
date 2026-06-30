@@ -6,31 +6,65 @@
   =======================================================
 */
 
-/* Replace inline padding with a responsive class */
+/* Careers page-specific styles */
 .careers-section {
-    padding: 120px 0 80px;
+    padding: var(--space-5xl) 0 var(--space-4xl);
     margin-top: 80px;
+    background: linear-gradient(180deg, #ffffff 0%, var(--color-gray-50) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.careers-section::before {
+    content: "";
+    position: absolute;
+    top: -180px;
+    right: -120px;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, var(--color-brand-alpha-15), transparent 70%);
+    filter: blur(90px);
+    pointer-events: none;
+}
+
+.careers-section::after {
+    content: "";
+    position: absolute;
+    bottom: -120px;
+    left: -100px;
+    width: 360px;
+    height: 360px;
+    background: radial-gradient(circle, var(--color-accent-soft), transparent 70%);
+    filter: blur(80px);
+    pointer-events: none;
+}
+
+.careers-section > .container {
+    position: relative;
+    z-index: 1;
 }
 
 .careers-title {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
     font-weight: 800;
     color: var(--color-gray-900);
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.05;
+    letter-spacing: var(--tracking-display);
 }
 
 @media (max-width: 991px) {
     .careers-section {
-        padding: 90px 0 60px;
+        padding: var(--space-4xl) 0 var(--space-3xl);
     }
 }
 
 @media (max-width: 575px) {
     .careers-section {
-        padding: 70px 0 48px;
+        padding: var(--space-3xl) 0 var(--space-2xl);
     }
 
     .careers-title {
-        font-size: clamp(1.8rem, 8vw, 2.4rem);
+        font-size: clamp(1.9rem, 8vw, 2.5rem);
     }
 }
