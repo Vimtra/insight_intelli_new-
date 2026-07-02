@@ -1,70 +1,238 @@
-/* 
+/*
   =======================================================
-  CSS for careers.html
-  Contains ONLY page-specific styles. 
+  careers.css — Editorial system, matches about/services/
+  partners/contact. No dots, pills, badges, or ornaments.
   Navbar and footer styles are inherited from style.css.
   =======================================================
 */
 
-/* Careers page-specific styles */
-.careers-section {
-    padding: var(--space-5xl) 0 var(--space-4xl);
-    margin-top: 80px;
-    background: linear-gradient(180deg, #ffffff 0%, var(--color-gray-50) 100%);
-    position: relative;
-    overflow: hidden;
+.cr-eyebrow {
+  font-family: var(--font-family-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+  margin: 0 0 16px;
+  line-height: 1;
 }
 
-.careers-section::before {
-    content: "";
-    position: absolute;
-    top: -180px;
-    right: -120px;
-    width: 480px;
-    height: 480px;
-    background: radial-gradient(circle, var(--color-brand-alpha-15), transparent 70%);
-    filter: blur(90px);
-    pointer-events: none;
+.cr-heading {
+  font-family: var(--font-family-display);
+  font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--color-gray-900);
+  margin: 0;
 }
 
-.careers-section::after {
-    content: "";
-    position: absolute;
-    bottom: -120px;
-    left: -100px;
-    width: 360px;
-    height: 360px;
-    background: radial-gradient(circle, var(--color-accent-soft), transparent 70%);
-    filter: blur(80px);
-    pointer-events: none;
+.cr-section-head {
+  margin-bottom: 40px;
 }
 
-.careers-section > .container {
-    position: relative;
-    z-index: 1;
+/* --- Hero: headline + inline stat --- */
+.cr-hero {
+  margin-top: 140px;
+  padding: 64px 0 56px;
+  background: #fafbfc;
+  border-bottom: 1px solid rgba(14, 19, 32, 0.06);
 }
 
-.careers-title {
-    font-size: clamp(2.25rem, 5vw, 3.5rem);
-    font-weight: 800;
-    color: var(--color-gray-900);
-    margin-bottom: 1.25rem;
-    line-height: 1.05;
-    letter-spacing: var(--tracking-display);
+.cr-hero-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
 }
 
+.cr-hero-title {
+  font-family: var(--font-family-display);
+  font-size: clamp(2.5rem, 6vw, 4.25rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  color: var(--color-gray-900);
+  margin: 0;
+}
+
+.cr-hero-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding-left: 24px;
+  border-left: 1px solid rgba(14, 19, 32, 0.12);
+}
+
+.cr-hero-stat-num {
+  font-family: var(--font-family-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-brand);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.cr-hero-stat-label {
+  font-size: 0.9375rem;
+  color: var(--color-gray-500);
+}
+
+/* --- Open positions: hairline list --- */
+.cr-positions {
+  padding: 72px 0;
+  background: var(--color-white);
+  border-bottom: 1px solid rgba(14, 19, 32, 0.06);
+}
+
+.cr-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(14, 19, 32, 0.08);
+}
+
+.cr-list-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(14, 19, 32, 0.08);
+}
+
+.cr-list-num {
+  font-family: var(--font-family-display);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-brand);
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+  width: 24px;
+}
+
+.cr-list-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  flex: 1;
+}
+
+.cr-list-link {
+  flex-shrink: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-gray-500);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s var(--ease-out), border-color 0.2s var(--ease-out);
+}
+
+.cr-list-link:hover {
+  color: var(--color-brand);
+  border-color: var(--color-brand);
+}
+
+/* --- Featured role spotlight --- */
+.cr-spotlight {
+  padding: 72px 0;
+  background: #fafbfc;
+  border-bottom: 1px solid rgba(14, 19, 32, 0.06);
+}
+
+.cr-spotlight-card {
+  border: 1px solid rgba(14, 19, 32, 0.1);
+  border-left: 3px solid var(--color-brand);
+  border-radius: 8px;
+  background: var(--color-white);
+  padding: 36px 32px;
+}
+
+.cr-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 32px;
+  margin: 0 0 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(14, 19, 32, 0.08);
+}
+
+.cr-spec dt {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gray-400);
+  margin: 0 0 6px;
+}
+
+.cr-spec dd {
+  font-family: var(--font-family-display);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin: 0;
+}
+
+.cr-spotlight-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cr-spotlight-text {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--color-gray-600);
+  margin: 0;
+  max-width: 65ch;
+}
+
+/* --- Referral --- */
+.cr-referral {
+  padding: 72px 0;
+  background: var(--color-ink);
+  color: var(--color-white);
+  text-align: center;
+}
+
+.cr-referral-row {
+  max-width: 560px;
+}
+
+.cr-referral-title {
+  font-family: var(--font-family-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-white);
+  margin: 0 0 12px;
+}
+
+.cr-referral-text {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0 0 28px;
+}
+
+/* --- Responsive --- */
 @media (max-width: 991px) {
-    .careers-section {
-        padding: var(--space-4xl) 0 var(--space-3xl);
-    }
+  .cr-hero { padding: 56px 0 48px; margin-top: 140px; }
+  .cr-positions,
+  .cr-spotlight,
+  .cr-referral { padding: 56px 0; }
+  .cr-spec-grid { grid-template-columns: 1fr; gap: 16px; }
 }
 
 @media (max-width: 575px) {
-    .careers-section {
-        padding: var(--space-3xl) 0 var(--space-2xl);
-    }
-
-    .careers-title {
-        font-size: clamp(1.9rem, 8vw, 2.5rem);
-    }
+  .cr-hero { padding: 48px 0 40px; }
+  .cr-hero-row { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .cr-hero-stat { border-left: none; padding-left: 0; }
+  .cr-positions,
+  .cr-spotlight,
+  .cr-referral { padding: 48px 0; }
+  .cr-list-item { flex-wrap: wrap; gap: 6px 16px; }
+  .cr-list-title { flex-basis: calc(100% - 44px); }
+  .cr-spotlight-card { padding: 28px 24px; }
 }

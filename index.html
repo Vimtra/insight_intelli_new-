@@ -162,115 +162,19 @@
     <main id="main-content">
       <!-- ========== HERO SECTION ========== -->
       <section class="hero-section" aria-label="Hero">
-        <!-- Full Background Carousel -->
-        <div class="hero-carousel-wrapper">
-          <div
-            id="heroCarousel"
-            class="carousel slide hero-carousel-full"
-            data-bs-ride="carousel"
-            data-bs-interval="5000"
-            aria-label="Featured highlights"
-          >
-            <div class="carousel-inner">
-              <div
-                class="carousel-item active"
-                data-title="You dream it, we do it"
-                data-description="Driving growth with strategic staffing, smart automation, and digital solutions that scale with your goals."
-              >
-                <img
-                  src="images/slider/01.jpg"
-                  class="hero-bg-img"
-                  alt="Team collaborating on a strategic staffing project"
-                  loading="eager"
-                />
-                <div class="carousel-overlay"></div>
-              </div>
-              <div
-                class="carousel-item"
-                data-title="We excel in finding the best talent"
-                data-description="We match top talent with mission-critical roles using data-powered sourcing and personal care."
-              >
-                <img
-                  src="images/slider/02.jpg"
-                  class="hero-bg-img"
-                  alt="Professional recruiter reviewing candidate profiles"
-                  loading="lazy"
-                />
-                <div class="carousel-overlay"></div>
-              </div>
-              <div
-                class="carousel-item"
-                data-title="Timely delivery: we shorten the onboarding process"
-                data-description="Our streamlined workflows and automation reduce time-to-hire and ramp-up."
-              >
-                <img
-                  src="images/slider/03.jpg"
-                  class="hero-bg-img"
-                  alt="Streamlined onboarding process with digital tools"
-                  loading="lazy"
-                />
-                <div class="carousel-overlay"></div>
-              </div>
-              <div
-                class="carousel-item"
-                data-title="Connecting the best talent with available opportunities"
-                data-description="We connect skilled professionals to opportunities where they can deliver impact fast."
-              >
-                <img
-                  src="images/slider/04.jpg"
-                  class="hero-bg-img"
-                  alt="Professionals connecting at a networking event"
-                  loading="lazy"
-                />
-                <div class="carousel-overlay"></div>
-              </div>
-            </div>
-
-            <!-- Controls -->
-            <button
-              class="carousel-control-prev"
-              type="button"
-              data-bs-target="#heroCarousel"
-              data-bs-slide="prev"
-              aria-label="Previous slide"
-            >
-              <i class="bi bi-chevron-left" aria-hidden="true"></i>
-            </button>
-            <button
-              class="carousel-control-next"
-              type="button"
-              data-bs-target="#heroCarousel"
-              data-bs-slide="next"
-              aria-label="Next slide"
-            >
-              <i class="bi bi-chevron-right" aria-hidden="true"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- Centered Content Overlay -->
-        <div class="container hero-content-container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8">
-              <div class="hero-content-centered">
-                <div class="hero-badge">
-                  <span class="badge-dot" aria-hidden="true"></span>
-                  <span>Next-Gen Intelligence</span>
-                </div>
-                <h1 class="hero-title" id="dynamic-title">
-                  You Dream It,<br />We Do It
-                </h1>
-                <p class="hero-description" id="hero-description-text">
-                  Driving growth with strategic staffing, smart automation, and
-                  digital solutions that scale with your goals.
-                </p>
-                <div class="hero-buttons">
-                  <a href="contact.html" class="btn btn-brand">Get a Quote</a>
-                  <a href="about.html" class="btn btn-outline-white"
-                    >Learn More</a
-                  >
-                </div>
-              </div>
+        <div class="hero-grid-overlay bg-grid-soft" aria-hidden="true"></div>
+        <div class="container">
+          <div class="hero-content-centered">
+            <h1 class="hero-title">
+              The people and systems behind<br />your next stage of growth.
+            </h1>
+            <p class="hero-description">
+              Insight Intelli pairs strategic staffing with smart automation
+              and digital solutions built for enterprise scale.
+            </p>
+            <div class="hero-buttons">
+              <a href="contact.html" class="btn btn-brand">Start a conversation</a>
+              <a href="services.html" class="btn btn-outline-white">Explore services</a>
             </div>
           </div>
         </div>
@@ -358,64 +262,44 @@
 
           <div class="services-grid">
             <!-- Service 1 -->
-            <div class="service-card">
-              <div class="service-icon" aria-hidden="true">
-                <i class="bi bi-people-fill"></i>
-              </div>
+            <a href="services.html" class="service-card">
+              <i class="bi bi-people-fill service-icon" aria-hidden="true"></i>
               <h3 class="service-card-title">Strategic Staffing</h3>
               <p class="service-card-text">
-                We connect top-tier talent with mission-critical roles using
-                data-driven sourcing and personal care to find the perfect fit.
+                Top-tier talent for mission-critical roles, matched with
+                data-driven sourcing and personal care.
               </p>
-              <a href="services.html" class="service-card-link">
-                Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
+            </a>
 
             <!-- Service 2 -->
-            <div class="service-card">
-              <div class="service-icon" aria-hidden="true">
-                <i class="bi bi-gear-wide-connected"></i>
-              </div>
+            <a href="services.html" class="service-card">
+              <i class="bi bi-gear-wide-connected service-icon" aria-hidden="true"></i>
               <h3 class="service-card-title">Smart Automation</h3>
               <p class="service-card-text">
-                Streamline operations with intelligent automation that reduces
-                manual effort, accelerates delivery, and cuts costs.
+                Intelligent automation that reduces manual effort and
+                accelerates delivery.
               </p>
-              <a href="services.html" class="service-card-link">
-                Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
+            </a>
 
             <!-- Service 3 -->
-            <div class="service-card">
-              <div class="service-icon" aria-hidden="true">
-                <i class="bi bi-laptop"></i>
-              </div>
+            <a href="services.html" class="service-card">
+              <i class="bi bi-laptop service-icon" aria-hidden="true"></i>
               <h3 class="service-card-title">Digital Solutions</h3>
               <p class="service-card-text">
-                Custom software, web platforms, and digital tools built to scale
-                with your business and drive measurable outcomes.
+                Custom software and digital tools built to scale with your
+                business.
               </p>
-              <a href="services.html" class="service-card-link">
-                Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
+            </a>
 
             <!-- Service 4 -->
-            <div class="service-card">
-              <div class="service-icon" aria-hidden="true">
-                <i class="bi bi-mortarboard-fill"></i>
-              </div>
+            <a href="services.html" class="service-card">
+              <i class="bi bi-mortarboard-fill service-icon" aria-hidden="true"></i>
               <h3 class="service-card-title">Talent Development</h3>
               <p class="service-card-text">
-                Upskill your workforce with targeted training programs, career
-                coaching, and professional development pathways.
+                Targeted training, career coaching, and professional
+                development pathways.
               </p>
-              <a href="services.html" class="service-card-link">
-                Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
+            </a>
           </div>
 
           <div class="services-cta">
@@ -513,7 +397,6 @@
                 prioritize human connection, growth, and well-being in
                 everything we do.
               </p>
-              <div class="value-dot" aria-hidden="true"></div>
             </div>
 
             <div class="value-card">
@@ -524,7 +407,6 @@
                 just a destination—it's a journey we undertake together with our
                 partners.
               </p>
-              <div class="value-dot" aria-hidden="true"></div>
             </div>
 
             <div class="value-card">
@@ -535,7 +417,6 @@
                 and we invest the time and effort to exceed expectations
                 consistently.
               </p>
-              <div class="value-dot" aria-hidden="true"></div>
             </div>
 
             <div class="value-card">
@@ -546,7 +427,6 @@
                 Innovation means nothing if it doesn't improve people's lives
                 and unlock potential.
               </p>
-              <div class="value-dot" aria-hidden="true"></div>
             </div>
           </div>
         </div>
@@ -703,67 +583,6 @@
           ".vision-item, .service-card, .mission-pillar, .value-card",
         )
         .forEach((el) => scrollObserver.observe(el));
-
-      // ========== DYNAMIC HERO CAROUSEL TEXT ==========
-
-      const dynamicTitle = document.getElementById("dynamic-title");
-      const dynamicDescription = document.getElementById(
-        "hero-description-text",
-      );
-      const carousel = document.getElementById("heroCarousel");
-
-      function updateHeroText(item) {
-        if (!item) return;
-        const title = item.getAttribute("data-title");
-        const description = item.getAttribute("data-description");
-
-        if (title && dynamicTitle) {
-          dynamicTitle.style.opacity = "0";
-          setTimeout(() => {
-            dynamicTitle.textContent = title;
-            dynamicTitle.style.transition = "opacity 0.5s ease";
-            dynamicTitle.style.opacity = "1";
-          }, 250);
-        }
-
-        if (description && dynamicDescription) {
-          dynamicDescription.style.opacity = "0";
-          setTimeout(() => {
-            dynamicDescription.textContent = description;
-            dynamicDescription.style.transition = "opacity 0.5s ease";
-            dynamicDescription.style.opacity = "1";
-          }, 250);
-        }
-      }
-
-      if (carousel) {
-        carousel.addEventListener("slid.bs.carousel", function (event) {
-          updateHeroText(event.relatedTarget);
-        });
-        updateHeroText(carousel.querySelector(".carousel-item.active"));
-      }
-
-      // ========== CAROUSEL PROGRESS BAR ==========
-
-      const progressBar = document.getElementById("carouselProgress");
-      const totalSlides = 4;
-      let currentSlide = 0;
-
-      function updateProgress() {
-        if (!progressBar) return;
-        progressBar.style.width =
-          ((currentSlide + 1) / totalSlides) * 100 + "%";
-      }
-
-      if (carousel) {
-        carousel.addEventListener("slid.bs.carousel", function (event) {
-          currentSlide = Array.from(
-            event.relatedTarget.parentNode.children,
-          ).indexOf(event.relatedTarget);
-          updateProgress();
-        });
-        updateProgress();
-      }
 
       // ========== MOBILE MENU ==========
 
