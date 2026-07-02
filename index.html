@@ -334,123 +334,16 @@
         </div>
       </section>
 
-      <!-- ========== MISSION SECTION ========== -->
-      <section class="mission-section" aria-labelledby="mission-heading">
+      <!-- ========== CTA SECTION ========== -->
+      <section class="home-cta" aria-labelledby="home-cta-h">
         <div class="container">
-          <div class="mission-header-area">
-            <span class="mission-badge">Our Mission</span>
-            <h2 class="mission-title" id="mission-heading">
-              Guiding Aspirants Toward Excellence
-            </h2>
-          </div>
-
-          <div class="mission-statement-wrapper">
-            <p class="mission-statement">
-              To fulfill the aspirant's interdisciplinary goals in punctual and
-              innovative ways by recommending the correct resources for each
-              aspirant's specific needs.
-            </p>
-          </div>
-
-          <div class="mission-pillars">
-            <div class="mission-pillar">
-              <h3 class="mission-pillar-title">Interdisciplinary Excellence</h3>
-              <p class="mission-pillar-text">
-                We understand that growth requires diverse perspectives and
-                expertise. Our approach integrates multiple disciplines to
-                create comprehensive solutions tailored to your unique
-                challenges.
-              </p>
-            </div>
-
-            <div class="mission-pillar">
-              <h3 class="mission-pillar-title">Punctual Delivery</h3>
-              <p class="mission-pillar-text">
-                Time is invaluable. We ensure that every solution, strategy, and
-                recommendation reaches you when you need it most, enabling you
-                to stay ahead of market demands.
-              </p>
-            </div>
-
-            <div class="mission-pillar">
-              <h3 class="mission-pillar-title">Resource Optimization</h3>
-              <p class="mission-pillar-text">
-                We pride ourselves on developing your niche and helping you tap
-                all of its resources. No potential is left undiscovered or
-                unexploited in your journey toward success.
-              </p>
-            </div>
-          </div>
-
-          <div class="mission-accent-line" aria-hidden="true"></div>
-
-          <p class="mission-closing">
-            We are committed to helping you unlock your full potential through
-            strategic partnerships, innovative thinking, and unwavering
-            dedication to your aspirations.
-          </p>
-        </div>
-      </section>
-
-      <!-- ========== CORE VALUES SECTION ========== -->
-      <section class="values-section" aria-labelledby="values-heading">
-        <div class="container">
-          <div class="values-header-area">
-            <span class="values-badge">Core Values</span>
-            <h2 class="values-title" id="values-heading">
-              What We<br />Believe In
-            </h2>
-          </div>
-
-          <div class="values-intro">
-            <p class="values-intro-text">
-              We believe in people, we believe in success and we believe in hard
-              work paying off. We believe that technology evolves in order to
-              serve people, so we use our expertise to aid aspirants in terms of
-              reaching their full potentials in timely ways.
-            </p>
-          </div>
-
-          <div class="values-grid">
-            <div class="value-card">
-              <div class="value-number" aria-hidden="true">01</div>
-              <h3 class="value-title">People First</h3>
-              <p class="value-description">
-                At our core, we believe in the potential of every individual. We
-                prioritize human connection, growth, and well-being in
-                everything we do.
-              </p>
-            </div>
-
-            <div class="value-card">
-              <div class="value-number" aria-hidden="true">02</div>
-              <h3 class="value-title">Success Driven</h3>
-              <p class="value-description">
-                We are committed to delivering meaningful results. Success isn't
-                just a destination—it's a journey we undertake together with our
-                partners.
-              </p>
-            </div>
-
-            <div class="value-card">
-              <div class="value-number" aria-hidden="true">03</div>
-              <h3 class="value-title">Hardwork & Dedication</h3>
-              <p class="value-description">
-                We believe hard work pays off. Excellence demands commitment,
-                and we invest the time and effort to exceed expectations
-                consistently.
-              </p>
-            </div>
-
-            <div class="value-card">
-              <div class="value-number" aria-hidden="true">04</div>
-              <h3 class="value-title">Technology for Good</h3>
-              <p class="value-description">
-                We leverage cutting-edge technology as a tool to serve humanity.
-                Innovation means nothing if it doesn't improve people's lives
-                and unlock potential.
-              </p>
-            </div>
+          <h2 class="home-cta-title" id="home-cta-h">Contact Us</h2>
+          <div class="home-cta-actions">
+            <a href="contact.html" class="btn btn-brand">Start a conversation</a>
+            <a href="about.html" class="home-cta-link">
+              Learn more about us
+              <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </a>
           </div>
         </div>
       </section>
@@ -603,7 +496,7 @@
 
       document
         .querySelectorAll(
-          ".vision-item, .service-card, .mission-pillar, .value-card",
+          ".vision-item, .service-card",
         )
         .forEach((el) => scrollObserver.observe(el));
 
