@@ -211,6 +211,14 @@
 .form-subtitle {
   font-size: var(--font-size-sm);
   color: var(--color-gray-400);
+  margin-bottom: 8px;
+}
+
+.form-job-info {
+  font-size: 0.95rem;
+  color: var(--color-gray-600);
+  margin-top: 12px;
+  margin-bottom: 18px;
 }
 
 /* Two-column row */
