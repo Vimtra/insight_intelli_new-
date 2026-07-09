@@ -8,13 +8,49 @@
 /* -------------------------------------------------------
    Hero / Page Header
    ------------------------------------------------------- */
+/* ===== HERO — two-column: copy + communication network ===== */
 .contact-hero {
   position: relative;
   margin-top: 140px;
-  padding: 72px 0 64px;
-  background: linear-gradient(180deg, #ffffff 0%, #f7f8fb 100%);
+  padding: 84px 0 76px;
+  overflow: hidden;
+  background:
+    radial-gradient(70% 120% at 90% 0%, rgba(255, 106, 0, 0.05) 0%, transparent 54%),
+    linear-gradient(180deg, #ffffff 0%, #f7f8fb 100%);
   border-bottom: 1px solid rgba(14, 19, 32, 0.06);
 }
+
+.contact-hero-orb {
+  position: absolute;
+  top: -12%;
+  right: -6%;
+  width: 46%;
+  height: 130%;
+  background: radial-gradient(circle at 60% 44%, rgba(255, 106, 0, 0.13), transparent 60%);
+  filter: blur(12px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
+  align-items: center;
+  gap: clamp(32px, 4vw, 64px);
+}
+
+.contact-hero-content { min-width: 0; }
+.contact-hero-content > * {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: ctHeroIn 0.8s var(--ease-out) forwards;
+}
+.contact-hero-content > *:nth-child(1) { animation-delay: 0.05s; }
+.contact-hero-content > *:nth-child(2) { animation-delay: 0.12s; }
+.contact-hero-content > *:nth-child(3) { animation-delay: 0.19s; }
+@keyframes ctHeroIn { to { opacity: 1; transform: none; } }
 
 .contact-eyebrow {
   font-family: var(--font-family-display);
@@ -28,13 +64,138 @@
 }
 
 .contact-hero-title {
-  font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+  font-size: clamp(2.25rem, 4.6vw, 3.5rem);
   font-weight: 800;
   color: var(--color-gray-900);
-  line-height: 1.1;
+  line-height: 1.06;
   letter-spacing: var(--tracking-display);
-  margin: 0 0 16px;
-  max-width: 18ch;
+  margin: 0 0 18px;
+  max-width: 14ch;
+}
+
+.contact-hero-sub {
+  font-size: clamp(1.0625rem, 1.25vw, 1.1875rem);
+  line-height: 1.62;
+  color: var(--color-gray-500);
+  margin: 0;
+  max-width: 44ch;
+}
+
+/* --- Right visual: communication pathways --- */
+.contact-hero-visual {
+  position: relative;
+  min-height: clamp(320px, 32vw, 440px);
+  pointer-events: none;
+}
+.contact-comm { position: absolute; inset: 0; }
+
+.contact-comm-panel {
+  position: absolute;
+  border-radius: 20px 20px 20px 6px;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.72), rgba(247, 248, 251, 0.24));
+  border: 1px solid rgba(14, 19, 32, 0.07);
+  box-shadow: 0 24px 58px rgba(14, 19, 32, 0.08);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  pointer-events: none;
+  z-index: 0;
+}
+.contact-comm-panel--a { top: 12%; left: 16%; width: 46%; height: 30%; transform: rotate(-3deg); }
+.contact-comm-panel--b { bottom: 12%; right: 12%; width: 42%; height: 28%; border-radius: 20px 20px 6px 20px; transform: rotate(3deg); }
+
+.contact-comm-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  z-index: 1;
+}
+.contact-comm-lines line {
+  stroke-dasharray: 4 6;
+  animation: ctDash 16s linear infinite;
+}
+@keyframes ctDash { to { stroke-dashoffset: -200; } }
+
+.contact-node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(14, 19, 32, 0.08);
+  box-shadow: 0 12px 28px rgba(14, 19, 32, 0.1);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  z-index: 2;
+  animation: ctFloat 6.5s ease-in-out infinite;
+}
+.contact-node i { line-height: 1; color: var(--color-brand); }
+
+.contact-node--hub {
+  left: 56%;
+  top: 50%;
+  width: 78px;
+  height: 78px;
+  font-size: 1.65rem;
+  color: #fff;
+  background: linear-gradient(150deg, var(--color-brand), var(--color-brand-dark));
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 16px 42px rgba(255, 106, 0, 0.34);
+  z-index: 3;
+  animation: ctHubPulse 4s ease-in-out infinite;
+}
+.contact-node--hub i { color: #fff; }
+
+.contact-node--n1, .contact-node--n2, .contact-node--n3, .contact-node--n4 {
+  width: 50px;
+  height: 50px;
+  font-size: 1.1rem;
+}
+.contact-node--n1 { left: 22%; top: 24%; animation-delay: -1s; }
+.contact-node--n2 { left: 82%; top: 28%; animation-delay: -2.5s; }
+.contact-node--n3 { left: 24%; top: 76%; animation-delay: -4s; }
+.contact-node--n4 { left: 82%; top: 72%; animation-delay: -5.5s; }
+
+@keyframes ctFloat {
+  0%, 100% { transform: translate(-50%, -50%); }
+  50% { transform: translate(-50%, calc(-50% - 6px)); }
+}
+@keyframes ctHubPulse {
+  0%, 100% { box-shadow: 0 16px 42px rgba(255, 106, 0, 0.34); }
+  50% { box-shadow: 0 18px 56px rgba(255, 106, 0, 0.5); }
+}
+
+/* --- Hero responsive --- */
+@media (max-width: 991px) {
+  .contact-hero-grid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: clamp(24px, 3vw, 40px);
+  }
+  .contact-hero-visual { min-height: 340px; }
+}
+@media (max-width: 767.98px) {
+  .contact-hero-grid { grid-template-columns: 1fr; gap: 36px; }
+  .contact-hero-title { max-width: 18ch; }
+  .contact-hero-visual {
+    width: 100%;
+    max-width: 420px;
+    margin-inline: auto;
+    min-height: 300px;
+  }
+}
+@media (max-width: 575px) {
+  .contact-hero-visual { min-height: 250px; }
+  .contact-comm-panel { display: none; }
+  .contact-node--hub { width: 64px; height: 64px; font-size: 1.4rem; }
+  .contact-node--n1, .contact-node--n2, .contact-node--n3, .contact-node--n4 { width: 44px; height: 44px; font-size: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-hero-content > * { animation: none; opacity: 1; transform: none; }
+  .contact-node, .contact-comm-lines line { animation: none; }
 }
 
 
@@ -480,7 +641,7 @@
    ------------------------------------------------------- */
 @media (max-width: 991.98px) {
   .contact-hero {
-    padding: 96px 0 56px;
+    padding: 72px 0 56px;
   }
 
   .contact-grid {
@@ -503,7 +664,7 @@
 
 @media (max-width: 575.98px) {
   .contact-hero {
-    padding: 88px 0 48px;
+    padding: 56px 0 48px;
   }
 
   .form-row {

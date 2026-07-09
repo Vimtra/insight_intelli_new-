@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -77,7 +77,7 @@
           "@type": "ContactPoint",
           "telephone": "+1-510-462-1236",
           "contactType": "customer service",
-          "email": "care@insightintelli.com"
+          "email": "admin@insightintelli.com"
         },
         "sameAs": [
           "https://www.linkedin.com/company/insightintelli-inc./",
@@ -102,13 +102,13 @@
               <i class="bi bi-telephone-fill"></i>
               +1 510 462 1236
             </a>
-            <a href="mailto:care@insightintelli.com" class="top-bar-link">
+            <a href="mailto:admin@insightintelli.com" class="top-bar-link">
               <i class="bi bi-envelope-fill" aria-hidden="true"></i>
-              care@insightintelli.com
+              admin@insightintelli.com
             </a>
             <div class="top-bar-link">
               <i class="bi bi-geo-alt-fill"></i>
-              1909 J N Pease Place, Suite 103, Charlotte NC â€“ 28262
+              1909 J N Pease Place, Suite 103, Charlotte NC &ndash; 28262
             </div>
           </div>
         </div>
@@ -170,23 +170,54 @@
     <main id="main-content">
       <!-- ========== HERO ========== -->
       <section class="cr-hero" aria-labelledby="cr-hero-h">
+        <span class="cr-hero-orb" aria-hidden="true"></span>
         <div class="container">
-          <div class="cr-hero-inner">
-            <p class="cr-eyebrow">Careers</p>
-            <h1 class="cr-hero-title" id="cr-hero-h">
-              Grow your career with Insight Intelli.
-            </h1>
-            <p class="cr-hero-sub">
-              We connect the right talent with the right role across the USA and
-              India. Browse our open positions and apply in minutes &mdash; no
-              account, no hassle.
-            </p>
-            <div class="cr-hero-actions">
-              <a href="#apply" class="btn btn-brand" data-scroll>Apply now</a>
-              <a href="#openings" class="cr-btn-ghost" data-scroll>
-                View open roles
-                <i class="bi bi-arrow-down" aria-hidden="true"></i>
-              </a>
+          <div class="cr-hero-grid">
+            <div class="cr-hero-content">
+              <p class="cr-eyebrow">Careers</p>
+              <h1 class="cr-hero-title" id="cr-hero-h">
+                Grow your career with Insight Intelli.
+              </h1>
+              <p class="cr-hero-sub">
+                We connect the right talent with the right role across the USA and
+                India. Browse our open positions and apply in minutes &mdash; no
+                account, no hassle.
+              </p>
+              <div class="cr-hero-actions">
+                <a href="#apply" class="btn btn-brand" data-scroll>Apply now</a>
+                <a href="#openings" class="cr-btn-ghost" data-scroll>
+                  View open roles
+                  <i class="bi bi-arrow-down" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="cr-hero-visual" aria-hidden="true">
+              <div class="cr-climb">
+                <span class="cr-climb-bar cr-climb-bar--1"></span>
+                <span class="cr-climb-bar cr-climb-bar--2"></span>
+                <span class="cr-climb-bar cr-climb-bar--3"></span>
+                <span class="cr-climb-bar cr-climb-bar--4"></span>
+                <svg class="cr-climb-line" viewBox="0 0 100 100" preserveAspectRatio="none">
+                  <defs>
+                    <linearGradient id="crLine" x1="0" y1="1" x2="1" y2="0">
+                      <stop offset="0" stop-color="#ff6a00" stop-opacity="0.15" />
+                      <stop offset="1" stop-color="#ff6a00" stop-opacity="0.9" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M14 86 L40 64 L62 42 L86 18" fill="none"
+                        stroke="url(#crLine)" stroke-width="2"
+                        vector-effect="non-scaling-stroke"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <div class="cr-step cr-step--1"><i class="bi bi-send-fill" aria-hidden="true"></i></div>
+                <div class="cr-step cr-step--2"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i></div>
+                <div class="cr-step cr-step--3"><i class="bi bi-graph-up-arrow" aria-hidden="true"></i></div>
+                <div class="cr-step cr-step--4 cr-step--top">
+                  <i class="bi bi-trophy-fill" aria-hidden="true"></i>
+                  <span class="cr-step-flag">Grow with us</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -370,7 +401,7 @@
               </ul>
               <p class="cr-apply-contact">
                 Prefer email? Write to
-                <a href="mailto:care@insightintelli.com">care@insightintelli.com</a>
+                <a href="mailto:admin@insightintelli.com">admin@insightintelli.com</a>
               </p>
             </aside>
 
@@ -471,7 +502,7 @@
                 </div>
                 <div class="cr-form-msg is-error" id="applyError" role="alert" aria-live="assertive">
                   <i class="bi bi-exclamation-circle-fill" aria-hidden="true"></i>
-                  <span>Something went wrong. Please try again, or email care@insightintelli.com.</span>
+                  <span>Something went wrong. Please try again, or email admin@insightintelli.com.</span>
                 </div>
               </form>
             </div>
@@ -481,15 +512,22 @@
 
       <!-- ========== REFERRAL ========== -->
       <section class="cr-referral" aria-labelledby="cr-referral-h">
-        <div class="container cr-referral-row">
-          <h2 class="cr-referral-title" id="cr-referral-h">Employee referral policy</h2>
-          <p class="cr-referral-text">
-            Insight Intelli appreciates referrals from employees and trusted
-            partners. Refer qualified candidates for open roles and earn a
-            reward when the referral is hired.
-          </p>
+        <span class="cr-referral-glow" aria-hidden="true"></span>
+        <div class="container cr-referral-inner">
+          <header class="cr-referral-head">
+            <p class="cr-referral-eyebrow">Referrals</p>
+            <h2 class="cr-referral-title" id="cr-referral-h">Employee referral policy</h2>
+            <p class="cr-referral-text">
+              Insight Intelli appreciates referrals from employees and trusted
+              partners. Refer qualified candidates for open roles and earn a
+              reward when the referral is hired.
+            </p>
+          </header>
+
           <div class="cr-policy-grid">
             <article class="cr-policy-card cr-reveal">
+              <span class="cr-policy-icon" aria-hidden="true"><i class="bi bi-person-check-fill"></i></span>
+              <span class="cr-policy-num" aria-hidden="true">01</span>
               <h3>Who is eligible</h3>
               <p>
                 Current Insight Intelli employees, former employees, and trusted
@@ -498,6 +536,8 @@
               </p>
             </article>
             <article class="cr-policy-card cr-reveal">
+              <span class="cr-policy-icon" aria-hidden="true"><i class="bi bi-gift-fill"></i></span>
+              <span class="cr-policy-num" aria-hidden="true">02</span>
               <h3>Referral reward</h3>
               <p>
                 A referral bonus is payable after the referred candidate
@@ -506,17 +546,50 @@
               </p>
             </article>
             <article class="cr-policy-card cr-reveal">
+              <span class="cr-policy-icon" aria-hidden="true"><i class="bi bi-send-fill"></i></span>
+              <span class="cr-policy-num" aria-hidden="true">03</span>
               <h3>Submission process</h3>
               <p>
-                Use the application form above, choose “Employee referral”, and
-                share the candidate details along with your name as the
-                referring employee.
+                Email the candidate&rsquo;s r&eacute;sum&eacute; to
+                admin@insightintelli.com with their details and your name as the
+                referring employee &mdash; or apply through the form above.
               </p>
             </article>
           </div>
-          <button type="button" class="btn btn-brand cr-job-apply" data-job="Employee referral">Refer a candidate</button>
+
+          <div class="cr-referral-cta">
+            <a
+              href="mailto:admin@insightintelli.com?subject=Employee%20Referral&amp;body=Hi%20Insight%20Intelli%20team%2C%0D%0A%0D%0AI%20would%20like%20to%20refer%20a%20candidate%20for%20an%20open%20role.%20Please%20find%20their%20details%20below%20and%20the%20r%C3%A9sum%C3%A9%20attached%3A%0D%0A%0D%0ACandidate%20name%3A%0D%0ARole%20of%20interest%3A%0D%0ACandidate%20email%3A%0D%0ACandidate%20phone%3A%0D%0A%0D%0AReferred%20by%3A"
+              class="btn btn-brand cr-referral-btn"
+            >
+              <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+              Email your referral
+            </a>
+            <span class="cr-referral-note">
+              <i class="bi bi-paperclip" aria-hidden="true"></i>
+              Attach the candidate&rsquo;s r&eacute;sum&eacute; &middot; sent to admin@insightintelli.com
+            </span>
+          </div>
         </div>
       </section>
+      <!-- ========== JOB DESCRIPTION MODAL (content injected by JS) ========== -->
+      <div class="cr-modal" id="jdModal" hidden>
+        <div class="cr-modal-overlay" data-close></div>
+        <div class="cr-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="jdModalTitle">
+          <button type="button" class="cr-modal-close" aria-label="Close job description" data-close>
+            <i class="bi bi-x-lg" aria-hidden="true"></i>
+          </button>
+          <p class="cr-modal-tag" id="jdModalTag"></p>
+          <h2 class="cr-modal-title" id="jdModalTitle"></h2>
+          <dl class="cr-spec-grid" id="jdModalSpecs" hidden></dl>
+          <div class="cr-modal-section" id="jdModalOverview" hidden></div>
+          <div class="cr-modal-section" id="jdModalResp" hidden></div>
+          <div class="cr-modal-section" id="jdModalReq" hidden></div>
+          <button type="button" class="btn btn-brand cr-job-apply" id="jdModalApply">
+            Apply for this role
+          </button>
+        </div>
+      </div>
     </main>
 
     <!-- ========== FOOTER ========== -->
@@ -592,7 +665,7 @@
               <div class="footer-contact-item">
                 <i class="bi bi-geo-alt" aria-hidden="true"></i>
                 <span
-                  >1909 J N Pease Place, Suite 103, Charlotte NC â€“ 28262</span
+                  >1909 J N Pease Place, Suite 103, Charlotte NC &ndash; 28262</span
                 >
               </div>
               <div class="footer-contact-item">
@@ -601,8 +674,8 @@
               </div>
               <div class="footer-contact-item">
                 <i class="bi bi-envelope" aria-hidden="true"></i>
-                <a href="mailto:care@insightintelli.com"
-                  >care@insightintelli.com</a
+                <a href="mailto:admin@insightintelli.com"
+                  >admin@insightintelli.com</a
                 >
               </div>
             </div>
@@ -749,21 +822,325 @@
         }, 600);
       }
 
-      // Delegated apply clicks (grid cards, referral, JD panel)
+      /* =========================================================
+         Job descriptions — edit or extend these freely.
+         Keys must match each role's data-job value exactly.
+         ========================================================= */
+      const JOB_DESCRIPTIONS = {
+        "Software Developer – HTML, CSS, JavaScript": {
+          type: "Full-time", location: "United States",
+          summary: "Build and maintain responsive, accessible web interfaces that bring product designs to life across modern browsers and devices.",
+          responsibilities: [
+            "Develop responsive UI using semantic HTML, modern CSS, and vanilla JavaScript.",
+            "Translate designs and wireframes into pixel-accurate, cross-browser layouts.",
+            "Optimize pages for performance, accessibility (WCAG), and SEO.",
+            "Collaborate with designers and back-end developers to integrate APIs."
+          ],
+          requirements: [
+            "Strong hands-on experience with HTML5, CSS3, and JavaScript (ES6+).",
+            "Familiarity with responsive design, Flexbox/Grid, and browser dev tools.",
+            "Working knowledge of version control (Git) and basic build tooling.",
+            "Bachelor's degree in Computer Science or equivalent practical experience."
+          ]
+        },
+        "DevOps Engineer": {
+          type: "Full-time", location: "United States",
+          summary: "Automate build, release, and infrastructure workflows so teams can ship reliable software faster.",
+          responsibilities: [
+            "Design and maintain CI/CD pipelines for automated build, test, and deployment.",
+            "Provision and manage cloud infrastructure using infrastructure-as-code.",
+            "Monitor system health, set up alerting, and drive incident response.",
+            "Improve reliability, scalability, and security across environments."
+          ],
+          requirements: [
+            "Experience with AWS, Azure, or GCP and containers (Docker/Kubernetes).",
+            "Proficiency with CI/CD tools and scripting (Bash, Python, or similar).",
+            "Knowledge of IaC tools such as Terraform or CloudFormation.",
+            "Bachelor's degree in a relevant field or equivalent experience."
+          ]
+        },
+        "Software Developer – ETL": {
+          type: "Full-time", location: "United States",
+          summary: "Design and build data pipelines that extract, transform, and load data across systems for analytics and reporting.",
+          responsibilities: [
+            "Develop and maintain ETL workflows and data integration jobs.",
+            "Model, cleanse, and transform data from multiple source systems.",
+            "Tune queries and pipelines for performance and reliability.",
+            "Partner with analysts to deliver accurate, well-structured datasets."
+          ],
+          requirements: [
+            "Experience building ETL processes with relational databases and SQL.",
+            "Familiarity with data warehousing concepts and integration tools.",
+            "Strong attention to data quality, validation, and error handling.",
+            "Bachelor's degree in a relevant field or equivalent experience."
+          ]
+        },
+        "Business Systems Analyst": {
+          type: "Full-time", location: "United States",
+          summary: "Bridge business needs and technical delivery by gathering requirements and translating them into clear solutions.",
+          responsibilities: [
+            "Elicit, document, and prioritize business and functional requirements.",
+            "Map current-state processes and recommend improvements.",
+            "Create user stories, specifications, and acceptance criteria.",
+            "Coordinate with stakeholders, developers, and QA through delivery."
+          ],
+          requirements: [
+            "Proven experience in business/systems analysis on software projects.",
+            "Strong requirements-gathering, documentation, and communication skills.",
+            "Familiarity with Agile/Scrum and tools like Jira or Confluence.",
+            "Bachelor's degree in Business, IT, or a related field."
+          ]
+        },
+        "Software Developer – C#, .NET": {
+          type: "Full-time", location: "United States",
+          summary: "Build and maintain robust back-end services and applications on the .NET platform.",
+          responsibilities: [
+            "Develop applications and APIs using C# and .NET / .NET Core.",
+            "Design data models and integrate with SQL Server and external services.",
+            "Write unit tests and participate in code reviews.",
+            "Troubleshoot, debug, and optimize existing applications."
+          ],
+          requirements: [
+            "Solid experience with C#, .NET / .NET Core, and ASP.NET.",
+            "Knowledge of REST APIs, SQL, and object-oriented design.",
+            "Familiarity with Git and Agile development.",
+            "Bachelor's degree in Computer Science or equivalent experience."
+          ]
+        },
+        "Software Developer – Salesforce": {
+          type: "Full-time", location: "United States",
+          summary: "Customize and extend the Salesforce platform to support sales, service, and business operations.",
+          responsibilities: [
+            "Configure and customize Salesforce using flows, objects, and layouts.",
+            "Develop with Apex, Lightning Web Components, and Visualforce.",
+            "Integrate Salesforce with external systems via APIs.",
+            "Support deployments, data management, and admin best practices."
+          ],
+          requirements: [
+            "Hands-on Salesforce development experience (Apex, LWC).",
+            "Understanding of the Salesforce data model, security, and automation.",
+            "Salesforce certification (Admin or Platform Developer) is a plus.",
+            "Bachelor's degree in a relevant field or equivalent experience."
+          ]
+        },
+        "Software Developer – Splunk": {
+          type: "Full-time", location: "United States",
+          summary: "Build dashboards, alerts, and integrations on Splunk to turn machine data into operational insight.",
+          responsibilities: [
+            "Onboard and normalize data sources into Splunk.",
+            "Develop searches, dashboards, reports, and alerts using SPL.",
+            "Create and maintain apps, add-ons, and integrations.",
+            "Support monitoring, security, and observability use cases."
+          ],
+          requirements: [
+            "Experience with Splunk development and Search Processing Language (SPL).",
+            "Understanding of log management, parsing, and data onboarding.",
+            "Familiarity with scripting and regular expressions.",
+            "Bachelor's degree in a relevant field or equivalent experience."
+          ]
+        },
+        "Software Developer – Microsoft SharePoint Development": {
+          type: "Full-time", location: "United States",
+          summary: "Develop and customize SharePoint solutions that support collaboration, content, and workflows.",
+          responsibilities: [
+            "Build and customize SharePoint sites, lists, and libraries.",
+            "Develop web parts, workflows, and integrations (SPFx, Power Automate).",
+            "Migrate and manage content across SharePoint environments.",
+            "Support governance, permissions, and administration."
+          ],
+          requirements: [
+            "Experience with SharePoint Online / On-Prem development.",
+            "Familiarity with SPFx, Power Platform, and Microsoft 365.",
+            "Knowledge of JavaScript/TypeScript and REST APIs.",
+            "Bachelor's degree in a relevant field or equivalent experience."
+          ]
+        },
+        "Software Developer – Microsoft SQL Server": {
+          type: "Full-time", location: "United States",
+          summary: "Design, develop, and optimize databases and stored procedures on Microsoft SQL Server.",
+          responsibilities: [
+            "Design schemas and write stored procedures, functions, and views.",
+            "Optimize queries, indexes, and overall database performance.",
+            "Implement backup, recovery, and data integrity practices.",
+            "Support reporting and data integration needs."
+          ],
+          requirements: [
+            "Strong T-SQL and Microsoft SQL Server development experience.",
+            "Knowledge of performance tuning and database design.",
+            "Familiarity with SSIS/SSRS is a plus.",
+            "Bachelor's degree in a relevant field or equivalent experience."
+          ]
+        },
+        "Software Developer – Java and Android Application Development": {
+          type: "Full-time", location: "United States",
+          summary: "Build Java back-end services and native Android applications used by customers and internal teams.",
+          responsibilities: [
+            "Develop and maintain Android apps using Java/Kotlin and the Android SDK.",
+            "Build and integrate RESTful services and back-end logic in Java.",
+            "Optimize apps for performance, battery, and a range of devices.",
+            "Publish and maintain releases through the app lifecycle."
+          ],
+          requirements: [
+            "Experience with Java and Android application development.",
+            "Familiarity with REST APIs, SQLite, and the Android SDK.",
+            "Understanding of mobile UI/UX and Google Play guidelines.",
+            "Bachelor's degree in Computer Science or equivalent experience."
+          ]
+        },
+        "Systems Analyst": {
+          type: "Full-time", location: "United States",
+          summary: "Analyze, evaluate, and improve IT systems to keep business operations efficient and reliable.",
+          responsibilities: [
+            "Assess existing systems and identify opportunities for improvement.",
+            "Document requirements, workflows, and system specifications.",
+            "Coordinate testing, implementation, and user support.",
+            "Act as a liaison between business users and technical teams."
+          ],
+          requirements: [
+            "Experience analyzing and supporting IT systems.",
+            "Strong analytical, documentation, and problem-solving skills.",
+            "Familiarity with databases, reporting, and integration concepts.",
+            "Bachelor's degree in IT, Computer Science, or a related field."
+          ]
+        },
+        "Software Developer – Talend Development": {
+          flag: "Now hiring · 3 openings",
+          type: "Full-time · 40 hrs/week", location: "Charlotte, NC 28262",
+          compensation: "$154,669.00 / year", openings: "3", posted: "20 Aug 2025", travel: "Across the USA",
+          summary: "Develop software using Talend technologies, design ETL processes, and implement data integration solutions. Travel/relocation is required throughout the USA.",
+          responsibilities: [
+            "Develop software solutions using Talend technologies.",
+            "Design and build ETL processes for data integration.",
+            "Implement and maintain data integration solutions across systems.",
+            "Travel or relocate as required to project sites throughout the USA."
+          ],
+          requirements: [
+            "Master's degree in a relevant field with six months of experience, or a Bachelor's degree plus five years of progressive experience.",
+            "Six months of Talend Development experience is required.",
+            "Experience designing ETL processes and data integration solutions."
+          ]
+        },
+        "Systems Analyst – Computer Programming Tools": {
+          type: "Full-time", location: "United States",
+          summary: "Analyze and support the programming tools and environments that development teams rely on.",
+          responsibilities: [
+            "Evaluate, configure, and support development tools and environments.",
+            "Document standards, usage, and troubleshooting guides.",
+            "Assist developers with tooling, builds, and integrations.",
+            "Recommend improvements to developer workflows."
+          ],
+          requirements: [
+            "Experience with software development tools and environments.",
+            "Strong analytical and troubleshooting skills.",
+            "Familiarity with programming languages and build systems.",
+            "Bachelor's degree in a relevant field or equivalent experience."
+          ]
+        },
+        "Network Engineer": {
+          type: "Full-time", location: "United States",
+          summary: "Design, implement, and maintain reliable and secure network infrastructure.",
+          responsibilities: [
+            "Configure and maintain routers, switches, firewalls, and VPNs.",
+            "Monitor network performance and resolve connectivity issues.",
+            "Implement network security and access controls.",
+            "Document network architecture and support capacity planning."
+          ],
+          requirements: [
+            "Experience administering enterprise networks (LAN/WAN).",
+            "Knowledge of TCP/IP, routing, switching, and network security.",
+            "Certifications such as CCNA/CCNP are a plus.",
+            "Bachelor's degree in a relevant field or equivalent experience."
+          ]
+        }
+      };
+
+      // Job description modal
+      const jdModal = document.getElementById("jdModal");
+      let jdLastFocus = null;
+
+      function jdRenderSection(id, label, items) {
+        const el = document.getElementById(id);
+        if (!items || !items.length) { el.hidden = true; el.innerHTML = ""; return; }
+        el.hidden = false;
+        el.innerHTML = "<h4>" + label + "</h4><ul class=\"cr-jd-list\">" +
+          items.map((i) => "<li>" + i + "</li>").join("") + "</ul>";
+      }
+
+      function openJdModal(job) {
+        const d = JOB_DESCRIPTIONS[job];
+        if (!d || !jdModal) return;
+        jdLastFocus = document.activeElement;
+
+        document.getElementById("jdModalTitle").textContent = job;
+        document.getElementById("jdModalTag").textContent =
+          d.flag || [d.type, d.location].filter(Boolean).join(" · ");
+
+        const specEl = document.getElementById("jdModalSpecs");
+        if (d.compensation || d.openings || d.posted || d.travel) {
+          const specs = [
+            ["Type", d.type], ["Compensation", d.compensation], ["Openings", d.openings],
+            ["Posted", d.posted], ["Location", d.location], ["Travel", d.travel]
+          ].filter((s) => s[1]);
+          specEl.hidden = false;
+          specEl.innerHTML = specs.map((s) =>
+            "<div class=\"cr-spec\"><dt>" + s[0] + "</dt><dd>" + s[1] + "</dd></div>").join("");
+        } else {
+          specEl.hidden = true;
+          specEl.innerHTML = "";
+        }
+
+        const ov = document.getElementById("jdModalOverview");
+        if (d.summary) { ov.hidden = false; ov.innerHTML = "<h4>Role overview</h4><p>" + d.summary + "</p>"; }
+        else { ov.hidden = true; ov.innerHTML = ""; }
+
+        jdRenderSection("jdModalResp", "Key responsibilities", d.responsibilities);
+        jdRenderSection("jdModalReq", "Requirements", d.requirements);
+        document.getElementById("jdModalApply").dataset.job = job;
+
+        jdModal.hidden = false;
+        document.body.classList.add("cr-modal-open");
+        const dlg = jdModal.querySelector(".cr-modal-dialog");
+        if (dlg) dlg.scrollTop = 0;
+        const c = jdModal.querySelector(".cr-modal-close");
+        if (c) c.focus();
+      }
+
+      function closeJdModal(restore = true) {
+        if (!jdModal) return;
+        jdModal.hidden = true;
+        document.body.classList.remove("cr-modal-open");
+        if (restore && jdLastFocus) jdLastFocus.focus();
+      }
+
+      // Add a "Job description" button to every role that has a description
+      document.querySelectorAll("#jobGrid .cr-job[data-job]").forEach((card) => {
+        if (!JOB_DESCRIPTIONS[card.dataset.job]) return;
+        const applyBtn = card.querySelector(".cr-job-apply");
+        const view = document.createElement("button");
+        view.type = "button";
+        view.className = "cr-job-view";
+        view.setAttribute("aria-haspopup", "dialog");
+        view.innerHTML = "<i class=\"bi bi-file-text\" aria-hidden=\"true\"></i> Job description";
+        view.addEventListener("click", () => openJdModal(card.dataset.job));
+        card.insertBefore(view, applyBtn);
+      });
+
+      if (jdModal) {
+        jdModal.addEventListener("click", (e) => {
+          if (e.target.hasAttribute("data-close")) closeJdModal();
+        });
+      }
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && jdModal && !jdModal.hidden) closeJdModal();
+      });
+
+      // Delegated apply clicks (grid cards, referral, modal)
       document.addEventListener("click", (e) => {
         const btn = e.target.closest(".cr-job-apply");
         if (!btn) return;
         const card = btn.closest(".cr-job");
+        if (jdModal && !jdModal.hidden) closeJdModal(false);
         applyFor(btn.dataset.job || (card && card.dataset.job) || "");
-      });
-
-      // Expandable job description toggles
-      document.querySelectorAll(".cr-job-toggle").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const card = btn.closest(".cr-job");
-          const open = card.classList.toggle("is-open");
-          btn.setAttribute("aria-expanded", open ? "true" : "false");
-        });
       });
 
       // ========== SEARCH / FILTER ==========

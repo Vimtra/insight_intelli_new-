@@ -59,35 +59,65 @@
 .cr-hero {
   position: relative;
   margin-top: 140px;
-  padding: 72px 0 76px;
+  padding: 84px 0 80px;
   background:
-    radial-gradient(78% 60% at 100% 0%, rgba(255, 106, 0, 0.05) 0%, transparent 60%),
-    linear-gradient(180deg, #fafbfc 0%, #ffffff 70%);
+    radial-gradient(72% 110% at 90% 0%, rgba(255, 106, 0, 0.055) 0%, transparent 56%),
+    linear-gradient(180deg, #fafbfc 0%, #ffffff 72%);
   border-bottom: 1px solid rgba(14, 19, 32, 0.06);
   overflow: hidden;
 }
 
-.cr-hero-inner {
-  max-width: 760px;
+.cr-hero-orb {
+  position: absolute;
+  top: -12%;
+  right: -6%;
+  width: 46%;
+  height: 130%;
+  background: radial-gradient(circle at 60% 46%, rgba(255, 106, 0, 0.13), transparent 60%);
+  filter: blur(12px);
+  pointer-events: none;
+  z-index: 0;
 }
+
+.cr-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  align-items: center;
+  gap: clamp(32px, 4vw, 64px);
+}
+
+.cr-hero-content { min-width: 0; }
+.cr-hero-content > * {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: crHeroIn 0.8s var(--ease-out) forwards;
+}
+.cr-hero-content > *:nth-child(1) { animation-delay: 0.05s; }
+.cr-hero-content > *:nth-child(2) { animation-delay: 0.12s; }
+.cr-hero-content > *:nth-child(3) { animation-delay: 0.19s; }
+.cr-hero-content > *:nth-child(4) { animation-delay: 0.26s; }
+@keyframes crHeroIn { to { opacity: 1; transform: none; } }
 
 .cr-hero-title {
   font-family: var(--font-family-display);
-  font-size: clamp(2.25rem, 5.4vw, 3.75rem);
+  font-size: clamp(2.25rem, 4.6vw, 3.75rem);
   font-weight: 700;
   letter-spacing: -0.045em;
-  line-height: 1.04;
+  line-height: 1.03;
   color: var(--color-gray-900);
   margin: 0 0 22px;
+  max-width: 16ch;
   text-wrap: balance;
 }
 
 .cr-hero-sub {
   font-size: clamp(1.0625rem, 1.3vw, 1.1875rem);
-  line-height: 1.6;
+  line-height: 1.62;
   color: var(--color-gray-500);
   margin: 0 0 34px;
-  max-width: 56ch;
+  max-width: 46ch;
 }
 
 .cr-hero-actions {
@@ -96,6 +126,135 @@
   gap: 20px;
   flex-wrap: wrap;
   margin-bottom: 0;
+}
+
+/* --- Right visual: upward career journey --- */
+.cr-hero-visual {
+  position: relative;
+  min-height: clamp(340px, 34vw, 460px);
+  pointer-events: none;
+}
+.cr-climb { position: absolute; inset: 0; }
+
+.cr-climb-bar {
+  position: absolute;
+  bottom: 8%;
+  width: 12%;
+  border-radius: 10px 10px 4px 4px;
+  background: linear-gradient(180deg, rgba(255, 106, 0, 0.2), rgba(255, 106, 0, 0.04));
+  border: 1px solid rgba(255, 106, 0, 0.14);
+  pointer-events: none;
+  z-index: 0;
+}
+.cr-climb-bar--1 { left: 16%; height: 22%; }
+.cr-climb-bar--2 { left: 34%; height: 38%; }
+.cr-climb-bar--3 { left: 52%; height: 56%; }
+.cr-climb-bar--4 { left: 70%; height: 76%; }
+
+.cr-climb-line {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  z-index: 1;
+}
+.cr-climb-line path {
+  stroke-dasharray: 5 6;
+  animation: crClimbDash 15s linear infinite;
+}
+@keyframes crClimbDash { to { stroke-dashoffset: -180; } }
+
+.cr-step {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(14, 19, 32, 0.08);
+  box-shadow: 0 12px 26px rgba(14, 19, 32, 0.1);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: var(--color-brand);
+  font-size: 1.05rem;
+  z-index: 2;
+  animation: crStepFloat 6s ease-in-out infinite;
+}
+.cr-step--1 { left: 14%; top: 86%; animation-delay: -0.5s; }
+.cr-step--2 { left: 40%; top: 64%; animation-delay: -2s; }
+.cr-step--3 { left: 62%; top: 42%; animation-delay: -3.5s; }
+.cr-step--4 { left: 86%; top: 18%; }
+
+.cr-step--top {
+  width: 64px;
+  height: 64px;
+  font-size: 1.4rem;
+  color: #fff;
+  background: linear-gradient(150deg, var(--color-brand), var(--color-brand-dark));
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 16px 40px rgba(255, 106, 0, 0.34);
+  z-index: 3;
+  animation: crTopPulse 4s ease-in-out infinite;
+}
+.cr-step-flag {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-family: var(--font-family-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 106, 0, 0.2);
+  padding: 5px 11px;
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(14, 19, 32, 0.08);
+}
+
+@keyframes crStepFloat {
+  0%, 100% { transform: translate(-50%, -50%); }
+  50% { transform: translate(-50%, calc(-50% - 6px)); }
+}
+@keyframes crTopPulse {
+  0%, 100% { box-shadow: 0 16px 40px rgba(255, 106, 0, 0.34); }
+  50% { box-shadow: 0 18px 54px rgba(255, 106, 0, 0.5); }
+}
+
+/* --- Hero responsive --- */
+@media (max-width: 991px) {
+  .cr-hero-grid {
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+    gap: clamp(24px, 3vw, 40px);
+  }
+  .cr-hero-visual { min-height: 360px; }
+}
+@media (max-width: 767.98px) {
+  .cr-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .cr-hero-title { max-width: 20ch; }
+  .cr-hero-visual {
+    width: 100%;
+    max-width: 440px;
+    margin-inline: auto;
+    min-height: 320px;
+  }
+}
+@media (max-width: 575px) {
+  .cr-hero-visual { min-height: 268px; }
+  .cr-climb-bar { display: none; }
+  .cr-step--top { width: 56px; height: 56px; font-size: 1.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cr-hero-content > * { animation: none; opacity: 1; transform: none; }
+  .cr-step, .cr-climb-line path { animation: none; }
 }
 
 .cr-btn-ghost {
@@ -346,53 +505,160 @@
 }
 .cr-job-apply:hover i { transform: translateX(2px); }
 
-/* Expandable role (job description accordion) */
-.cr-job--jd {
-  flex-direction: column;
-  align-items: stretch;
-}
-.cr-job--jd .cr-job-row {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-
-.cr-job-toggle {
+/* "Job description" trigger button on a role */
+.cr-job-view {
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
   font-family: var(--font-family);
   font-size: 0.8125rem;
   font-weight: 600;
-  color: var(--color-brand);
+  color: var(--color-gray-600);
   background: none;
   border: none;
   cursor: pointer;
   padding: 8px 6px;
+  white-space: nowrap;
+  transition: color 0.2s var(--ease-out);
 }
-.cr-job-toggle i { transition: transform 0.3s var(--ease-out); }
-.cr-job--jd.is-open .cr-job-toggle i { transform: rotate(180deg); }
+.cr-job-view i { font-size: 0.9rem; }
+.cr-job-view:hover { color: var(--color-brand); }
 
-/* grid-rows trick animates auto height smoothly */
-.cr-job-detail {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.35s var(--ease-out);
+/* Job description modal */
+.cr-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
 }
-.cr-job--jd.is-open .cr-job-detail { grid-template-rows: 1fr; }
+.cr-modal[hidden] { display: none; }
 
-.cr-job-detail-inner {
-  overflow: hidden;
-  min-height: 0;
+.cr-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 18, 32, 0.68);
+  animation: crModalFade 0.25s var(--ease-out);
 }
-.cr-job-detail-inner > :first-child {
-  margin-top: 20px;
-  padding-top: 22px;
-  border-top: 1px solid rgba(14, 19, 32, 0.1);
+
+.cr-modal-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(680px, 100%);
+  max-height: 88vh;
+  overflow-y: auto;
+  background: var(--color-white);
+  border-radius: 18px;
+  padding: 40px 38px;
+  box-shadow: 0 40px 90px rgba(11, 18, 32, 0.32);
+  animation: crModalPop 0.3s var(--ease-out);
 }
-.cr-job-detail .cr-spec-grid { margin-top: 22px; }
-.cr-job-detail .btn-brand { margin-top: 8px; }
+
+.cr-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-gray-100);
+  color: var(--color-gray-700);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  transition: background 0.2s var(--ease-out), color 0.2s var(--ease-out);
+}
+.cr-modal-close:hover { background: var(--color-brand); color: #fff; }
+
+.cr-modal-title {
+  font-family: var(--font-family-display);
+  font-size: clamp(1.375rem, 2.4vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--color-gray-900);
+  margin: 0 0 26px;
+  padding-right: 44px;
+}
+.cr-modal .btn-brand { margin-top: 24px; }
+
+/* hidden must win over display:grid/flex inside the modal */
+.cr-modal [hidden] { display: none !important; }
+
+.cr-modal-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+  margin: 0 0 12px;
+}
+
+.cr-modal .cr-spec-grid { margin: 4px 0 4px; }
+
+.cr-modal-section { margin-top: 24px; }
+.cr-modal-section h4 {
+  font-family: var(--font-family-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gray-400);
+  margin: 0 0 12px;
+}
+.cr-modal-section p {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--color-gray-600);
+}
+
+.cr-jd-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cr-jd-list li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--color-gray-600);
+}
+.cr-jd-list li::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-brand);
+}
+
+body.cr-modal-open { overflow: hidden; }
+
+@keyframes crModalFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes crModalPop {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (max-width: 575px) {
+  .cr-modal { padding: 14px; }
+  .cr-modal-dialog { padding: 30px 22px; }
+}
 
 /* Empty state */
 .cr-empty {
@@ -714,53 +980,146 @@
    6. REFERRAL
    ======================================================= */
 .cr-referral {
-  padding: 76px 0;
-  background: var(--color-ink);
+  position: relative;
+  overflow: hidden;
+  padding: 84px 0;
+  background:
+    radial-gradient(58% 90% at 50% -12%, rgba(255, 106, 0, 0.16) 0%, transparent 60%),
+    var(--color-ink);
   color: var(--color-white);
   text-align: center;
 }
-.cr-referral-row { max-width: 780px; }
+.cr-referral-glow {
+  position: absolute;
+  left: 50%;
+  bottom: -42%;
+  width: 72%;
+  height: 82%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle at 50% 50%, rgba(91, 107, 240, 0.14), transparent 62%);
+  filter: blur(22px);
+  pointer-events: none;
+}
+.cr-referral-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 940px;
+}
+.cr-referral-head {
+  max-width: 620px;
+  margin: 0 auto 44px;
+}
+.cr-referral-eyebrow {
+  font-family: var(--font-family-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+  margin: 0 0 14px;
+  line-height: 1;
+}
 .cr-referral-title {
   font-family: var(--font-family-display);
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.625rem, 3.2vw, 2.25rem);
   font-weight: 700;
   letter-spacing: -0.03em;
+  line-height: 1.1;
   color: var(--color-white);
-  margin: 0 0 12px;
+  margin: 0 0 14px;
 }
 .cr-referral-text {
   font-size: 0.9375rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.65);
-  margin: 0 auto 32px;
-  max-width: 60ch;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.62);
+  margin: 0 auto;
+  max-width: 56ch;
 }
 .cr-policy-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
-  margin: 0 0 36px;
+  margin: 0 0 40px;
+  text-align: left;
 }
 .cr-policy-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 26px 24px;
-  text-align: left;
+  position: relative;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  padding: 30px 26px;
+  transition: transform 0.35s var(--ease-out), border-color 0.35s var(--ease-out),
+              background 0.35s var(--ease-out);
+}
+.cr-policy-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 106, 0, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+}
+.cr-policy-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  background: rgba(255, 106, 0, 0.14);
+  color: var(--color-brand);
+  font-size: 1.25rem;
+  margin-bottom: 18px;
+}
+.cr-policy-num {
+  position: absolute;
+  top: 28px;
+  right: 26px;
+  font-family: var(--font-family-display);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.26);
+  font-variant-numeric: tabular-nums;
 }
 .cr-policy-card h3 {
   font-family: var(--font-family-display);
-  font-size: 1rem;
+  font-size: 1.0625rem;
   font-weight: 700;
+  letter-spacing: -0.01em;
   color: var(--color-white);
-  margin: 0 0 12px;
+  margin: 0 0 10px;
 }
 .cr-policy-card p {
   margin: 0;
   font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.62);
+  color: rgba(255, 255, 255, 0.6);
   line-height: 1.7;
 }
+
+/* CTA — white pill, brand-orange label, opens a referral email */
+.cr-referral-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.cr-referral-btn.btn-brand {
+  background: #ffffff;
+  color: var(--color-brand);
+  font-weight: 700;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+}
+.cr-referral-btn.btn-brand:hover {
+  background: #ffffff;
+  color: var(--color-brand-dark);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
+}
+.cr-referral-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+.cr-referral-note i { color: var(--color-brand); }
 
 /* =======================================================
    7. RESPONSIVE
