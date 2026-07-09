@@ -140,13 +140,6 @@
   line-height: 1.62;
 }
 
-.pt-hero-actions {
-  display: inline-flex;
-  align-items: center;
-  gap: 28px;
-  flex-wrap: wrap;
-}
-
 /* --- Right visual: partnership network (hub + satellites) --- */
 .pt-hero-visual {
   position: relative;
@@ -264,64 +257,10 @@
   .pt-node, .pt-net-lines line { animation: none; }
 }
 
-/* --- Trusted-by logo teaser strip --- */
-.pt-hero-trust {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 24px 32px;
-  padding-top: 32px;
-  border-top: 1px solid rgba(14, 19, 32, 0.1);
-}
-
-.pt-trust-label {
-  margin: 0;
-  color: var(--color-gray-400);
-  font-family: var(--font-family-display);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  line-height: 1;
-  text-transform: uppercase;
-  flex-shrink: 0;
-}
-
-.pt-trust-logos {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 28px;
-}
-
-.pt-trust-logos img {
-  max-height: 26px;
-  width: auto;
-  object-fit: contain;
-  opacity: 0.75;
-  transition: opacity 0.25s var(--ease-out);
-}
-
-.pt-trust-logos img:hover { opacity: 1; }
-
-.pt-trust-more {
-  color: var(--color-gray-500);
-  font-size: 0.875rem;
-  font-weight: 600;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(14, 19, 32, 0.2);
-  padding-bottom: 2px;
-  transition: color 0.25s var(--ease-out), border-color 0.25s var(--ease-out);
-}
-
-.pt-trust-more:hover {
-  color: var(--color-brand);
-  border-color: var(--color-brand);
-}
-
 .pt-models,
 .pt-values,
 .pt-network {
-  padding: 88px 0;
+  padding: 56px 0;
   border-bottom: 1px solid rgba(14, 19, 32, 0.06);
 }
 
@@ -497,14 +436,10 @@
     padding: 72px 0 56px;
   }
 
-  .pt-hero-trust {
-    gap: 16px 24px;
-  }
-
   .pt-models,
   .pt-values,
   .pt-network {
-    padding: 72px 0;
+    padding: 48px 0;
   }
 
   .pt-models-grid {
@@ -528,12 +463,6 @@
     padding: 56px 0 48px;
   }
 
-  .pt-hero-trust {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .pt-hero-actions,
   .pt-cta-actions {
     flex-direction: column;
     align-items: stretch;
@@ -541,8 +470,6 @@
     width: 100%;
   }
 
-  .pt-hero-actions .btn-brand,
-  .pt-hero-actions .pt-link,
   .pt-cta-actions .btn-brand,
   .pt-cta-actions .pt-link {
     width: 100%;
