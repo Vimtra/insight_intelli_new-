@@ -309,7 +309,7 @@
    4. VALUES — numbered editorial grid (no cards)
    ======================================================= */
 .ab-values {
-  padding: 88px 0;
+  padding: 56px 0;
   background: var(--color-white);
   border-bottom: 1px solid rgba(14, 19, 32, 0.06);
 }
@@ -322,15 +322,15 @@
 }
 
 .ab-value {
-  padding: 44px 40px 44px 0;
+  padding: 20px 18px 20px 0;
   border-bottom: 1px solid rgba(14, 19, 32, 0.08);
   border-right: 1px solid rgba(14, 19, 32, 0.08);
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 8px;
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+  transform: translateY(8px);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
 }
 
 .ab-value.scroll-animate {
@@ -384,24 +384,24 @@
 }
 
 @media (max-width: 991px) {
-  .ab-values { padding: 72px 0; }
+  .ab-values { padding: 48px 0; }
 
   .ab-value:nth-child(2n) {
     padding-right: 0;
   }
   .ab-value:not(:nth-child(2n + 1)) {
-    padding-left: 32px;
+    padding-left: 20px;
   }
 }
 
 @media (max-width: 575px) {
-  .ab-values { padding: 56px 0; }
+  .ab-values { padding: 40px 0; }
   .ab-values-grid { grid-template-columns: 1fr; }
 
   .ab-value,
   .ab-value:nth-child(2n) {
     border-right: none;
-    padding: 32px 0;
+    padding: 16px 0;
   }
   .ab-value:not(:nth-child(2n + 1)),
   .ab-value:nth-child(2n + 1) {
