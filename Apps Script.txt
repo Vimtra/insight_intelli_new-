@@ -1,0 +1,400 @@
+/*  =============================================================================
+    INSIGHT INTELLI — Google Apps Script Web App
+    Handles Career applications + Contact messages coming from the website.
+      • Résumé file  ->  saved to a Google Drive folder
+      • Field data   ->  appended to a Google Sheet (acts as the "Excel" log)
+      • Notification ->  branded HTML email sent to the admin inbox
+    =============================================================================
+
+    ----------  ONE-TIME SETUP  ----------
+    1.  Create a Google Sheet. Copy its ID from the URL:
+        https://docs.google.com/spreadsheets/d/<<THIS_IS_THE_ID>>/edit
+        -> paste into SPREADSHEET_ID below.
+    2.  Create a Google Drive folder for résumés. Open it and copy the ID:
+        https://drive.google.com/drive/folders/<<THIS_IS_THE_ID>>
+        -> paste into DRIVE_FOLDER_ID below.
+    3.  In script.google.com, create a new project, paste ALL of this code.
+    4.  Run  testConfiguration  once and approve the permission prompts.
+    5.  Deploy ▸ New deployment ▸ type "Web app"
+          - Execute as:  Me
+          - Who has access:  Anyone
+        Copy the /exec Web app URL.
+    6.  Paste that URL into the website:
+          - careers.html  ->  const APPLICATION_ENDPOINT = "PASTE_URL_HERE";
+          - contact.html  ->  const CONTACT_ENDPOINT     = "PASTE_URL_HERE";
+    ============================================================================= */
+
+/* ----------  CONFIG  ---------- */
+const SPREADSHEET_ID   = "REPLACE_WITH_YOUR_GOOGLE_SHEET_ID";
+const DRIVE_FOLDER_ID  = "REPLACE_WITH_YOUR_DRIVE_FOLDER_ID";
+const NOTIFY_EMAIL     = "admin@insightintelli.com";   // where notifications are sent
+
+const CAREER_SHEET_NAME  = "Career Applications";
+const CONTACT_SHEET_NAME = "Contact Submissions";
+
+const CAREER_HEADERS  = ["Timestamp", "Position", "Full Name", "Email", "Phone",
+                         "LinkedIn / Portfolio", "Experience", "Message", "Résumé Link", "Source"];
+const CONTACT_HEADERS = ["Timestamp", "Full Name", "Email", "Phone", "Subject", "Message"];
+
+/* Brand tokens (match the website) */
+const BRAND      = "#ff6a00";
+const BRAND_DARK = "#c44f00";
+const INK        = "#0b1220";
+const COMPANY    = "Insight Intelli";
+
+const MAX_RESUME_BYTES = 5 * 1024 * 1024;   // 5 MB
+const EMAIL_RX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+/* =============================================================================
+   ROUTING
+   ============================================================================= */
+
+/** GET — simple health check so you can confirm the deployment works in a browser. */
+function doGet() {
+  return jsonOut_({
+    status: "online",
+    message: COMPANY + " form API is running",
+    forms: ["career", "contact"],
+    timestamp: new Date().toISOString()
+  });
+}
+
+/** POST — routes to the right handler based on formType (with a safe fallback). */
+function doPost(e) {
+  const lock = LockService.getScriptLock();
+  try {
+    lock.tryLock(15000);
+    const p = (e && e.parameter) || {};
+    const type = String(p.formType || "").toLowerCase();
+
+    if (type === "career"  || (p.position && p.resumeBase64)) return handleCareer(e);
+    if (type === "contact" || (p.message && !p.position))     return handleContact(e);
+
+    return jsonOut_({ status: "error", message: "Unable to determine form type." });
+  } catch (err) {
+    return jsonOut_({ status: "error", message: err.message });
+  } finally {
+    if (lock.hasLock()) lock.releaseLock();
+  }
+}
+
+/* =============================================================================
+   CAREER APPLICATION
+   ============================================================================= */
+function handleCareer(e) {
+  const p = (e && e.parameter) || {};
+  try {
+    const position   = String(p.position   || "").trim();
+    const fullName   = String(p.fullName   || "").trim();
+    const email      = String(p.email      || "").trim();
+    const phone      = String(p.phone      || "").trim();
+    const linkedin   = String(p.linkedin   || "").trim();
+    const experience = String(p.experience || "").trim();
+    const message    = String(p.message    || "").trim();
+    const source     = String(p.source     || "careers.html").trim();
+
+    const resumeB64  = p.resumeBase64 || "";
+    const resumeName = p.resumeName   || "resume.pdf";
+    const resumeType = p.resumeType   || "application/octet-stream";
+
+    /* --- validation --- */
+    if (!position)  throw new Error("Position is required.");
+    if (!fullName)  throw new Error("Full name is required.");
+    if (!email)     throw new Error("Email is required.");
+    if (!EMAIL_RX.test(email)) throw new Error("Invalid email address.");
+    if (!resumeB64) throw new Error("Résumé file is required.");
+
+    /* --- résumé -> Drive --- */
+    const resumeUrl = saveResume_(resumeB64, resumeType, resumeName, position, fullName);
+
+    /* --- data -> Sheet --- */
+    const row = {
+      Timestamp:  now_(),
+      Position:   position,
+      FullName:   fullName,
+      Email:      email,
+      Phone:      phone      || "N/A",
+      LinkedIn:   linkedin   || "N/A",
+      Experience: experience || "N/A",
+      Message:    message    || "N/A",
+      ResumeLink: resumeUrl,
+      Source:     source     || "N/A"
+    };
+    appendRow_(CAREER_SHEET_NAME, CAREER_HEADERS, [
+      row.Timestamp, row.Position, row.FullName, row.Email, row.Phone,
+      row.LinkedIn, row.Experience, row.Message, row.ResumeLink, row.Source
+    ]);
+
+    /* --- notify --- */
+    sendCareerEmail_(row);
+
+    return jsonOut_({ status: "success", message: "Application received", resumeUrl: resumeUrl });
+  } catch (err) {
+    sendErrorEmail_("Career application error", err, p);
+    return jsonOut_({ status: "error", message: err.message });
+  }
+}
+
+/* =============================================================================
+   CONTACT MESSAGE
+   ============================================================================= */
+function handleContact(e) {
+  const p = (e && e.parameter) || {};
+  try {
+    const fullName = String(p.fullName || p.name || "").trim();
+    const email    = String(p.email    || "").trim();
+    const phone    = String(p.phone    || "").trim();
+    const subject  = String(p.subject  || "").trim();
+    const message  = String(p.message  || "").trim();
+
+    /* --- validation --- */
+    if (!fullName) throw new Error("Full name is required.");
+    if (!email)    throw new Error("Email is required.");
+    if (!EMAIL_RX.test(email)) throw new Error("Invalid email address.");
+    if (!message)  throw new Error("Message is required.");
+
+    const row = {
+      Timestamp: now_(),
+      FullName:  fullName,
+      Email:     email,
+      Phone:     phone   || "N/A",
+      Subject:   subject || "N/A",
+      Message:   message
+    };
+    appendRow_(CONTACT_SHEET_NAME, CONTACT_HEADERS, [
+      row.Timestamp, row.FullName, row.Email, row.Phone, row.Subject, row.Message
+    ]);
+
+    sendContactEmail_(row);
+
+    return jsonOut_({ status: "success", message: "Message received" });
+  } catch (err) {
+    sendErrorEmail_("Contact form error", err, p);
+    return jsonOut_({ status: "error", message: err.message });
+  }
+}
+
+/* =============================================================================
+   HELPERS — Drive + Sheet
+   ============================================================================= */
+
+function saveResume_(base64, mime, name, position, applicant) {
+  const bytes = Utilities.base64Decode(base64);
+  if (bytes.length > MAX_RESUME_BYTES) throw new Error("Résumé exceeds the 5 MB limit.");
+
+  const blob   = Utilities.newBlob(bytes, mime, name);
+  const folder = DriveApp.getFolderById(DRIVE_FOLDER_ID);
+  const ext    = (String(name).split(".").pop() || "pdf").toLowerCase();
+  const stamp  = Utilities.formatDate(new Date(), Session.getScriptTimeZone(), "yyyyMMdd_HHmmss");
+
+  const file = folder.createFile(blob);
+  file.setName(safe_(position) + "_" + safe_(applicant) + "_" + stamp + "." + ext);
+  try {
+    file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+  } catch (shareErr) {
+    Logger.log("Sharing not set (shared-drive limitation): " + shareErr.message);
+  }
+  return file.getUrl();
+}
+
+function appendRow_(sheetName, headers, values) {
+  const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
+  let sheet = ss.getSheetByName(sheetName) || ss.insertSheet(sheetName);
+
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow(headers);
+    sheet.getRange(1, 1, 1, headers.length)
+         .setFontWeight("bold")
+         .setBackground(BRAND)
+         .setFontColor("#ffffff")
+         .setVerticalAlignment("middle");
+    sheet.setFrozenRows(1);
+    headers.forEach(function (h, i) {
+      const wide = /link|message|email/i.test(h);
+      sheet.setColumnWidth(i + 1, wide ? 320 : 150);
+    });
+  }
+  sheet.appendRow(values);
+  SpreadsheetApp.flush();
+}
+
+function safe_(s) {
+  return String(s || "").replace(/[^a-zA-Z0-9]+/g, "_").replace(/^_+|_+$/g, "").substring(0, 40) || "NA";
+}
+
+function now_() {
+  return Utilities.formatDate(new Date(), Session.getScriptTimeZone(), "MM/dd/yyyy HH:mm:ss");
+}
+
+function jsonOut_(obj) {
+  return ContentService.createTextOutput(JSON.stringify(obj)).setMimeType(ContentService.MimeType.JSON);
+}
+
+/* =============================================================================
+   EMAIL — modern, brand-themed templates
+   ============================================================================= */
+
+function emailShell_(headerTitle, headerSub, bodyHtml) {
+  return '' +
+  '<!DOCTYPE html><html><head><meta charset="UTF-8">' +
+  '<meta name="viewport" content="width=device-width, initial-scale=1.0"></head>' +
+  '<body style="margin:0;padding:0;background:#eef1f6;font-family:\'Segoe UI\',Roboto,Helvetica,Arial,sans-serif;">' +
+    '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#eef1f6;padding:32px 16px;"><tr><td align="center">' +
+      '<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(11,18,32,0.10);">' +
+        '<tr><td style="background:linear-gradient(135deg,' + BRAND + ' 0%,' + BRAND_DARK + ' 100%);padding:34px 40px;text-align:center;">' +
+          '<h1 style="margin:0;color:#ffffff;font-size:23px;font-weight:800;letter-spacing:-0.3px;">' + headerTitle + '</h1>' +
+          '<p style="margin:8px 0 0;color:rgba(255,255,255,0.9);font-size:13px;">' + headerSub + '</p>' +
+        '</td></tr>' +
+        '<tr><td style="padding:34px 40px;">' + bodyHtml + '</td></tr>' +
+        '<tr><td style="background:' + INK + ';padding:22px 40px;text-align:center;">' +
+          '<p style="margin:0 0 6px;color:#ffffff;font-size:13px;font-weight:700;">' + COMPANY + '</p>' +
+          '<p style="margin:0;color:rgba(255,255,255,0.55);font-size:11px;">Automated notification · please do not reply</p>' +
+        '</td></tr>' +
+      '</table>' +
+    '</td></tr></table>' +
+  '</body></html>';
+}
+
+function banner_(label, value) {
+  return '<div style="background:linear-gradient(135deg,' + BRAND + ' 0%,' + BRAND_DARK + ' 100%);border-radius:12px;padding:18px 22px;margin:0 0 26px;">' +
+    '<p style="margin:0;color:rgba(255,255,255,0.85);font-size:11px;text-transform:uppercase;letter-spacing:1.4px;font-weight:700;">' + label + '</p>' +
+    '<p style="margin:6px 0 0;color:#ffffff;font-size:19px;font-weight:800;">' + esc_(value) + '</p></div>';
+}
+
+function sectionTitle_(t) {
+  return '<div style="border-left:3px solid ' + BRAND + ';padding-left:14px;margin:0 0 16px;">' +
+    '<h3 style="margin:0;color:' + INK + ';font-size:16px;font-weight:800;">' + t + '</h3></div>';
+}
+
+function detailsTable_(rows) {
+  const body = rows.filter(function (r) { return r.value && r.value !== "N/A"; }).map(function (r, i, arr) {
+    const border = i < arr.length - 1 ? "border-bottom:1px solid #eef1f6;" : "";
+    let val;
+    if (r.type === "email")     val = '<a href="mailto:' + esc_(r.value) + '" style="color:' + BRAND + ';text-decoration:none;font-weight:600;">' + esc_(r.value) + '</a>';
+    else if (r.type === "phone") val = '<a href="tel:' + esc_(r.value) + '" style="color:' + BRAND + ';text-decoration:none;font-weight:600;">' + esc_(r.value) + '</a>';
+    else if (r.type === "url")   val = '<a href="' + esc_(r.value) + '" target="_blank" style="color:' + BRAND + ';text-decoration:none;font-weight:600;word-break:break-all;">' + esc_(r.value) + '</a>';
+    else                         val = '<span style="color:' + INK + ';font-weight:600;">' + esc_(r.value) + '</span>';
+    return '<tr><td style="padding:14px 18px;' + border + '"><table width="100%"><tr>' +
+      '<td style="width:38%;color:#5f6877;font-size:13px;font-weight:600;">' + r.label + '</td>' +
+      '<td style="text-align:right;font-size:14px;">' + val + '</td></tr></table></td></tr>';
+  }).join("");
+  return '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f7f8fb;border:1px solid #eef1f6;border-radius:12px;overflow:hidden;">' + body + '</table>';
+}
+
+function messageBox_(label, text) {
+  return '<div style="background:#fff7f1;border:1px solid #ffd9bd;border-left:3px solid ' + BRAND + ';border-radius:12px;padding:18px 20px;margin:26px 0 0;">' +
+    '<p style="margin:0 0 10px;color:' + BRAND_DARK + ';font-size:11px;text-transform:uppercase;letter-spacing:1px;font-weight:700;">' + label + '</p>' +
+    '<p style="margin:0;color:#2d3340;white-space:pre-wrap;line-height:1.7;font-size:14px;">' + esc_(text) + '</p></div>';
+}
+
+function primaryBtn_(href, text) {
+  return '<div style="text-align:center;margin-top:28px;"><a href="' + href + '" target="_blank" ' +
+    'style="display:inline-block;background:linear-gradient(135deg,' + BRAND + ' 0%,' + BRAND_DARK + ' 100%);color:#ffffff;padding:13px 32px;text-decoration:none;border-radius:999px;font-weight:700;font-size:14px;">' + text + '</a></div>';
+}
+
+function esc_(s) {
+  return String(s == null ? "" : s)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
+function sendCareerEmail_(d) {
+  const body =
+    banner_("Position applied for", d.Position) +
+    sectionTitle_("Applicant details") +
+    detailsTable_([
+      { label: "Full name",           value: d.FullName },
+      { label: "Email",               value: d.Email,      type: "email" },
+      { label: "Phone",               value: d.Phone,      type: "phone" },
+      { label: "Experience",          value: d.Experience },
+      { label: "LinkedIn / Portfolio",value: d.LinkedIn,   type: "url" },
+      { label: "Source",              value: d.Source },
+      { label: "Applied",             value: d.Timestamp }
+    ]) +
+    (d.Message && d.Message !== "N/A" ? messageBox_("Candidate note", d.Message) : "") +
+    primaryBtn_(d.ResumeLink, "View résumé");
+
+  MailApp.sendEmail({
+    to: NOTIFY_EMAIL,
+    subject: "New job application: " + d.Position + " — " + d.FullName,
+    htmlBody: emailShell_("New Job Application", COMPANY + " · Careers", body),
+    replyTo: d.Email
+  });
+}
+
+function sendContactEmail_(d) {
+  const body =
+    sectionTitle_("Contact details") +
+    detailsTable_([
+      { label: "Name",     value: d.FullName },
+      { label: "Email",    value: d.Email,   type: "email" },
+      { label: "Phone",    value: d.Phone,   type: "phone" },
+      { label: "Subject",  value: d.Subject },
+      { label: "Received", value: d.Timestamp }
+    ]) +
+    messageBox_("Message", d.Message) +
+    primaryBtn_("mailto:" + d.Email + "?subject=Re: " + encodeURIComponent(d.Subject === "N/A" ? "Your message" : d.Subject), "Reply via email");
+
+  MailApp.sendEmail({
+    to: NOTIFY_EMAIL,
+    subject: "New contact message from " + d.FullName,
+    htmlBody: emailShell_("New Contact Message", COMPANY + " · Contact form", body),
+    replyTo: d.Email
+  });
+}
+
+function sendErrorEmail_(subject, err, p) {
+  try {
+    MailApp.sendEmail({
+      to: NOTIFY_EMAIL,
+      subject: COMPANY + " — " + subject,
+      body: "A submission failed.\n\n" +
+            "Error: " + (err && err.message) + "\n" +
+            "Name:  " + (p.fullName || p.name || "Unknown") + "\n" +
+            "Email: " + (p.email || "Unknown") + "\n" +
+            "Time:  " + new Date().toISOString()
+    });
+  } catch (mailErr) {
+    Logger.log("Failed to send error email: " + mailErr.message);
+  }
+}
+
+/* =============================================================================
+   TEST UTILITIES  (run manually from the Apps Script editor)
+   ============================================================================= */
+
+function testConfiguration() {
+  Logger.log("Sheet:  " + SpreadsheetApp.openById(SPREADSHEET_ID).getName());
+  Logger.log("Folder: " + DriveApp.getFolderById(DRIVE_FOLDER_ID).getName());
+  Logger.log("Notify: " + NOTIFY_EMAIL);
+  Logger.log("Configuration OK.");
+}
+
+function testCareerSubmission() {
+  const out = handleCareer({ parameter: {
+    formType: "career",
+    position: "DevOps Engineer",
+    fullName: "Test Applicant",
+    email: "test.applicant@example.com",
+    phone: "+1 555 0100",
+    linkedin: "https://linkedin.com/in/test",
+    experience: "3–5 years",
+    message: "Sample application from testCareerSubmission().",
+    source: "test",
+    resumeBase64: Utilities.base64Encode("Sample resume content"),
+    resumeName: "test_resume.pdf",
+    resumeType: "application/pdf"
+  }});
+  Logger.log(out.getContent());
+}
+
+function testContactSubmission() {
+  const out = handleContact({ parameter: {
+    formType: "contact",
+    fullName: "Test Visitor",
+    email: "test.visitor@example.com",
+    phone: "+1 555 0199",
+    subject: "General enquiry",
+    message: "Sample message from testContactSubmission()."
+  }});
+  Logger.log(out.getContent());
+}

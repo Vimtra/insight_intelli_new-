@@ -589,6 +589,13 @@
   display: flex;
 }
 
+/* Error variant */
+.form-toast.is-error {
+  background: #fef2f2;
+  border-color: #fca5a5;
+  color: #b91c1c;
+}
+
 /* -------------------------------------------------------
    Map section — kept small/secondary, not the page focus
    ------------------------------------------------------- */
