@@ -196,13 +196,10 @@
                 and India. Browse our open positions and apply in minutes
                 &mdash; no account, no hassle.
               </p>
-              <div class="cr-hero-actions">
-                <a href="#apply" class="btn btn-brand" data-scroll>Apply now</a>
-                <a href="#openings" class="cr-btn-ghost" data-scroll>
-                  View open roles
-                  <i class="bi bi-arrow-down" aria-hidden="true"></i>
-                </a>
-              </div>
+              <p class="cr-hero-sub" style="margin-top: 16px; font-size: 0.95rem; opacity: 0.85;">
+                <strong>Note:</strong> Current Job Postings and Openings can be obtained by contacting HR directly.
+              </p>
+
             </div>
 
             <div class="cr-hero-visual" aria-hidden="true">
@@ -264,6 +261,7 @@
         class="cr-positions"
         id="openings"
         aria-labelledby="cr-positions-h"
+        hidden
       >
         <div class="container">
           <header class="cr-section-head cr-reveal">
@@ -581,21 +579,18 @@
                   class="field-group field-select-group full"
                   id="fg-position"
                   style="margin-bottom: 18px"
+                  hidden
                 >
                   <select
                     id="position"
                     name="position"
                     class="field-select"
-                    required
-                    aria-required="true"
                     aria-describedby="position-error"
                   >
-                    <option value="" disabled selected hidden>
-                      Select a position…
-                    </option>
+                    <option value="" disabled hidden>Select a position…</option>
                     <!-- role options injected by JS -->
                     <option value="Employee referral">Employee referral</option>
-                    <option value="General / open application">
+                    <option value="General / open application" selected>
                       General / open application
                     </option>
                   </select>
@@ -798,7 +793,7 @@
       </section>
 
       <!-- ========== REFERRAL ========== -->
-      <section class="cr-referral" aria-labelledby="cr-referral-h">
+      <section class="cr-referral" aria-labelledby="cr-referral-h" hidden>
         <span class="cr-referral-glow" aria-hidden="true"></span>
         <div class="container cr-referral-inner">
           <header class="cr-referral-head">
