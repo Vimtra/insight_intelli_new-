@@ -278,7 +278,7 @@
 .pt-model {
   display: flex;
   flex-direction: column;
-  padding: 48px 40px;
+  padding: 34px 40px;
   border: 1px solid rgba(14, 19, 32, 0.08);
   border-radius: 8px;
   background: var(--color-white);
@@ -293,8 +293,8 @@
 }
 
 .pt-model-kicker {
-  margin: 0 0 24px;
-  padding-bottom: 22px;
+  margin: 0 0 18px;
+  padding-bottom: 16px;
   border-bottom: 1px solid rgba(14, 19, 32, 0.06);
   color: var(--color-brand);
   font-family: var(--font-family-display);
@@ -306,7 +306,7 @@
 }
 
 .pt-model-title {
-  margin: 0 0 18px;
+  margin: 0 0 12px;
   color: var(--color-gray-900);
   font-family: var(--font-family-display);
   font-size: clamp(1.25rem, 1.7vw, 1.5rem);
@@ -316,7 +316,7 @@
 }
 
 .pt-model-desc {
-  margin: 0 0 28px;
+  margin: 0;
   color: var(--color-gray-500);
   font-size: 1rem;
   line-height: 1.7;
@@ -397,6 +397,60 @@
   max-width: 100%;
   max-height: 52px;
   object-fit: contain;
+}
+
+/* ---- Two-row partner logo marquee (opposite directions) ---- */
+.pt-marquee {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pt-marquee-row {
+  overflow: hidden;
+  /* soft edges so cards ease in/out instead of hard-popping */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+}
+
+.pt-marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  /* one full set width per loop -> constant speed on every screen size */
+  animation: ptMarquee 40s linear infinite;
+}
+
+/* Row 2 plays the same keyframe reversed -> moves left to right */
+.pt-marquee-row--right .pt-marquee-track {
+  animation-direction: reverse;
+}
+
+/* Pause both rows while hovering anywhere over the marquee */
+.pt-marquee:hover .pt-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes ptMarquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Cards inside the marquee: keep the existing card look, but fixed-width
+   and always visible (override the scroll-reveal used by the grid). One set
+   of 6 cards (6 x 226px = 1356px) is wider than the container, so the same
+   logo can never appear twice inside the viewport at once. */
+.pt-marquee .pt-logo {
+  flex: 0 0 auto;
+  width: 210px;
+  margin-right: 16px;
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
+.pt-marquee .pt-logo:hover {
+  transform: translateY(-2px);
 }
 
 .pt-cta {
@@ -487,7 +541,7 @@
   }
 
   .pt-section-head { margin-bottom: 48px; }
-  .pt-model { padding: 36px 28px; }
+  .pt-model { padding: 28px 26px; }
 
   .pt-value {
     grid-template-columns: 1fr;
@@ -515,5 +569,24 @@
   .pt-model:hover,
   .pt-logo:hover {
     transform: none;
+  }
+
+  /* Marquee: stop motion and lay logos out statically (no duplicates) */
+  .pt-marquee-track {
+    animation: none;
+    width: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .pt-marquee-row {
+    overflow: visible;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .pt-marquee .pt-logo {
+    margin: 0 8px 12px;
+  }
+  .pt-marquee .pt-logo--dup {
+    display: none;
   }
 }

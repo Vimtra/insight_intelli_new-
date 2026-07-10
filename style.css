@@ -967,7 +967,7 @@ a { color: inherit; }
 .vision-item-number {
   font-size: 2.5rem;
   font-weight: 800;
-  color: var(--color-brand-alpha-10);
+  color: var(--color-brand);
   line-height: 1;
   margin-bottom: var(--space-md);
   letter-spacing: -2px;
