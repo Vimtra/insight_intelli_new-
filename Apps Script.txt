@@ -25,8 +25,8 @@
     ============================================================================= */
 
 /* ----------  CONFIG  ---------- */
-const SPREADSHEET_ID   = "REPLACE_WITH_YOUR_GOOGLE_SHEET_ID";
-const DRIVE_FOLDER_ID  = "REPLACE_WITH_YOUR_DRIVE_FOLDER_ID";
+const SPREADSHEET_ID   = "1dg7WHU6r3529Q2Sc_aVIkF9wL4L7F5DF2q-dxNwtNbg";
+const DRIVE_FOLDER_ID  = "1dSMXWzThlcxZJXTsuJTUZGuMBs0gxFB4";
 const NOTIFY_EMAIL     = "admin@insightintelli.com";   // where notifications are sent
 
 const CAREER_SHEET_NAME  = "Career Applications";
