@@ -1363,9 +1363,10 @@ body {
   .dmx-check { grid-template-columns: 1fr; }
   .dmx-row { grid-template-columns: 40px 1fr; gap: 14px; }
   .dmx-row-arrow { display: none; }
-  .dmx-steps { grid-template-columns: 1fr; gap: 28px; text-align: left; }
-  .dmx-step { display: grid; grid-template-columns: 56px 1fr; gap: 18px; align-items: start; text-align: left; }
+  .dmx-steps { grid-template-columns: 1fr; gap: 16px; text-align: left; }
+  .dmx-step { display: grid; grid-template-columns: 56px 1fr; column-gap: 14px; row-gap: 0; align-items: start; text-align: left; }
   .dmx-step-node { margin: 0; }
+  .dmx-step-desc { grid-column: 2; }
   .dmx-collage, .dmx-hero-stage { height: 420px; }
 }
 
