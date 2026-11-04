@@ -149,8 +149,31 @@
               <li class="nav-item">
                 <a class="nav-link active" href="about.html">About</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="services.html">Services</a>
+              <li class="nav-item nav-dropdown">
+                <a
+                  class="nav-link nav-dropdown-toggle"
+                  href="services.html"
+                  role="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Services
+                  <span class="nav-caret" aria-hidden="true"></span>
+                </a>
+                <ul class="nav-dropdown-menu" role="menu">
+                  <li role="none">
+                    <a class="nav-dropdown-link" href="services.html" role="menuitem">
+                      <span class="nav-dropdown-link-title">Staffing &amp; IT Consulting</span>
+                      <span class="nav-dropdown-link-desc">Talent, delivery &amp; automation</span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a class="nav-dropdown-link" href="digital-marketing.html" role="menuitem">
+                      <span class="nav-dropdown-link-title">Digital Marketing</span>
+                      <span class="nav-dropdown-link-desc">SEO, PPC, social &amp; content</span>
+                    </a>
+                  </li>
+                </ul>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="partners.html">Partners</a>
@@ -651,7 +674,7 @@
       // ========== MOBILE MENU ==========
 
       // Auto-close on link click
-      document.querySelectorAll(".navbar-nav .nav-link").forEach((link) => {
+      document.querySelectorAll(".navbar-nav .nav-link:not(.nav-dropdown-toggle)").forEach((link) => {
         link.addEventListener("click", () => {
           const navbarCollapse = document.getElementById("navbarNav");
           if (navbarCollapse && navbarCollapse.classList.contains("show")) {
@@ -819,6 +842,36 @@
           this.classList.add("was-validated");
         });
       });
+    </script>
+    <script>
+      // ===== Services dropdown (desktop hover via CSS; mobile accordion) =====
+      (function () {
+        const mq = window.matchMedia("(max-width: 991.98px)");
+        document.querySelectorAll(".nav-dropdown").forEach(function (dd) {
+          const toggle = dd.querySelector(".nav-dropdown-toggle");
+          if (!toggle) return;
+          toggle.addEventListener("click", function (e) {
+            if (mq.matches) {
+              e.preventDefault();
+              const open = dd.classList.toggle("open");
+              toggle.setAttribute("aria-expanded", open ? "true" : "false");
+            }
+          });
+          dd.addEventListener("mouseenter", function () {
+            if (!mq.matches) toggle.setAttribute("aria-expanded", "true");
+          });
+          dd.addEventListener("mouseleave", function () {
+            if (!mq.matches) toggle.setAttribute("aria-expanded", "false");
+          });
+        });
+        mq.addEventListener("change", function () {
+          document.querySelectorAll(".nav-dropdown.open").forEach(function (dd) {
+            dd.classList.remove("open");
+            const t = dd.querySelector(".nav-dropdown-toggle");
+            if (t) t.setAttribute("aria-expanded", "false");
+          });
+        });
+      })();
     </script>
   </body>
 </html>
