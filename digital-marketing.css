@@ -253,102 +253,103 @@ body {
   letter-spacing: 0.02em;
 }
 
-/* --- Property listing --- */
-.mk-property {
+/* --- Campaign insights --- */
+.mk-insights {
   width: 218px;
   padding: 0;
   color: #202938;
   border: 1px solid rgba(255, 255, 255, 0.72);
   box-shadow: 0 30px 60px rgba(5, 9, 18, 0.42);
 }
-.mk-property-photo {
+.mk-insights-chart {
   position: relative;
   height: 102px;
   overflow: hidden;
   background:
-    linear-gradient(180deg, transparent 55%, rgba(12, 22, 31, 0.3)),
-    linear-gradient(165deg, #9ed9ef 0 47%, #dce9dc 47% 57%, #729276 57% 100%);
+    radial-gradient(90% 90% at 100% 0%, rgba(255, 106, 0, 0.22), transparent 65%),
+    linear-gradient(145deg, #17243b, #0c1321);
 }
-.mk-property-house {
-  position: absolute;
-  left: 50%;
-  bottom: 13px;
-  width: 104px;
-  height: 48px;
-  transform: translateX(-50%);
-  background: linear-gradient(90deg, #f4efe5 0 38%, #fffaf0 38% 100%);
-  box-shadow: 0 7px 12px rgba(21, 39, 39, 0.2);
-}
-.mk-property-house::before {
+.mk-insights-chart::after {
   content: "";
   position: absolute;
-  left: -8px;
-  top: -22px;
-  width: 82px;
-  height: 32px;
-  background: #394957;
-  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+  inset: 31px 14px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  background: repeating-linear-gradient(180deg, transparent 0 16px, rgba(255, 255, 255, 0.08) 16px 17px);
 }
-.mk-property-house::after {
-  content: "";
+.mk-insights-badge {
   position: absolute;
-  left: 43px;
-  bottom: 0;
-  width: 18px;
-  height: 31px;
-  background: #8a6044;
-  box-shadow: -27px -15px 0 -3px #8fc1c7, 26px -15px 0 -3px #8fc1c7;
-}
-.mk-property-badge {
-  position: absolute;
-  z-index: 1;
   top: 10px;
   left: 10px;
   padding: 5px 8px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.94);
-  color: #263449;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.86);
   font-size: 0.61rem;
   font-weight: 700;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
-.mk-property-info {
+.mk-insights-bars {
+  position: absolute;
+  z-index: 1;
+  inset: 37px 18px 16px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 7px;
+}
+.mk-insights-bars i {
+  flex: 1;
+  border-radius: 4px 4px 0 0;
+  background: linear-gradient(180deg, #ff9b55, var(--color-brand));
+  box-shadow: 0 0 12px rgba(255, 106, 0, 0.22);
+}
+.mk-insights-bars i:nth-child(1) { height: 28%; opacity: 0.65; }
+.mk-insights-bars i:nth-child(2) { height: 42%; opacity: 0.72; }
+.mk-insights-bars i:nth-child(3) { height: 35%; opacity: 0.78; }
+.mk-insights-bars i:nth-child(4) { height: 58%; opacity: 0.84; }
+.mk-insights-bars i:nth-child(5) { height: 49%; opacity: 0.88; }
+.mk-insights-bars i:nth-child(6) { height: 74%; opacity: 0.94; }
+.mk-insights-bars i:nth-child(7) { height: 100%; }
+.mk-insights-info {
   display: grid;
   gap: 5px;
   padding: 12px 14px 13px;
   background: #fff;
 }
-.mk-property-type {
+.mk-insights-type {
   color: #778193;
   font-size: 0.59rem;
   font-weight: 600;
   letter-spacing: 0.045em;
   text-transform: uppercase;
 }
-.mk-property-name {
+.mk-insights-name {
   color: #202938;
   font-family: var(--font-family-display);
   font-size: 0.95rem;
   line-height: 1.1;
 }
-.mk-property-details {
+.mk-insights-summary {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 6px;
   margin-top: 2px;
 }
-.mk-property-details b {
+.mk-insights-summary b {
   color: var(--color-brand);
-  font-size: 0.79rem;
+  font-size: 0.72rem;
 }
-.mk-property-details i {
+.mk-insights-summary i {
   color: #7a8493;
   font-size: 0.58rem;
   font-style: normal;
   white-space: nowrap;
 }
+.mk-insights-summary i span { color: #2c9b70; font-weight: 800; }
 
 /* --- Ad creative --- */
 .mk-ad {
@@ -718,7 +719,7 @@ body {
 }
 .dmx-hero-stage .mk { position: absolute; }
 .dmx-stage-post { top: 2%; left: 4%; --rot: -5deg; transform: rotate(-5deg); z-index: 3; }
-.dmx-stage-property { top: 2%; right: 2%; --rot: 5deg; transform: rotate(5deg); z-index: 2; }
+.dmx-stage-insights { top: 2%; right: 2%; --rot: 5deg; transform: rotate(5deg); z-index: 2; }
 .dmx-stage-poster { bottom: 2%; left: 0; --rot: -3deg; transform: rotate(-3deg); z-index: 2; }
 .dmx-stage-reel { bottom: 0; right: 2%; --rot: 4deg; transform: rotate(4deg); z-index: 3; }
 .dmx-stage-timeline { bottom: 30%; left: 50%; margin-left: -150px; --rot: -2deg; transform: rotate(-2deg); z-index: 4; }
