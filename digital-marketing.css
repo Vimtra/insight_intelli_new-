@@ -253,6 +253,103 @@ body {
   letter-spacing: 0.02em;
 }
 
+/* --- Property listing --- */
+.mk-property {
+  width: 218px;
+  padding: 0;
+  color: #202938;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: 0 30px 60px rgba(5, 9, 18, 0.42);
+}
+.mk-property-photo {
+  position: relative;
+  height: 102px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, transparent 55%, rgba(12, 22, 31, 0.3)),
+    linear-gradient(165deg, #9ed9ef 0 47%, #dce9dc 47% 57%, #729276 57% 100%);
+}
+.mk-property-house {
+  position: absolute;
+  left: 50%;
+  bottom: 13px;
+  width: 104px;
+  height: 48px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #f4efe5 0 38%, #fffaf0 38% 100%);
+  box-shadow: 0 7px 12px rgba(21, 39, 39, 0.2);
+}
+.mk-property-house::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: -22px;
+  width: 82px;
+  height: 32px;
+  background: #394957;
+  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+}
+.mk-property-house::after {
+  content: "";
+  position: absolute;
+  left: 43px;
+  bottom: 0;
+  width: 18px;
+  height: 31px;
+  background: #8a6044;
+  box-shadow: -27px -15px 0 -3px #8fc1c7, 26px -15px 0 -3px #8fc1c7;
+}
+.mk-property-badge {
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  left: 10px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #263449;
+  font-size: 0.61rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.mk-property-info {
+  display: grid;
+  gap: 5px;
+  padding: 12px 14px 13px;
+  background: #fff;
+}
+.mk-property-type {
+  color: #778193;
+  font-size: 0.59rem;
+  font-weight: 600;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+}
+.mk-property-name {
+  color: #202938;
+  font-family: var(--font-family-display);
+  font-size: 0.95rem;
+  line-height: 1.1;
+}
+.mk-property-details {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px;
+  margin-top: 2px;
+}
+.mk-property-details b {
+  color: var(--color-brand);
+  font-size: 0.79rem;
+}
+.mk-property-details i {
+  color: #7a8493;
+  font-size: 0.58rem;
+  font-style: normal;
+  white-space: nowrap;
+}
+
 /* --- Ad creative --- */
 .mk-ad {
   width: 186px;
@@ -621,7 +718,7 @@ body {
 }
 .dmx-hero-stage .mk { position: absolute; }
 .dmx-stage-post { top: 2%; left: 4%; --rot: -5deg; transform: rotate(-5deg); z-index: 3; }
-.dmx-stage-ad { top: 0; right: 6%; --rot: 5deg; transform: rotate(5deg); z-index: 2; }
+.dmx-stage-property { top: 2%; right: 2%; --rot: 5deg; transform: rotate(5deg); z-index: 2; }
 .dmx-stage-poster { bottom: 2%; left: 0; --rot: -3deg; transform: rotate(-3deg); z-index: 2; }
 .dmx-stage-reel { bottom: 0; right: 2%; --rot: 4deg; transform: rotate(4deg); z-index: 3; }
 .dmx-stage-timeline { bottom: 30%; left: 50%; margin-left: -150px; --rot: -2deg; transform: rotate(-2deg); z-index: 4; }
@@ -1245,12 +1342,13 @@ body {
 @media (max-width: 1100px) {
   .dmx-steps { grid-template-columns: repeat(2, 1fr); gap: 36px 24px; }
   .dmx-steps::before { display: none; }
+  .dmx-hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .dmx-hero-stage { max-width: 560px; margin-inline: auto; width: 100%; }
+  .dmx-stage-timeline { bottom: 10%; }
 }
 
 @media (max-width: 991.98px) {
   .dmx-hero { margin-top: 108px; }
-  .dmx-hero-grid { grid-template-columns: 1fr; gap: 48px; }
-  .dmx-hero-stage { max-width: 560px; margin-inline: auto; width: 100%; }
   .dmx-split { grid-template-columns: 1fr; gap: 44px; }
   .dmx-split--reverse .dmx-split-visual { order: 0; }
   .dmx-why-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -1275,7 +1373,9 @@ body {
   .dmx-hero-actions .dmx-btn { flex: 1 1 auto; justify-content: center; }
   /* simplify dense compositions on very small screens */
   .dmx-stage-timeline, .dmx-collage-ad { display: none; }
-  .dmx-hero-stage { height: 360px; }
+  .dmx-hero-stage { height: 460px; }
+  .dmx-stage-post,
+  .dmx-stage-reel { display: none; }
   .dmx-collage { height: 380px; }
   .mk-timeline { width: 260px; }
   .dmx-why-figure { flex-direction: column; }
