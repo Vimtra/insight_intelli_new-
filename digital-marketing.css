@@ -1395,7 +1395,7 @@ body {
    ============================================================ */
 .dmx-strategy {
   position: relative;
-  padding: clamp(84px, 9vw, 128px) 0;
+  padding: clamp(52px, 5.5vw, 76px) 0;
   overflow: hidden;
   background: linear-gradient(180deg, #ffffff 0%, #f5f6fa 55%, #ffffff 100%);
   border-bottom: 1px solid rgba(14, 19, 32, 0.06);
@@ -1415,14 +1415,15 @@ body {
   z-index: 1;
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
-  gap: clamp(24px, 4vw, 64px);
+  gap: clamp(24px, 3.5vw, 48px);
   align-items: end;
-  margin-bottom: clamp(44px, 6vw, 76px);
+  margin-bottom: clamp(30px, 3.5vw, 46px);
 }
 .dmx-strategy-title {
   margin: 0;
+  scroll-margin-top: 64px;
   font-family: var(--font-family-display);
-  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-size: clamp(2.3rem, 4.6vw, 3.6rem);
   font-weight: 800;
   letter-spacing: -0.045em;
   line-height: 1;
@@ -1432,8 +1433,8 @@ body {
 .dmx-strategy-intro {
   margin: 0 0 6px;
   color: var(--color-gray-500);
-  font-size: clamp(1.0625rem, 1.2vw, 1.1875rem);
-  line-height: 1.64;
+  font-size: clamp(1rem, 1.1vw, 1.1rem);
+  line-height: 1.55;
 }
 
 /* ---- flow ---- */
@@ -1441,16 +1442,16 @@ body {
   position: relative;
   z-index: 1;
   display: grid;
-  gap: clamp(8px, 2vw, 20px);
+  gap: clamp(6px, 1.5vw, 16px);
 }
 .dmx-strat-row {
   display: grid;
-  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
-  gap: clamp(28px, 4vw, 68px);
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(24px, 3vw, 48px);
   align-items: center;
 }
 .dmx-strat-row--rev {
-  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
 }
 .dmx-strat-row--rev .dmx-strat-visual { order: 2; }
 
@@ -1458,18 +1459,18 @@ body {
 .dmx-strat-no {
   display: block;
   font-family: var(--font-family-display);
-  font-size: clamp(3rem, 6vw, 5rem);
+  font-size: clamp(2.6rem, 4.5vw, 3.5rem);
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.04em;
   color: transparent;
   -webkit-text-stroke: 1.5px rgba(14, 19, 32, 0.16);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 .dmx-strat-row--rev .dmx-strat-no { -webkit-text-stroke-color: rgba(255, 106, 0, 0.42); }
 .dmx-strat-kicker {
   display: inline-block;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   font-family: var(--font-family-display);
   font-weight: 700;
   font-size: 0.8rem;
@@ -1478,7 +1479,7 @@ body {
   color: var(--color-brand);
 }
 .dmx-strat-h3 {
-  margin: 0 0 14px;
+  margin: 0 0 10px;
   font-family: var(--font-family-display);
   font-size: clamp(1.55rem, 2.6vw, 2.35rem);
   font-weight: 700;
@@ -1490,8 +1491,8 @@ body {
 .dmx-strat-desc {
   margin: 0;
   color: var(--color-gray-500);
-  font-size: 1.0625rem;
-  line-height: 1.62;
+  font-size: 1rem;
+  line-height: 1.55;
   max-width: 48ch;
 }
 
@@ -1501,7 +1502,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 18px;
-  margin: clamp(10px, 2.5vw, 26px) 0;
+  margin: clamp(6px, 1.5vw, 16px) 0;
 }
 .dmx-strat-link-line {
   height: 1px;
@@ -1540,7 +1541,7 @@ body {
 /* =================== BRAND TOUCHPOINT NETWORK =================== */
 .dmx-touch {
   position: relative;
-  height: clamp(380px, 40vw, 460px);
+  height: clamp(300px, 29vw, 360px);
 }
 .dmx-touch-net {
   position: absolute;
@@ -1598,8 +1599,9 @@ body {
   gap: 9px;
   overflow: visible;
   box-shadow: 0 26px 52px rgba(255, 106, 0, 0.22), 0 0 0 1px rgba(14, 19, 32, 0.06);
-  left: 41%;
-  top: 38%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   z-index: 3;
 }
 .dmx-touch-core::before {
@@ -1619,7 +1621,7 @@ body {
 }
 
 /* website touchpoint */
-.dmx-tp-web { width: 208px; top: 1%; left: 20%; }
+.dmx-tp-web { width: 208px; top: 0; left: 4%; }
 .tp-web-bar {
   display: flex;
   align-items: center;
@@ -1634,7 +1636,7 @@ body {
 .tp-web-body::after { content: ""; position: absolute; left: 14px; top: 34px; width: 120px; height: 7px; border-radius: 4px; background: #c8cfdb; box-shadow: 0 14px 0 #e2e6ee, 0 28px 0 #e2e6ee; }
 
 /* social touchpoint */
-.dmx-tp-social { width: 166px; top: 38%; left: -1%; }
+.dmx-tp-social { width: 166px; bottom: 0; left: 0; }
 .tp-soc-head { display: flex; align-items: center; gap: 9px; padding: 12px 12px 0; }
 .tp-soc-ava { width: 30px; height: 30px; border-radius: 50%; background: conic-gradient(from 210deg, var(--color-brand), #ff9f5a, var(--color-accent)); flex: 0 0 auto; }
 .tp-soc-head b { height: 7px; width: 70px; border-radius: 4px; background: #2d3340; }
@@ -1645,7 +1647,7 @@ body {
 .dmx-tp-ad {
   width: 150px;
   height: 150px;
-  top: 5%;
+  top: 0;
   right: 0;
   padding: 16px;
   display: flex;
@@ -1661,7 +1663,7 @@ body {
 .tp-ad-btn { align-self: flex-start; padding: 6px 13px; border-radius: 999px; background: var(--color-brand); color: #fff; font-size: 0.66rem; font-weight: 700; }
 
 /* audience touchpoint (grid, not floating circles) */
-.dmx-tp-aud { width: 162px; bottom: 0; right: 12%; }
+.dmx-tp-aud { width: 162px; bottom: 0; right: 0; }
 .tp-aud-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; padding: 30px 14px 14px; }
 .tp-aud-grid span { aspect-ratio: 1; border-radius: 7px; background: linear-gradient(135deg, #e2e6ee, #c8cfdb); }
 .tp-aud-grid span:nth-child(3n) { background: linear-gradient(135deg, #ff9f5a, var(--color-brand)); }
@@ -1677,7 +1679,7 @@ body {
 /* =================== LEAD CONVERSION PIPELINE =================== */
 .dmx-pipe {
   position: relative;
-  height: clamp(400px, 42vw, 480px);
+  height: clamp(300px, 30vw, 360px);
 }
 .dmx-pipe-svg {
   position: absolute;
@@ -1756,29 +1758,84 @@ body {
 .dmx-pipe-node--lead .dmx-pipe-motif i { background: var(--color-brand); }
 
 /* node positions along the flowing path */
-.dmx-pipe-node--1 { left: 26%; top: 13%; }
-.dmx-pipe-node--2 { left: 74%; top: 36%; }
-.dmx-pipe-node--3 { left: 30%; top: 63%; }
-.dmx-pipe-node--lead { left: 68%; top: 91%; }
+.dmx-pipe-node--1 { left: 27%; top: 13%; }
+.dmx-pipe-node--2 { left: 73%; top: 37%; }
+.dmx-pipe-node--3 { left: 30%; top: 61%; }
+.dmx-pipe-node--lead { left: 70%; top: 85%; }
 
 /* ---- responsive ---- */
 @media (max-width: 991.98px) {
-  .dmx-strategy-head { grid-template-columns: 1fr; gap: 20px; align-items: start; }
+  .dmx-strategy-head { grid-template-columns: 1fr; gap: 16px; align-items: start; }
+  .dmx-strategy-title { scroll-margin-top: 95px; }
   .dmx-strat-row,
   .dmx-strat-row--rev {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 18px;
   }
   .dmx-strat-row--rev .dmx-strat-visual { order: 0; }
   .dmx-strat-text { order: 2; }
+  .dmx-touch { height: clamp(280px, 38vw, 320px); }
+  .dmx-pipe { height: clamp(280px, 38vw, 320px); }
 }
 @media (max-width: 575.98px) {
-  .dmx-touch { height: 360px; }
-  .dmx-pipe { height: 440px; }
-  .dmx-pipe-node { padding: 10px 13px 10px 10px; gap: 10px; }
-  .dmx-pipe-node b { font-size: 0.9rem; }
-  .dmx-tp-web { width: 184px; }
+  .dmx-strategy { padding: 44px 0; }
+  .dmx-strategy-head { margin-bottom: 28px; }
+  .dmx-strategy-title {
+    font-size: clamp(2.15rem, 8vw, 2.6rem);
+    scroll-margin-top: 20px;
+  }
+  .dmx-strat-no { font-size: 2.5rem; margin-bottom: 5px; }
+  .dmx-strat-kicker { margin-bottom: 7px; }
+  .dmx-strat-h3 { font-size: 1.55rem; margin-bottom: 8px; }
+  .dmx-touch { height: 320px; }
+  .dmx-pipe { height: 320px; }
+  .dmx-tp-web {
+    width: 158px;
+    left: 0;
+  }
+  .tp-web-body { height: 64px; }
+  .dmx-tp-social {
+    width: 134px;
+    top: auto;
+    bottom: 0;
+  }
+  .tp-soc-media { height: 70px; }
+  .dmx-tp-ad {
+    width: 126px;
+    height: 130px;
+    padding: 12px;
+  }
+  .tp-ad-head { font-size: 1rem; }
+  .tp-ad-btn { padding: 5px 10px; }
+  .dmx-tp-aud { width: 132px; }
+  .dmx-touch-core { width: 112px; padding: 14px 12px 12px; }
+  .dmx-touch-core img { width: 82px; }
+  .dmx-pipe-node {
+    gap: 8px;
+    padding: 9px 11px 9px 9px;
+  }
+  .dmx-pipe-node b { font-size: 0.84rem; }
+  .dmx-pipe-node small { font-size: 0.65rem; }
+  .dmx-pipe-motif { width: 30px; height: 30px; padding: 7px; }
+  .dmx-pipe-node--1,
+  .dmx-pipe-node--3 { left: 32%; }
+  .dmx-pipe-node--2,
+  .dmx-pipe-node--lead { left: 68%; }
+  .dmx-strat-link { gap: 10px; }
+  .dmx-strat-link-badge { padding: 8px 12px; font-size: 0.72rem; }
   .dmx-strat-link-line { max-width: 90px; }
+}
+@media (max-width: 360px) {
+  .dmx-tp-web { width: 142px; }
+  .dmx-tp-social { width: 122px; }
+  .dmx-tp-ad { width: 116px; }
+  .dmx-tp-aud { width: 122px; }
+  .dmx-touch-core { width: 100px; }
+  .dmx-touch-core img { width: 74px; }
+  .dmx-pipe-node { gap: 6px; padding: 8px; }
+  .dmx-pipe-node b { font-size: 0.78rem; }
+  .dmx-pipe-node small { font-size: 0.6rem; }
+  .dmx-pipe-motif { width: 27px; height: 27px; padding: 6px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .dmx-touch-net path, .dmx-pipe-svg .flow,
