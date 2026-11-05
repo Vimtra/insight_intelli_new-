@@ -148,31 +148,11 @@
               <li class="nav-item">
                 <a class="nav-link" href="about.html">About</a>
               </li>
-              <li class="nav-item nav-dropdown">
-                <a
-                  class="nav-link nav-dropdown-toggle"
-                  href="services.html"
-                  role="button"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Services
-                  <span class="nav-caret" aria-hidden="true"></span>
-                </a>
-                <ul class="nav-dropdown-menu" role="menu">
-                  <li role="none">
-                    <a class="nav-dropdown-link" href="services.html" role="menuitem">
-                      <span class="nav-dropdown-link-title">Staffing &amp; IT Consulting</span>
-                      <span class="nav-dropdown-link-desc">Talent, delivery &amp; automation</span>
-                    </a>
-                  </li>
-                  <li role="none">
-                    <a class="nav-dropdown-link" href="digital-marketing.html" role="menuitem">
-                      <span class="nav-dropdown-link-title">Digital Marketing</span>
-                      <span class="nav-dropdown-link-desc">SEO, PPC, social &amp; content</span>
-                    </a>
-                  </li>
-                </ul>
+              <li class="nav-item">
+                <a class="nav-link" href="services.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="digital-marketing.html">Digital Marketing</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="partners.html">Partners</a>
@@ -370,6 +350,57 @@
         </div>
       </section>
 
+      <!-- ========== WHY INSIGHT INTELLI SECTION ========== -->
+      <section class="whyii" aria-labelledby="whyii-heading">
+        <div class="container">
+          <div class="whyii-grid">
+            <div class="whyii-intro">
+              <p class="whyii-eyebrow">Why Insight Intelli</p>
+              <h2 class="whyii-title" id="whyii-heading">
+                A partner built for <em>creative performance.</em>
+              </h2>
+              <p class="whyii-desc">
+                Strategy, creative and media under one roof &mdash; aligned to the
+                outcomes that move your business forward.
+              </p>
+              <div class="whyii-figure">
+                <div class="whyii-stat">
+                  <b>360<span>&deg;</span></b>
+                  <small>Strategy, creative &amp; media in one team</small>
+                </div>
+                <div class="whyii-stat">
+                  <b>Multi<span>-Platform</span></b>
+                  <small>Search, social, video &amp; web</small>
+                </div>
+              </div>
+            </div>
+
+            <ol class="whyii-list">
+              <li class="whyii-item">
+                <h3>Strategy-Driven Execution</h3>
+                <p>Every campaign starts with a clear plan tied to your goals.</p>
+              </li>
+              <li class="whyii-item">
+                <h3>Creative Excellence</h3>
+                <p>Design and video crafted to stand out and communicate clearly.</p>
+              </li>
+              <li class="whyii-item">
+                <h3>Data-Based Decisions</h3>
+                <p>We let performance data guide optimization, not guesswork.</p>
+              </li>
+              <li class="whyii-item">
+                <h3>Multi-Platform Expertise</h3>
+                <p>Search, social, video and web working as one system.</p>
+              </li>
+              <li class="whyii-item">
+                <h3>Performance-Focused Growth</h3>
+                <p>Built around measurable outcomes and sustainable scale.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
     </main>
 
     <!-- ========== FOOTER ========== -->
@@ -515,7 +546,7 @@
       // ========== MOBILE MENU ==========
 
       // Auto-close on link click
-      document.querySelectorAll(".navbar-nav .nav-link:not(.nav-dropdown-toggle)").forEach((link) => {
+      document.querySelectorAll(".navbar-nav .nav-link").forEach((link) => {
         link.addEventListener("click", () => {
           const navbarCollapse = document.getElementById("navbarNav");
           if (navbarCollapse && navbarCollapse.classList.contains("show")) {
@@ -690,36 +721,5 @@
         });
       });
     </script>
-    <script>
-      // ===== Services dropdown (desktop hover via CSS; mobile accordion) =====
-      (function () {
-        const mq = window.matchMedia("(max-width: 991.98px)");
-        document.querySelectorAll(".nav-dropdown").forEach(function (dd) {
-          const toggle = dd.querySelector(".nav-dropdown-toggle");
-          if (!toggle) return;
-          toggle.addEventListener("click", function (e) {
-            if (mq.matches) {
-              e.preventDefault();
-              const open = dd.classList.toggle("open");
-              toggle.setAttribute("aria-expanded", open ? "true" : "false");
-            }
-          });
-          dd.addEventListener("mouseenter", function () {
-            if (!mq.matches) toggle.setAttribute("aria-expanded", "true");
-          });
-          dd.addEventListener("mouseleave", function () {
-            if (!mq.matches) toggle.setAttribute("aria-expanded", "false");
-          });
-        });
-        mq.addEventListener("change", function () {
-          document.querySelectorAll(".nav-dropdown.open").forEach(function (dd) {
-            dd.classList.remove("open");
-            const t = dd.querySelector(".nav-dropdown-toggle");
-            if (t) t.setAttribute("aria-expanded", "false");
-          });
-        });
-      })();
-    </script>
   </body>
 </html>
-

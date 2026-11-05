@@ -137,31 +137,11 @@
               <li class="nav-item">
                 <a class="nav-link" href="about.html">About</a>
               </li>
-              <li class="nav-item nav-dropdown">
-                <a
-                  class="nav-link nav-dropdown-toggle active"
-                  href="services.html"
-                  role="button"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Services
-                  <span class="nav-caret" aria-hidden="true"></span>
-                </a>
-                <ul class="nav-dropdown-menu" role="menu">
-                  <li role="none">
-                    <a class="nav-dropdown-link" href="services.html" role="menuitem">
-                      <span class="nav-dropdown-link-title">Staffing &amp; IT Consulting</span>
-                      <span class="nav-dropdown-link-desc">Talent, delivery &amp; automation</span>
-                    </a>
-                  </li>
-                  <li role="none">
-                    <a class="nav-dropdown-link" href="digital-marketing.html" role="menuitem">
-                      <span class="nav-dropdown-link-title">Digital Marketing</span>
-                      <span class="nav-dropdown-link-desc">SEO, PPC, social &amp; content</span>
-                    </a>
-                  </li>
-                </ul>
+              <li class="nav-item">
+                <a class="nav-link" href="services.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="digital-marketing.html">Digital Marketing</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="partners.html">Partners</a>
@@ -695,57 +675,6 @@
         </div>
       </section>
 
-      <!-- ================ 6. WHY INSIGHT INTELLI ================ -->
-      <section class="dmx-why" aria-labelledby="dmx-why-h">
-        <div class="container">
-          <div class="dmx-why-grid">
-            <div class="dm-reveal">
-              <p class="dmx-eyebrow dmx-eyebrow--light">Why Insight Intelli</p>
-              <h2 class="dmx-h2 dmx-h2--light" id="dmx-why-h">
-                A partner built for <em>creative performance.</em>
-              </h2>
-              <p class="dmx-lead dmx-lead--light">
-                Strategy, creative and media under one roof &mdash; aligned to the
-                outcomes that move your business forward.
-              </p>
-              <div class="dmx-why-figure">
-                <div class="dmx-why-stat">
-                  <b>360<span>&deg;</span></b>
-                  <small>Strategy, creative &amp; media in one team</small>
-                </div>
-                <div class="dmx-why-stat">
-                  <b>Multi<span>-Platform</span></b>
-                  <small>Search, social, video &amp; web</small>
-                </div>
-              </div>
-            </div>
-
-            <ol class="dmx-why-list">
-              <li class="dmx-why-item dm-reveal">
-                <h3>Strategy-Driven Execution</h3>
-                <p>Every campaign starts with a clear plan tied to your goals.</p>
-              </li>
-              <li class="dmx-why-item dm-reveal">
-                <h3>Creative Excellence</h3>
-                <p>Design and video crafted to stand out and communicate clearly.</p>
-              </li>
-              <li class="dmx-why-item dm-reveal">
-                <h3>Data-Based Decisions</h3>
-                <p>We let performance data guide optimization, not guesswork.</p>
-              </li>
-              <li class="dmx-why-item dm-reveal">
-                <h3>Multi-Platform Expertise</h3>
-                <p>Search, social, video and web working as one system.</p>
-              </li>
-              <li class="dmx-why-item dm-reveal">
-                <h3>Performance-Focused Growth</h3>
-                <p>Built around measurable outcomes and sustainable scale.</p>
-              </li>
-            </ol>
-          </div>
-        </div>
-      </section>
-
       <!-- ================ 7. FINAL CTA ================ -->
       <section class="dmx-cta" aria-labelledby="dmx-cta-h">
         <span class="dmx-cta-ring" aria-hidden="true"></span>
@@ -896,7 +825,7 @@
 
       // ========== MOBILE MENU — auto-close on normal link click ==========
       document
-        .querySelectorAll(".navbar-nav .nav-link:not(.nav-dropdown-toggle)")
+        .querySelectorAll(".navbar-nav .nav-link")
         .forEach(function (link) {
           link.addEventListener("click", function () {
             const navbarCollapse = document.getElementById("navbarNav");
@@ -905,36 +834,6 @@
             }
           });
         });
-
-      // ========== SERVICES DROPDOWN (desktop hover via CSS; mobile accordion) ==========
-      (function () {
-        const mq = window.matchMedia("(max-width: 991.98px)");
-        document.querySelectorAll(".nav-dropdown").forEach(function (dd) {
-          const toggle = dd.querySelector(".nav-dropdown-toggle");
-          if (!toggle) return;
-          toggle.addEventListener("click", function (e) {
-            if (mq.matches) {
-              // Mobile: tap expands/collapses submenu instead of navigating
-              e.preventDefault();
-              const open = dd.classList.toggle("open");
-              toggle.setAttribute("aria-expanded", open ? "true" : "false");
-            }
-          });
-          dd.addEventListener("mouseenter", function () {
-            if (!mq.matches) toggle.setAttribute("aria-expanded", "true");
-          });
-          dd.addEventListener("mouseleave", function () {
-            if (!mq.matches) toggle.setAttribute("aria-expanded", "false");
-          });
-        });
-        mq.addEventListener("change", function () {
-          document.querySelectorAll(".nav-dropdown.open").forEach(function (dd) {
-            dd.classList.remove("open");
-            const t = dd.querySelector(".nav-dropdown-toggle");
-            if (t) t.setAttribute("aria-expanded", "false");
-          });
-        });
-      })();
 
       // ========== SCROLL TO TOP ==========
       const scrollTopBtn = document.getElementById("scrollToTop");
