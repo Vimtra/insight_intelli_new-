@@ -1841,3 +1841,62 @@ body {
   .dmx-touch-net path, .dmx-pipe-svg .flow,
   .dmx-tp-web, .dmx-tp-social, .dmx-tp-ad, .dmx-tp-aud { animation: none; }
 }
+
+/* ============================================================
+   SERVICES / DIGITAL MARKETING LANDING PAGE
+   Overview, Brand Awareness and Lead Generation as separate
+   sections (reusing the .dmx-strategy styles above).
+   ============================================================ */
+.dmx-overview .dmx-strategy-head { margin-bottom: 0; }
+
+.dmx-overview-links {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: clamp(28px, 3vw, 40px) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.dmx-overview-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px 10px 10px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid rgba(14, 19, 32, 0.1);
+  box-shadow: 0 10px 24px rgba(14, 19, 32, 0.06);
+  color: var(--color-gray-900);
+  font-family: var(--font-family-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: border-color 0.25s var(--ease-out), transform 0.25s var(--ease-out);
+}
+.dmx-overview-links a:hover {
+  border-color: rgba(255, 106, 0, 0.35);
+  transform: translateY(-2px);
+}
+.dmx-overview-links b {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 106, 0, 0.1);
+  color: var(--color-brand);
+  font-size: 0.75rem;
+}
+.dmx-overview-links i { color: var(--color-brand); }
+
+.dmx-outcome { padding: clamp(60px, 7vw, 100px) 0; }
+.dmx-outcome--alt { background: linear-gradient(180deg, #f7f8fb 0%, #ffffff 100%); }
+
+@media (max-width: 575.98px) {
+  .dmx-outcome { padding: 48px 0; }
+  .dmx-overview-links li { flex: 1 1 100%; }
+  .dmx-overview-links a { width: 100%; }
+}
